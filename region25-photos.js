@@ -22,7 +22,12 @@
     [/neroburg/, 50.196320, 6.743410],
     [/lo stivale/, 50.291221, 6.671320],
     [/taverna romana/, 50.292092, 6.672107],
-    [/ob dr bruck/, 50.286269, 6.636142]
+    [/ob dr bruck/, 50.286269, 6.636142],
+    [/zwoelfender/, 50.241310, 6.617310],
+    [/groner hof/, 50.300638, 6.738924],
+    [/kupferschmiede/, 50.177200, 6.588700],
+    [/el rancho/, 50.349566, 6.612841],
+    [/cafe sherlock/, 50.291550, 6.671260]
   ];
   const cache = new Map();
 
