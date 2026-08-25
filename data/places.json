@@ -1,0 +1,56 @@
+[
+  {
+    "id":"gastro-la-sirena","vertical":"gastro","name":"La Sirena da Franco","category":"Italienisch","town":"Stadtkyll","address":"Auelstraße 14-16, 54589 Stadtkyll","summary":"Italienische Küche mit Pasta-Spezialitäten im Ortskern.","tags":["italienisch","abendessen"],
+    "weeklyHours":{"mon":["11:30-14:00","17:30-22:00"],"tue":["11:30-14:00","17:30-22:00"],"wed":[],"thu":["11:30-14:00","17:30-22:30"],"fri":["11:30-14:00","17:30-22:30"],"sat":["11:30-14:00","17:30-22:30"],"sun":["11:30-14:00","17:30-22:30"]},
+    "source":{"label":"Ortsgemeinde Stadtkyll","url":"https://www.stadtkyll.de/strukturierte-daten/gastronomie/betriebe-gastro/pizzeria-la-sirena-da-franco/","type":"official_local","checkedAt":"2026-08-25"},"dynamicStatus":"source-based"
+  },
+  {
+    "id":"gastro-bistro-am-see","vertical":"gastro","name":"Bistro am See","category":"Bistro · Bar","town":"Stadtkyll","address":"Wirftstraße / Tennishalle, 54589 Stadtkyll","summary":"Bistro im Wirfttal für Essen, Getränke und gelegentliche Cocktailabende.","tags":["bar","cocktails","abend"],
+    "weeklyHours":{"mon":["17:00-23:00"],"tue":["17:00-23:00"],"wed":["17:00-23:00"],"thu":["17:00-23:00"],"fri":["17:00-23:00"],"sat":[],"sun":[]},
+    "source":{"label":"Ortsgemeinde Stadtkyll","url":"https://www.stadtkyll.de/strukturierte-daten/gastronomie/betriebe-gastro/bistro-am-see/","type":"official_local","checkedAt":"2026-08-25"},"dynamicStatus":"source-based"
+  },
+  {
+    "id":"gastro-woodstock","vertical":"gastro","name":"Woodstock - Food & Music","category":"Restaurant","town":"Stadtkyll","address":"Wirftstraße 19, 54589 Stadtkyll","summary":"Restaurant im Wirfttal mit Food-&-Music-Profil.","tags":["abendessen","musik"],
+    "weeklyHours":{"mon":["17:00-22:00"],"tue":[],"wed":["17:00-22:00"],"thu":["17:00-22:00"],"fri":["17:00-22:00"],"sat":["17:00-22:00"],"sun":["17:00-22:00"]},
+    "source":{"label":"Öffentliches Branchenprofil","url":"https://www.google.com/maps/search/?api=1&query=Woodstock%20Food%20Music%20Stadtkyll","type":"business_listing","checkedAt":"2026-08-25"},"dynamicStatus":"source-based"
+  },
+  {
+    "id":"gastro-pannekooche","vertical":"gastro","name":"Pannekooche - Schnitzel Haus Stadtkyll","category":"Pfannkuchen · Schnitzel","town":"Stadtkyll","address":"Hauptstraße 19, 54589 Stadtkyll","summary":"Pfannkuchen- und Schnitzelrestaurant im Ortskern.","tags":["familie","deftig"],
+    "weeklyHours":{"mon":["16:00-21:00"],"tue":["16:00-21:00"],"wed":["16:00-21:00"],"thu":["16:00-21:00"],"fri":["15:00-21:30"],"sat":["15:00-21:00"],"sun":["12:30-20:30"]},
+    "source":{"label":"Öffentliches Branchenprofil","url":"https://www.google.com/maps/search/?api=1&query=Pannekooche%20Stadtkyll","type":"business_listing","checkedAt":"2026-08-25"},"dynamicStatus":"source-based"
+  },
+  {
+    "id":"gastro-doppelfeld","vertical":"gastro","name":"Café Doppelfeld","category":"Café · Bäckerei · Eis","town":"Stadtkyll","address":"Raiffeisenplatz 3, 54589 Stadtkyll","summary":"Café, Bäckerei und Eiscafé für Frühstück, Kaffee und Kuchen.","tags":["cafe","fruehstueck","familie"],
+    "weeklyHours":{"mon":["06:30-18:00"],"tue":["06:30-18:00"],"wed":["06:30-18:00"],"thu":["06:30-18:00"],"fri":["06:30-18:00"],"sat":["06:30-17:00"],"sun":["07:00-18:00"]},
+    "source":{"label":"Öffentliches Branchenprofil","url":"https://www.google.com/maps/search/?api=1&query=Cafe%20Doppelfeld%20Stadtkyll","type":"business_listing","checkedAt":"2026-08-25"},"dynamicStatus":"source-based"
+  },
+  {
+    "id":"gastro-deniz","vertical":"gastro","name":"Kebap Pizza-Haus Deniz","category":"Kebab · Pizza","town":"Stadtkyll","address":"Schwammertstraße 4, 54589 Stadtkyll","summary":"Kebab- und Pizzaangebot im Ortszentrum.","tags":["schnell","pizza","spaet"],
+    "weeklyHours":{"mon":[],"tue":["11:00-22:00"],"wed":["11:00-22:00"],"thu":["11:00-22:00"],"fri":["11:00-22:00"],"sat":["11:00-22:00"],"sun":["11:00-22:00"]},
+    "source":{"label":"Öffentliches Branchenprofil","url":"https://www.google.com/maps/search/?api=1&query=Kebap%20Pizza-Haus%20Deniz%20Stadtkyll","type":"business_listing","checkedAt":"2026-08-25"},"dynamicStatus":"source-based"
+  },
+  {
+    "id":"life-sy1","vertical":"lifestyle","name":"SY 1 Panoramatour","category":"Wandern","town":"Stadtkyll","summary":"Rundweg um den Luftkurort mit offenen Landschaften, Aussicht und Start am Kirchplatz.","tags":["wandern","aussicht","draussen"],"facts":{"start":"Kirchplatz Stadtkyll","difficulty":"lokaler Rundweg"},
+    "source":{"label":"Ortsgemeinde Stadtkyll","url":"https://www.stadtkyll.de/freizeit/wanderwege/rundwanderungen/","type":"official_local","checkedAt":"2026-08-25"}
+  },
+  {
+    "id":"life-sy2","vertical":"lifestyle","name":"SY 2 · Waldhöhen & Wirftbachtal","category":"Wandern","town":"Stadtkyll","summary":"7,5 km Rundtour durch Wald, Höhen und das Wirfttal; familienfreundlich ausgewiesen.","tags":["wandern","familie","wald","draussen"],"facts":{"distance":"7,5 km","duration":"2:15 h","difficulty":"mittel"},
+    "source":{"label":"Ortsgemeinde Stadtkyll / Eifel Tourismus","url":"https://www.stadtkyll.de/freizeit/wanderwege/rundwanderungen/","type":"official_local","checkedAt":"2026-08-25"}
+  },
+  {
+    "id":"life-water","vertical":"lifestyle","name":"Wasserpfad im Wirfttal","category":"Wandern · Natur","town":"Stadtkyll","summary":"Naturroute im Wirfttal rund um Wasser, Stauseen und den Ferienpark.","tags":["wandern","wasser","familie","draussen"],"facts":{"start":"Wirfttal / Ferienpark"},
+    "source":{"label":"Ortsgemeinde Stadtkyll","url":"https://www.stadtkyll.de/freizeit/wanderwege/rundwanderungen/","type":"official_local","checkedAt":"2026-08-25"}
+  },
+  {
+    "id":"life-bike-discovery","vertical":"lifestyle","name":"Entdeckerroute ab Stadtkyll","category":"Rad · E-Bike","town":"Stadtkyll","summary":"31 km E-Bike-Rundtour über Jünkerath, Naturpark Hohes Venn, Schmidtheim, Baasem und Kronenburg.","tags":["rad","ebike","kronenburg","draussen"],"facts":{"distance":"31,0 km","duration":"2:20 h","ascent":"314 hm","difficulty":"mittel"},
+    "source":{"label":"Gerolsteiner Land","url":"https://www.gerolsteiner-land.de/touren/entdeckerroute-stadtkyll","type":"official_tourism","checkedAt":"2026-08-25"}
+  },
+  {
+    "id":"life-bike-panorama","vertical":"lifestyle","name":"Panorama-Tour Kyll, Venn & Vulkane","category":"Rad · E-Bike","town":"Stadtkyll","summary":"Knapp 40 km Rundtour über Kurpark, Kyll-Radweg und Kronenburger See.","tags":["rad","ebike","see","kronenburg","draussen"],"facts":{"distance":"39,7 km","duration":"3:05 h","ascent":"499 hm","difficulty":"mittelschwer"},
+    "source":{"label":"Gerolsteiner Land","url":"https://www.gerolsteiner-land.de/touren/panoramatour","type":"official_tourism","checkedAt":"2026-08-25"}
+  },
+  {
+    "id":"life-kurpark","vertical":"lifestyle","name":"Kurpark an der Kyll","category":"Spaziergang · Natur","town":"Stadtkyll","summary":"Naturnah gestalteter Kurpark direkt an der Kyll für einen kurzen Spaziergang ohne große Planung.","tags":["spazieren","familie","kurz","draussen"],"facts":{"effort":"leicht"},
+    "source":{"label":"Ortsgemeinde Stadtkyll","url":"https://www.stadtkyll.de/ortsgemeinde/ortsbuergermeisterin/","type":"official_local","checkedAt":"2026-08-25"}
+  }
+]
