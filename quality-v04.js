@@ -52,6 +52,41 @@
     });
   }
 
+  function refineConsumerCopy(root = document) {
+    root.querySelectorAll('.editorial:not([data-consumer-copy])').forEach(editorial => {
+      editorial.dataset.consumerCopy = '1';
+      const eyebrow = editorial.querySelector('.eyebrow');
+      const title = editorial.querySelector('h2');
+      const copy = editorial.querySelector('p');
+      const button = editorial.querySelector('button');
+      if (eyebrow) eyebrow.textContent = 'DEINE EIFEL · HEUTE';
+      if (title) title.innerHTML = 'Mehr erleben.<br>Weniger suchen.';
+      if (copy) copy.innerHTML = '<b>Stadtkyll ist dein Ausgangspunkt.</b> Entdecke Essen, Natur, Kronenburg, Jünkerath und das Obere Kylltal passend zu dem, was jetzt für dich funktioniert.';
+      if (button) button.textContent = 'Region entdecken';
+    });
+
+    root.querySelectorAll('.head').forEach(head => {
+      const eyebrow = head.querySelector('.eyebrow');
+      if (eyebrow?.textContent.trim() !== 'REGION 2') return;
+      eyebrow.textContent = 'STADTKYLL · OBERES KYLLTAL';
+      const copy = head.querySelector('p');
+      if (copy) copy.textContent = 'Stadtkyll, Kronenburg, Jünkerath und die Eifel drumherum – auf einer Karte, ohne Umwege.';
+    });
+
+    root.querySelectorAll('.map-card').forEach(card => {
+      const title = card.querySelector('h2');
+      if (title?.textContent.trim() !== 'Stadtkyll zuerst.') return;
+      title.textContent = 'Nah dran. Viel zu entdecken.';
+      const copy = card.querySelector('p');
+      if (copy) copy.textContent = 'Stadtkyll ist der Mittelpunkt. Kronenburg und Jünkerath sind schon dabei – weitere Ziele im Oberen Kylltal kommen dort hinzu, wo sie für deinen Tag wirklich relevant sind.';
+    });
+
+    root.querySelectorAll('.section').forEach(section => {
+      const eyebrow = section.querySelector('.section-head .eyebrow');
+      if (eyebrow?.textContent.trim() === 'PROOF-METRIK') section.remove();
+    });
+  }
+
   function refineSourceNote(root = document) {
     root.querySelectorAll('.source-note:not([data-quality-copy])').forEach(note => {
       note.dataset.qualityCopy = '1';
@@ -65,6 +100,7 @@
     classifyCards();
     cleanProofCards();
     refinePrototypeLabels();
+    refineConsumerCopy();
     refineSourceNote();
   }
 
