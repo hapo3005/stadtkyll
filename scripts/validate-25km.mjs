@@ -1,7 +1,11 @@
 import fs from 'node:fs';
 
-const file = new URL('../data/places-25km.json', import.meta.url);
-const places = JSON.parse(fs.readFileSync(file, 'utf8'));
+const files = [
+  new URL('../data/places-25km.json', import.meta.url),
+  new URL('../data/places-25km-more.json', import.meta.url)
+];
+const layers = files.map(file => JSON.parse(fs.readFileSync(file, 'utf8')));
+const places = layers.flat();
 const CENTER = { lat: 50.350553, lng: 6.529506 };
 const MAX_KM = 25.5;
 const DAYS = ['mon','tue','wed','thu','fri','sat','sun'];
@@ -23,7 +27,7 @@ function distanceKm(a, b) {
   return 2 * R * Math.asin(Math.sqrt(h));
 }
 
-if (!Array.isArray(places) || places.length === 0) fail('places-25km.json must be a non-empty array');
+if (layers.some(layer => !Array.isArray(layer) || layer.length === 0)) fail('all 25-km data layers must be non-empty arrays');
 
 const ids = new Set();
 let maxDistance = 0;
@@ -31,7 +35,7 @@ let gastro = 0;
 let lifestyle = 0;
 
 for (const place of places) {
-  if (!place.id || ids.has(place.id)) fail(`missing or duplicate id: ${place.id}`);
+  if (!place.id || ids.has(place.id)) fail(`missing or duplicate id across radius layers: ${place.id}`);
   ids.add(place.id);
   if (!['gastro','lifestyle'].includes(place.vertical)) fail(`${place.id}: invalid vertical`);
   if (!place.name || !place.category || !place.town || !place.summary) fail(`${place.id}: required consumer content missing`);
@@ -59,4 +63,4 @@ for (const place of places) {
   else lifestyle += 1;
 }
 
-console.log(`Validated ${places.length} 25-km additions: ${gastro} gastro, ${lifestyle} lifestyle, max ${maxDistance.toFixed(1)} km.`);
+console.log(`Validated ${places.length} 25-km additions across ${layers.length} layers: ${gastro} gastro, ${lifestyle} lifestyle, max ${maxDistance.toFixed(1)} km.`);
