@@ -100,9 +100,18 @@
     const filter = event.target.closest('[data-filter]');
     const nav = event.target.closest('[data-nav]');
     const mode = event.target.closest('[data-mode]');
+
+    if (mode?.dataset.mode === 'wellness' && typeof window.setTab === 'function') {
+      wellnessActive = true;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      window.setTab('lifestyle', 'wellness');
+      return;
+    }
+
     if (filter) wellnessActive = filter.dataset.filter === 'wellness';
     else if (nav) wellnessActive = nav.dataset.filter === 'wellness';
-    else if (mode) wellnessActive = mode.dataset.mode === 'wellness';
+    else if (mode) wellnessActive = false;
   }, true);
 
   let queued = false;
