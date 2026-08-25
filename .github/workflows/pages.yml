@@ -24,6 +24,7 @@ jobs:
       - name: Validate app before deploy
         run: |
           node --check app.js
+          node --check photos.js
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           node scripts/validate-data.mjs
@@ -31,7 +32,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site/data
-          cp index.html styles.css app.js manifest.webmanifest icon.svg _site/
+          cp index.html styles.css map.css photos.css app.js photos.js manifest.webmanifest icon.svg _site/
           cp data/region.json data/places.json _site/data/
           touch _site/.nojekyll
 
