@@ -1,0 +1,26 @@
+.photo-hero{
+  background-image:
+    linear-gradient(180deg,rgba(5,31,51,.18) 0%,rgba(5,31,51,.08) 38%,rgba(5,31,51,.58) 72%,rgba(5,31,51,.88) 100%),
+    var(--hero-photo)!important;
+  background-size:cover!important;
+  background-position:center 46%!important;
+}
+.photo-hero:before{content:none!important}
+.photo-hero:after{height:145px;background:linear-gradient(180deg,transparent,var(--paper))!important}
+.photo-hero .brand,.photo-hero .hero-copy h1,.photo-hero .hero-copy p{color:#fff!important;text-shadow:0 2px 20px rgba(4,22,38,.5)}
+.photo-hero .eyebrow{color:#ffd1b8}
+.hero-photo-credit{position:absolute;right:16px;top:calc(68px + env(safe-area-inset-top));z-index:4}
+.photo-credit{display:inline-flex;align-items:center;max-width:calc(100% - 16px);padding:5px 7px;border-radius:999px;background:rgba(5,31,51,.76);backdrop-filter:blur(8px);color:#fff!important;text-decoration:none;font-size:6.5px;font-weight:750;letter-spacing:.01em;box-shadow:0 5px 14px rgba(5,31,51,.18)}
+.photo-credit.compact{font-size:6px;padding:5px 7px;background:rgba(5,31,51,.7)}
+.place-photo{position:relative;margin:-14px -14px 13px;aspect-ratio:16/9;overflow:hidden;border-radius:16px 16px 12px 12px;background:#d8e3e5}
+.place-photo img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.002)}
+.photo-overlay{position:absolute;inset:auto 8px 8px 8px;display:flex;align-items:flex-end;justify-content:space-between;gap:8px;pointer-events:none}
+.photo-overlay>*{pointer-events:auto}
+.photo-context{display:inline-flex;align-items:center;padding:5px 7px;border-radius:999px;background:rgba(255,253,248,.92);color:#17324a;font-size:6.5px;font-weight:850;box-shadow:0 4px 12px rgba(5,31,51,.12)}
+.detail-photo{margin:8px 0 18px;aspect-ratio:16/10;border-radius:18px;box-shadow:0 14px 30px rgba(5,31,51,.12)}
+.detail-photo+.eyebrow{display:inline-block;margin-top:2px}
+.popup-photo{display:block;margin:-2px -2px 8px;height:92px;overflow:hidden;border-radius:9px;background:#d8e3e5}
+.popup-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.leaflet-popup-content .popup-photo+*{margin-top:0}
+@media (max-width:370px){.photo-overlay{align-items:flex-start;flex-direction:column}.photo-context{font-size:6px}.photo-credit{font-size:5.8px}.hero-photo-credit{top:calc(65px + env(safe-area-inset-top))}}
+@media (prefers-reduced-motion:no-preference){.place-photo img{transition:transform .35s ease}.card:active .place-photo img{transform:scale(1.025)}}
