@@ -32,6 +32,7 @@
     {"id": "outdoor", "label": "Draußen", "icon": "🥾"},
     {"id": "family", "label": "Mit Kindern", "icon": "👨‍👩‍👧"},
     {"id": "rain", "label": "Bei Regen", "icon": "🌧️"},
+    {"id": "wellness", "label": "Wellness", "icon": "♨️"},
     {"id": "surprise", "label": "Überrasch mich", "icon": "✨"}
   ],
   "trust": {
@@ -45,5 +46,5 @@
     "interactive": true,
     "locationPermission": "on-demand"
   },
-  "version": "0.7.0"
+  "version": "0.8.0"
 }

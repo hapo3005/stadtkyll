@@ -4,8 +4,9 @@
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
   const LAYERS = [
-    'data/places-25km.json?v=0.7.0',
-    'data/places-25km-more.json?v=0.7.0'
+    'data/places-25km.json?v=0.8.0',
+    'data/places-25km-more.json?v=0.8.0',
+    'data/places-25km-extra.json?v=0.8.0'
   ];
 
   window.fetch = async (input, init) => {
@@ -37,7 +38,7 @@
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Region-Layer': 'stadtkyll-25km-v07'
+          'X-HOY-Region-Layer': 'stadtkyll-25km-v08'
         }
       });
     } catch (error) {

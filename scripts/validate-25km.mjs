@@ -2,7 +2,8 @@ import fs from 'node:fs';
 
 const files = [
   new URL('../data/places-25km.json', import.meta.url),
-  new URL('../data/places-25km-more.json', import.meta.url)
+  new URL('../data/places-25km-more.json', import.meta.url),
+  new URL('../data/places-25km-extra.json', import.meta.url)
 ];
 const layers = files.map(file => JSON.parse(fs.readFileSync(file, 'utf8')));
 const places = layers.flat();
