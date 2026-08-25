@@ -50,6 +50,7 @@ jobs:
           test -f map.css
           test -f photos.css
           test -f quality-v04.css
+          test -f quality-v012.css
           test -f quality-v08.js
           test -f quality-v09.js
           test -f quality-v012.js
