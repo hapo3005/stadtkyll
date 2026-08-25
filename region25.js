@@ -25,7 +25,9 @@
     'steffelner drees',
     'naturkundemuseum gerolstein',
     'kurpark stadtkyll',
-    'gerolsteiner dolomiten'
+    'gerolsteiner dolomiten',
+    'erwins brauhaus',
+    'birgeler hof'
   ];
   const MOTORCYCLE_STOP_NAMES = [
     'historischer burgort kronenburg',
