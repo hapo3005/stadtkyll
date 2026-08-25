@@ -35,6 +35,7 @@
     {"id": "outdoor", "label": "Draußen", "icon": "🥾"},
     {"id": "family", "label": "Mit Kindern", "icon": "👨‍👩‍👧"},
     {"id": "dog", "label": "Mit Hund", "icon": "🐕"},
+    {"id": "motorcycle", "label": "Mit Motorrad", "icon": "🏍️"},
     {"id": "motorsport", "label": "Motorsport", "icon": "🏁"},
     {"id": "rain", "label": "Bei Regen", "icon": "🌧️"},
     {"id": "wellness", "label": "Wellness", "icon": "♨️"},
@@ -44,12 +45,12 @@
     "dynamicDataRule": "Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
     "sourceFreshnessDays": 30,
     "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
-    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen."
+    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg im HOY-Radius liegt."
   },
   "map": {
     "provider": "OpenStreetMap",
     "interactive": true,
     "locationPermission": "on-demand"
   },
-  "version": "0.9.0"
+  "version": "0.9.1"
 }
