@@ -4,6 +4,7 @@
   let activeSpecial = null;
   const SPECIALS = {
     dog: { label: 'Mit Hund', icon: '🐕' },
+    motorcycle: { label: 'Mit Motorrad', icon: '🏍️' },
     motorsport: { label: 'Motorsport', icon: '🏁' }
   };
 
@@ -11,6 +12,7 @@
   if (typeof originalMatchesMode === 'function') {
     window.matchesMode = function matchesModeV09(place, mode) {
       if (mode === 'dog') return (place.tags || []).includes('hund');
+      if (mode === 'motorcycle') return (place.tags || []).includes('motorrad');
       if (mode === 'motorsport') return (place.tags || []).includes('motorsport');
       return originalMatchesMode(place, mode);
     };
@@ -22,6 +24,7 @@
       const tags = place.tags || [];
       const category = (place.category || '').toLowerCase();
       if (tags.includes('motorsport') || category.includes('motorsport') || category.includes('kart')) return '🏁';
+      if (tags.includes('motorrad') || category.includes('motorrad')) return '🏍️';
       if (category.includes('mit hund')) return '🐕';
       return originalIconFor(place);
     };
