@@ -118,7 +118,7 @@
         const start = startMinutes(range);
         if (start === null) continue;
         if (offset === 0 && start <= context.minutes) continue;
-        return offset * 1440 + start - (offset === 0 ? context.minutes : context.minutes);
+        return offset * 1440 + start - context.minutes;
       }
     }
     return null;
@@ -180,7 +180,7 @@
       if (category.includes('kino') || category.includes('escape') || tags.has('wellness')) score += 12;
     } else if (context.daypart === 'nacht') {
       if (isEveningOption(place)) score += 8;
-      if (tags.has('draussen') || tags.has('wandern') || tags.has('aussicht')) score -= 34;
+      if (tags.has('draussen') || tags.has('wandern') || tags.has('aussicht')) score -= 76;
       if (place.vertical === 'gastro' && status.code === 'open') score += 18;
     }
 
@@ -259,7 +259,13 @@
     const title = hoySection.querySelector('.section-head h2');
     const copy = hoySection.querySelector('.section-copy');
     const cards = hoySection.querySelector('.cards');
+    const allButton = hoySection.querySelector('.section-head button');
     if (!title || !cards) return;
+
+    if (allButton) {
+      allButton.textContent = 'Alle Optionen';
+      allButton.dataset.nav = 'region';
+    }
 
     const anyImmediate = picks.some(item => ['open','soon'].includes(window.openingState?.(item.place)?.code));
     title.textContent = anyImmediate ? 'Für jetzt ausgewählt' : 'Als Nächstes passend';
