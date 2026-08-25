@@ -17,7 +17,12 @@
     [/poseidon/, 50.224054, 6.655500],
     [/erwins brauhaus/, 50.320378, 6.617414],
     [/birgeler hof/, 50.321284, 6.621737],
-    [/bei lonnen/, 50.327262, 6.442706]
+    [/bei lonnen/, 50.327262, 6.442706],
+    [/mausefalle/, 50.195850, 6.745703],
+    [/neroburg/, 50.196320, 6.743410],
+    [/lo stivale/, 50.291221, 6.671320],
+    [/taverna romana/, 50.292092, 6.672107],
+    [/ob dr bruck/, 50.286269, 6.636142]
   ];
   const cache = new Map();
 
