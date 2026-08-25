@@ -19,13 +19,19 @@ jobs:
           node --check app.js
           node --check photos.js
           node --check quality-v04.js
+          node --check region25.js
+          node --check region25-ui.js
           node --check scripts/validate-data.mjs
+          node --check scripts/validate-25km.mjs
       - name: Validate JSON syntax
         run: |
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/places.json > /dev/null
-      - name: Validate regional data contract
-        run: node scripts/validate-data.mjs
+          python -m json.tool data/places-25km.json > /dev/null
+      - name: Validate regional data contracts
+        run: |
+          node scripts/validate-data.mjs
+          node scripts/validate-25km.mjs
       - name: Verify required files
         run: |
           test -f index.html
@@ -33,5 +39,8 @@ jobs:
           test -f map.css
           test -f photos.css
           test -f quality-v04.css
+          test -f region25.js
+          test -f region25-ui.js
+          test -f data/places-25km.json
           test -f manifest.webmanifest
           test -f icon.svg
