@@ -83,9 +83,13 @@
   }
 
   async function enhanceMotorcycleWindows(root = document) {
-    root.querySelector('#moto-window-filter')?.remove();
-    root.querySelector('#moto-window-empty')?.remove();
-    if (activeSpecial !== 'motorcycle') return;
+    const existingWrap = root.querySelector('#moto-window-filter');
+    const existingEmpty = root.querySelector('#moto-window-empty');
+    if (activeSpecial !== 'motorcycle') {
+      existingWrap?.remove();
+      existingEmpty?.remove();
+      return;
+    }
 
     const eyebrow = root.querySelector('.head .eyebrow');
     const filterline = root.querySelector('.filterline');
@@ -102,14 +106,21 @@
       if (bucket) counts[bucket] += 1;
     });
 
-    const wrap = document.createElement('div');
-    wrap.id = 'moto-window-filter';
-    wrap.className = 'filterline moto-window-filter';
-    wrap.setAttribute('aria-label', 'Motorradtour nach Zeitfenster filtern');
-    wrap.innerHTML = Object.entries(MOTO_WINDOWS).map(([id, config]) =>
-      `<button type="button" data-moto-window="${id}" class="${activeMotoWindow === id ? 'active' : ''}" aria-pressed="${activeMotoWindow === id}">${config.label}<span class="moto-count">${counts[id]}</span></button>`
-    ).join('');
-    filterline.insertAdjacentElement('afterend', wrap);
+    let wrap = existingWrap;
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.id = 'moto-window-filter';
+      wrap.className = 'filterline moto-window-filter';
+      wrap.setAttribute('aria-label', 'Motorradtour nach Zeitfenster filtern');
+      filterline.insertAdjacentElement('afterend', wrap);
+    }
+    const signature = `${activeMotoWindow}|${counts.all}|${counts.short}|${counts.half}|${counts.full}`;
+    if (wrap.dataset.signature !== signature) {
+      wrap.dataset.signature = signature;
+      wrap.innerHTML = Object.entries(MOTO_WINDOWS).map(([id, config]) =>
+        `<button type="button" data-moto-window="${id}" class="${activeMotoWindow === id ? 'active' : ''}" aria-pressed="${activeMotoWindow === id}">${config.label} · ${counts[id]}</button>`
+      ).join('');
+    }
 
     let visible = 0;
     list.querySelectorAll(':scope > .card').forEach(card => {
@@ -120,18 +131,23 @@
       if (show) visible += 1;
     });
 
-    if (!visible) {
+    if (!visible && !root.querySelector('#moto-window-empty')) {
       const empty = document.createElement('div');
       empty.id = 'moto-window-empty';
       empty.className = 'empty';
       empty.textContent = 'Für dieses Zeitfenster ist noch keine belastbare Tour hinterlegt.';
       list.appendChild(empty);
+    } else if (visible) {
+      root.querySelector('#moto-window-empty')?.remove();
     }
   }
 
   async function enhanceCrossVertical(root = document) {
-    root.querySelector('#special-cross-gastro')?.remove();
-    if (!['dog', 'motorcycle'].includes(activeSpecial)) return;
+    const existing = root.querySelector('#special-cross-gastro');
+    if (!['dog', 'motorcycle'].includes(activeSpecial)) {
+      existing?.remove();
+      return;
+    }
 
     const eyebrow = root.querySelector('.head .eyebrow');
     const list = root.querySelector('.list');
@@ -144,17 +160,27 @@
     const gastro = places
       .filter(place => place.vertical === 'gastro' && (place.tags || []).includes(config.tag))
       .sort((a, b) => a.name.localeCompare(b.name, 'de'));
-    if (!gastro.length) return;
+    if (!gastro.length) {
+      existing?.remove();
+      return;
+    }
 
-    const section = document.createElement('section');
-    section.id = 'special-cross-gastro';
-    section.className = 'section';
     const title = activeSpecial === 'dog' ? 'Hundefreundlich einkehren' : 'Einkehr auf der Motorradtour';
     const copy = activeSpecial === 'dog'
       ? 'Gastro, die von der Region ausdrücklich als hundefreundlich geführt wird.'
       : 'Straßennahe Stopps aus der lokalen HOY-Kuratierung – nicht als Betreiber-Zertifizierung „bikerfreundlich“ gemeint.';
-    section.innerHTML = `<div class="section-head"><div><span class="eyebrow">${config.icon} ${config.label.toUpperCase()}</span><h2>${title}</h2></div><span>${gastro.length} Optionen</span></div><p class="section-copy">${copy}</p><div class="list">${gastro.map(window.card).join('')}</div>`;
-    list.insertAdjacentElement('afterend', section);
+    const signature = `${activeSpecial}|${gastro.map(place => place.id).join(',')}`;
+    let section = existing;
+    if (!section) {
+      section = document.createElement('section');
+      section.id = 'special-cross-gastro';
+      section.className = 'section';
+      list.insertAdjacentElement('afterend', section);
+    }
+    if (section.dataset.signature !== signature) {
+      section.dataset.signature = signature;
+      section.innerHTML = `<div class="section-head"><div><span class="eyebrow">${config.icon} ${config.label.toUpperCase()}</span><h2>${title}</h2></div><span>${gastro.length} Optionen</span></div><p class="section-copy">${copy}</p><div class="list">${gastro.map(window.card).join('')}</div>`;
+    }
   }
 
   async function enhanceDetail(root = document) {
