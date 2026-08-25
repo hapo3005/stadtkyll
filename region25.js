@@ -4,13 +4,14 @@
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
   const LAYERS = [
-    'data/places-25km.json?v=0.11.0',
-    'data/places-25km-more.json?v=0.11.0',
-    'data/places-25km-extra.json?v=0.11.0',
-    'data/places-25km-special.json?v=0.11.0',
-    'data/places-25km-moto-dog.json?v=0.11.0',
-    'data/places-25km-depth.json?v=0.11.0',
-    'data/places-25km-v011.json?v=0.11.0'
+    'data/places-25km.json?v=0.12.0',
+    'data/places-25km-more.json?v=0.12.0',
+    'data/places-25km-extra.json?v=0.12.0',
+    'data/places-25km-special.json?v=0.12.0',
+    'data/places-25km-moto-dog.json?v=0.12.0',
+    'data/places-25km-depth.json?v=0.12.0',
+    'data/places-25km-v011.json?v=0.12.0',
+    'data/places-25km-v012.json?v=0.12.0'
   ];
   const DOG_FRIENDLY_NAMES = [
     'bielenhof-alm',
@@ -55,7 +56,11 @@
     'zur neroburg',
     'lo stivale',
     'taverna romana',
-    'ob dr bruck'
+    'ob dr bruck',
+    'zwoelfender',
+    'groner hof',
+    'kupferschmiede',
+    'el rancho'
   ];
 
   const normalise = value => String(value || '')
@@ -77,7 +82,7 @@
         sourceUrl: place.vertical === 'gastro'
           ? 'https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/restaurants'
           : 'https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/ausflugsziele',
-        checkedAt: '2026-08-25'
+        checkedAt: '2026-08-26'
       }
     };
   }
@@ -91,7 +96,7 @@
       tags,
       motorcycleCuration: place.motorcycleCuration || {
         source: 'HOY lokale Kuratierung',
-        checkedAt: '2026-08-25',
+        checkedAt: '2026-08-26',
         note: 'Straßennaher Tourstopp; keine Betreiber-Zertifizierung als bikerfreundlich.'
       }
     };
@@ -126,7 +131,7 @@
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Region-Layer': 'stadtkyll-25km-v011'
+          'X-HOY-Region-Layer': 'stadtkyll-25km-v012'
         }
       });
     } catch (error) {

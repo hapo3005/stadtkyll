@@ -27,7 +27,11 @@
     "Blankenheim",
     "Dahlem",
     "Ormont",
-    "Neroth"
+    "Neroth",
+    "Kerpen-Loogh",
+    "Kopp",
+    "Feusdorf",
+    "Gerolstein-Müllenborn"
   ],
   "expansion": [],
   "modes": [
@@ -39,6 +43,7 @@
     {"id": "motorcycle", "label": "Mit Motorrad", "icon": "🏍️"},
     {"id": "motorsport", "label": "Motorsport", "icon": "🏁"},
     {"id": "rain", "label": "Bei Regen", "icon": "🌧️"},
+    {"id": "evening", "label": "Abends", "icon": "🌙"},
     {"id": "wellness", "label": "Wellness", "icon": "♨️"},
     {"id": "surprise", "label": "Überrasch mich", "icon": "✨"}
   ],
@@ -46,12 +51,13 @@
     "dynamicDataRule": "Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
     "sourceFreshnessDays": 30,
     "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
-    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt."
+    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt.",
+    "weatherRule": "Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab."
   },
   "map": {
     "provider": "OpenStreetMap",
     "interactive": true,
     "locationPermission": "on-demand"
   },
-  "version": "0.11.0"
+  "version": "0.12.0"
 }

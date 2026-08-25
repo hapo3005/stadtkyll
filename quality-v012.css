@@ -1,0 +1,11 @@
+/* HOY Stadtkyll 0.12 — contextual recommendation layer */
+.smart-context{max-width:430px!important;font-size:7.7px!important;line-height:1.55!important;color:var(--muted)}
+.smart-context strong{color:var(--ink)}
+.smart-context a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+.hoy-pick-reason{display:inline-flex;align-items:center;min-height:20px;padding:4px 7px;border-radius:999px;background:rgba(236,111,62,.11);color:var(--orange);font-size:6.2px;font-weight:800;letter-spacing:.01em;white-space:nowrap}
+.section>.cards>.card .hoy-pick-reason{background:rgba(236,111,62,.13)}
+.list .card .hoy-pick-reason{font-size:5.8px;padding:4px 6px}
+#evening-cross-gastro{padding-top:22px;border-top:1px solid var(--line);margin-top:6px}
+#evening-cross-gastro>.section-copy{margin-bottom:12px}
+.filterline [data-filter="evening"].active,.chip[data-mode="evening"].active{background:var(--navy);color:#fff;border-color:var(--navy)}
+@media (max-width:370px){.smart-context{font-size:7.2px!important}.hoy-pick-reason{font-size:5.7px}}

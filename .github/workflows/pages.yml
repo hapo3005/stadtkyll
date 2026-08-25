@@ -28,6 +28,7 @@ jobs:
           node --check quality-v04.js
           node --check quality-v08.js
           node --check quality-v09.js
+          node --check quality-v012.js
           node --check region25.js
           node --check region25-ui.js
           node --check region25-photos.js
@@ -40,14 +41,15 @@ jobs:
           python -m json.tool data/places-25km-moto-dog.json > /dev/null
           python -m json.tool data/places-25km-depth.json > /dev/null
           python -m json.tool data/places-25km-v011.json > /dev/null
+          python -m json.tool data/places-25km-v012.json > /dev/null
           node scripts/validate-data.mjs
           node scripts/validate-25km.mjs
 
       - name: Prepare static site
         run: |
           mkdir -p _site/data
-          cp index.html styles.css map.css photos.css quality-v04.css quality-v08.js quality-v09.js app.js photos.js quality-v04.js region25.js region25-ui.js region25-photos.js manifest.webmanifest icon.svg _site/
-          cp data/region.json data/places.json data/places-25km.json data/places-25km-more.json data/places-25km-extra.json data/places-25km-special.json data/places-25km-moto-dog.json data/places-25km-depth.json data/places-25km-v011.json _site/data/
+          cp index.html styles.css map.css photos.css quality-v04.css quality-v012.css quality-v08.js quality-v09.js quality-v012.js app.js photos.js quality-v04.js region25.js region25-ui.js region25-photos.js manifest.webmanifest icon.svg _site/
+          cp data/region.json data/places.json data/places-25km.json data/places-25km-more.json data/places-25km-extra.json data/places-25km-special.json data/places-25km-moto-dog.json data/places-25km-depth.json data/places-25km-v011.json data/places-25km-v012.json _site/data/
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages
