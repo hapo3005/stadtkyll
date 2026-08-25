@@ -2,7 +2,9 @@ name: Validate Stadtkyll
 
 on:
   push:
-    branches: [main, region2-bootstrap]
+    branches:
+      - main
+      - 'region2-*'
   pull_request:
     branches: [main]
 
@@ -12,10 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Check JavaScript syntax
-        run: node --check app.js
-      - name: Validate region JSON
-        run: python -m json.tool data/region.json > /dev/null
-      - name: Validate places JSON
-        run: python -m json.tool data/places.json > /dev/null
+        run: |
+          node --check app.js
+          node --check scripts/validate-data.mjs
+      - name: Validate JSON syntax
+        run: |
+          python -m json.tool data/region.json > /dev/null
+          python -m json.tool data/places.json > /dev/null
+      - name: Validate regional data contract
+        run: node scripts/validate-data.mjs
       - name: Verify required files
-        run: test -f index.html && test -f styles.css && test -f manifest.webmanifest && test -f icon.svg
+        run: test -f index.html && test -f styles.css && test -f map.css && test -f manifest.webmanifest && test -f icon.svg

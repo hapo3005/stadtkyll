@@ -3,6 +3,7 @@ const state = {
   places: [],
   tab: 'today',
   filter: 'all',
+  mapFilter: 'all',
   query: ''
 };
 
@@ -12,6 +13,8 @@ const detail = document.querySelector('#detail');
 const toast = document.querySelector('#toast');
 
 const dayKeys = ['sun','mon','tue','wed','thu','fri','sat'];
+let mapInstance = null;
+let userLocationLayer = null;
 
 function esc(value='') {
   return String(value).replace(/[&<>'"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
@@ -27,18 +30,38 @@ function toMinutes(hhmm) {
 }
 
 function formatTime(hhmm) {
-  return hhmm.replace(':', ':');
+  return hhmm;
+}
+
+function localDateKey(date = new Date()) {
+  const y = date.getFullYear();
+  const m = String(date.getMonth() + 1).padStart(2,'0');
+  const d = String(date.getDate()).padStart(2,'0');
+  return `${y}-${m}-${d}`;
+}
+
+function scheduleApplies(place, date = new Date()) {
+  const key = localDateKey(date);
+  if (place.scheduleValidFrom && key < place.scheduleValidFrom) return false;
+  if (place.scheduleValidTo && key > place.scheduleValidTo) return false;
+  return true;
 }
 
 function openingState(place, date = new Date()) {
-  if (!place.weeklyHours) return {code:'na', label:'Aktivität'};
+  if (!place.weeklyHours) return {code:'na', label:'Heute planbar'};
+  if (!scheduleApplies(place,date)) return {code:'closed', label:'Saisonal geschlossen'};
   const slots = place.weeklyHours[dayKeys[date.getDay()]] || [];
   const now = todayClock(date);
   for (const slot of slots) {
     const [from,to] = slot.split('-');
     const start = toMinutes(from);
     const end = toMinutes(to);
-    if (now >= start && now < end) return {code:'open',label:`Jetzt offen · bis ${formatTime(to)}`};
+    if (now >= start && now < end) {
+      if (place.vertical === 'lifestyle' && start === 0 && end === 1440) {
+        return {code:'open',label:'Heute zugänglich'};
+      }
+      return {code:'open',label:`Jetzt offen · bis ${formatTime(to)}`};
+    }
     if (now < start) {
       const delta = start - now;
       if (delta <= 120) return {code:'soon',label:`Öffnet ${formatTime(from)}`};
@@ -63,7 +86,16 @@ function trustLabel(place) {
   return `Quelle vor ${days} Tagen geprüft`;
 }
 
+function trustType(place) {
+  if (place.dynamicStatus === 'source-based') return 'quellbasiert · nicht live';
+  if (place.dynamicStatus === 'official-static') return 'offizieller Inhalt';
+  return 'Quelle';
+}
+
 function routeUrl(place) {
+  if (place.location?.lat && place.location?.lng) {
+    return `https://www.google.com/maps/search/?api=1&query=${place.location.lat},${place.location.lng}`;
+  }
   const q = place.address || `${place.name}, ${place.town || state.region.shortLabel}`;
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 }
@@ -76,6 +108,10 @@ function iconFor(place) {
   if (place.vertical === 'gastro') return '🍽️';
   const c = (place.category || '').toLowerCase();
   if (c.includes('rad')) return '🚲';
+  if (c.includes('museum') || c.includes('indoor')) return '🏛️';
+  if (c.includes('see')) return '💧';
+  if (c.includes('burg')) return '🏰';
+  if (c.includes('aussicht')) return '⛰️';
   if (c.includes('natur')) return '🌲';
   if (c.includes('wandern')) return '🥾';
   return '✨';
@@ -110,7 +146,7 @@ function modeButtons() {
 
 function matchesMode(place, mode) {
   if (mode === 'all') return true;
-  if (mode === 'open') return place.vertical === 'gastro' && openingState(place).code === 'open';
+  if (mode === 'open') return openingState(place).code === 'open';
   if (mode === 'food') return place.vertical === 'gastro';
   if (mode === 'outdoor') return place.vertical === 'lifestyle' && (place.tags || []).includes('draussen');
   if (mode === 'family') return (place.tags || []).includes('familie');
@@ -124,11 +160,13 @@ function matchesQuery(place) {
   return haystack.includes(state.query.trim().toLowerCase());
 }
 
+function statusMarkup(place) {
+  const status = openingState(place);
+  if (!place.weeklyHours) return `<span class="status">Heute planbar</span>`;
+  return `<span class="status ${status.code}">${esc(status.label)}</span>`;
+}
+
 function card(place) {
-  const open = openingState(place);
-  const status = place.vertical === 'gastro'
-    ? `<span class="status ${open.code}">${esc(open.label)}</span>`
-    : `<span class="status">Heute planbar</span>`;
   const facts = place.facts ? Object.values(place.facts).slice(0,3) : [];
   const tags = [...facts,...(place.tags||[]).slice(0,2)];
   return `<article class="card">
@@ -138,12 +176,12 @@ function card(place) {
         <h3>${esc(place.name)}</h3>
         <p>${esc(place.summary)}</p>
       </div>
-      ${status}
+      ${statusMarkup(place)}
     </div>
     <div class="meta-row">${tags.map(tag => `<span class="pill">${esc(tag)}</span>`).join('')}</div>
     <div class="trust">
       <span><strong>${esc(place.town || state.region.shortLabel)}</strong> · ${esc(trustLabel(place))}</span>
-      <span>${place.dynamicStatus==='source-based'?'nicht live':'offiziell'}</span>
+      <span>${esc(trustType(place))}</span>
     </div>
     <div class="card-actions">
       <button type="button" data-detail="${esc(place.id)}">Details</button>
@@ -168,7 +206,7 @@ function renderHome() {
       <div class="hero-copy">
         <span class="eyebrow">${esc(now)}</span>
         <h1>Was geht<br>heute?</h1>
-        <p>Nicht suchen. Entscheiden. Essen, rausgehen oder etwas entdecken – jetzt in Stadtkyll.</p>
+        <p>Nicht suchen. Entscheiden. Essen, rausgehen oder etwas entdecken – jetzt rund um Stadtkyll.</p>
       </div>
       <div class="now-panel">
         <div class="now-grid">
@@ -182,19 +220,20 @@ function renderHome() {
     ${modeButtons()}
     <section class="section">
       <div class="section-head"><div><span class="eyebrow">HOY NOW</span><h2>${recommendations.length?'Jetzt interessant':'Als Nächstes'}</h2></div><button type="button" data-nav="gastro">Alle Gastro</button></div>
-      <p class="section-copy">* „Jetzt offen“ wird aus zuletzt geprüften Quellen berechnet und ist noch kein Händler-Live-Signal.</p>
+      <p class="section-copy">* „Jetzt offen“ wird aus heute geprüften Quellen berechnet. Das ist bewusst noch kein Händler-Live-Signal.</p>
       <div class="cards">${recommendations.length ? recommendations.map(card).join('') : gastro.slice(0,3).map(card).join('')}</div>
     </section>
     <section class="section">
       <div class="section-head"><div><span class="eyebrow">RAUS & LOS</span><h2>Heute erleben</h2></div><button type="button" data-nav="lifestyle">Alle Ideen</button></div>
-      <div class="cards">${lifestyle.slice(0,3).map(card).join('')}</div>
+      <div class="cards">${lifestyle.slice(0,4).map(card).join('')}</div>
     </section>
     <section class="editorial">
       <span class="eyebrow">REGION-2-TEST</span>
       <h2>Gleiche HOY-Idee.<br>Andere Region.</h2>
-      <p><b>Stadtkyll ist kein eigener Produkt-Fork.</b> Gastro und Lifestyle werden über regionale Daten konfiguriert. Genau daran messen wir, wie replizierbar HOY wirklich ist.</p>
+      <p><b>Stadtkyll bleibt regionale Konfiguration statt Produkt-Fork.</b> Die Karte, Trust-Logik, Entscheidungsmuster und App-Shell sind Core-Funktionen; Orte und regionale Modi kommen aus dem Datenlayer.</p>
+      <button type="button" data-nav="region">Region auf Karte ansehen</button>
     </section>
-    <div class="source-note">Datenstand Bootstrap: 25.08.2026. Dynamische Angaben werden bewusst mit Herkunft und Aktualitätsstatus gezeigt. Live-Verifizierung folgt als eigener Layer.</div>
+    <div class="source-note">Datenstand: 25.08.2026. Dynamische Angaben zeigen Herkunft und Prüfstand. Händler-/Crowd-Live-Verifizierung bleibt ein separater Trust-Layer.</div>
   `;
 }
 
@@ -209,27 +248,105 @@ function renderGastro() {
     return rank[openingState(a).code] - rank[openingState(b).code] || a.name.localeCompare(b.name,'de');
   });
   const filters = [['all','Alle'],['open','Jetzt offen'],['family','Familie']];
-  view.innerHTML = `${filterHeader('Essen. Jetzt.','HOY GASTRO','Was ist heute wirklich eine Option? Quellenstatus statt blindem Öffnungszeiten-Vertrauen.','Restaurant oder Küche')}
+  view.innerHTML = `${filterHeader('Essen. Jetzt.','HOY GASTRO','Was ist heute wirklich eine Option? Aktueller Quellenstatus statt blindem Öffnungszeiten-Vertrauen.','Restaurant oder Küche')}
     <div class="filterline">${filters.map(([id,label])=>`<button class="${state.filter===id?'active':''}" data-filter="${id}">${label}</button>`).join('')}</div>
     <div class="list">${items.length?items.map(card).join(''):'<div class="empty">Dafür gibt es im aktuellen Datenstand noch keinen Treffer.</div>'}</div>`;
 }
 
 function renderLifestyle() {
   let items = state.places.filter(p => p.vertical === 'lifestyle').filter(p => matchesMode(p,state.filter)).filter(matchesQuery);
-  const filters = [['all','Alle'],['outdoor','Draußen'],['family','Mit Kindern']];
+  const filters = [['all','Alle'],['open','Jetzt möglich'],['outdoor','Draußen'],['family','Mit Kindern'],['rain','Bei Regen']];
   view.innerHTML = `${filterHeader('Raus. Heute.','HOY LIFESTYLE','Keine endlose Sehenswürdigkeitenliste – Ideen, die zum heutigen Zeitfenster und Kontext passen sollen.','Wandern, Rad, Natur …')}
     <div class="filterline">${filters.map(([id,label])=>`<button class="${state.filter===id?'active':''}" data-filter="${id}">${label}</button>`).join('')}</div>
     <div class="list">${items.length?items.map(card).join(''):'<div class="empty">Dafür gibt es im aktuellen Datenstand noch keinen Treffer.</div>'}</div>`;
 }
 
+function mapFilterButtons() {
+  const filters = [['all','Alle'],['gastro','Gastro'],['lifestyle','Erleben']];
+  return `<div class="map-tools">
+    <div class="map-filter">${filters.map(([id,label]) => `<button type="button" data-map-filter="${id}" class="${state.mapFilter===id?'active':''}">${label}</button>`).join('')}</div>
+    <button type="button" class="locate" data-locate title="Standort wird nur nach deiner Freigabe verwendet">⌖ Meine Position</button>
+  </div>`;
+}
+
 function renderRegion() {
+  const mappable = state.places.filter(p => p.location?.lat && p.location?.lng);
   view.innerHTML = `<header class="head"><span class="eyebrow">REGION 2</span><h1>Oberes Kylltal</h1><p>Der erste Transfer-Test außerhalb La Manga: klein genug für hohe Datenqualität, touristisch genug für einen echten HOY-Nutzen.</p></header>
-    <section class="map-card"><span class="eyebrow">STARTCLUSTER</span><h2>Stadtkyll zuerst.</h2><p>Kerngebiet bewusst eng halten. Erst wenn Datenqualität, Nutzung und regionale Konfiguration funktionieren, wird Richtung Gerolstein erweitert.</p><div class="towns">${state.region.cluster.map(t=>`<span>${esc(t)}</span>`).join('')}<span>→ Gerolstein später</span></div></section>
-    <section class="section"><div class="section-head"><div><span class="eyebrow">PROOF-METRIK</span><h2>Was wir beweisen wollen</h2></div></div><div class="cards">
-      <article class="card"><h3>Core-Reuse</h3><p>HOY-App-Shell, Entscheidungslogik, Trust-Modell und Komponenten sollen regionsneutral bleiben.</p><div class="meta-row"><span class="pill good">Ziel 80–90 % Core</span></div></article>
-      <article class="card"><h3>Region als Datenlayer</h3><p>Orte, Kategorien, Quellen und regionale Modi liegen außerhalb der UI-Logik und können ersetzt werden.</p><div class="meta-row"><span class="pill good">bereits angelegt</span></div></article>
-      <article class="card"><h3>Live-Trust statt Behauptung</h3><p>Statische Quellen dürfen nicht wie Echtzeitdaten aussehen. Händler-/Crowd-Verifikation wird später separat ergänzt.</p><div class="meta-row"><span class="pill">Trust Gate</span></div></article>
+    <section class="region-map-card">
+      <div class="map-copy"><div><span class="eyebrow">LIVE-KARTE</span><h2>${mappable.length} verortete Ideen</h2></div><span class="map-count">${esc(state.region.shortLabel)} + Cluster</span></div>
+      ${mapFilterButtons()}
+      <div id="regionMap" class="region-map" aria-label="Interaktive Karte von Stadtkyll und Umgebung"></div>
+      <p class="map-note">OpenStreetMap-Basiskarte. „Meine Position“ fragt den Browser erst nach Klick um Standortfreigabe. HOY speichert dabei in diesem Prototyp keinen Standort.</p>
+    </section>
+    <section class="map-card"><span class="eyebrow">STARTCLUSTER</span><h2>Stadtkyll zuerst.</h2><p>Kerngebiet bewusst eng halten. Stadtkyll ist jetzt tief erfasst; Jünkerath und Kronenburg sind bereits mit ersten Lifestyle-Zielen angebunden. Kerschenbach folgt über Unterkunfts-/Gastgeber-Distribution.</p><div class="towns">${state.region.cluster.map(t=>`<span>${esc(t)}</span>`).join('')}<span>→ Gerolstein später</span></div></section>
+    <section class="section"><div class="section-head"><div><span class="eyebrow">PROOF-METRIK</span><h2>Was wir beweisen</h2></div></div><div class="cards">
+      <article class="card"><h3>Core-Reuse</h3><p>HOY-App-Shell, Entscheidungslogik, Trust-Modell und Kartenkomponente bleiben regionsneutral.</p><div class="meta-row"><span class="pill good">Ziel 80–90 % Core</span></div></article>
+      <article class="card"><h3>Region als Datenlayer</h3><p>Koordinaten, Orte, Kategorien, Quellen, Saisons und regionale Modi liegen außerhalb der UI-Logik.</p><div class="meta-row"><span class="pill good">17 Seed-Einträge</span></div></article>
+      <article class="card"><h3>Live-Trust statt Behauptung</h3><p>Statische Quellen dürfen nicht wie Echtzeitdaten aussehen. Betreiber-/Crowd-Verifikation wird separat ergänzt.</p><div class="meta-row"><span class="pill">Trust Gate</span></div></article>
     </div></section>`;
+  requestAnimationFrame(initRegionMap);
+}
+
+function mapPlaces() {
+  return state.places.filter(place => {
+    if (!place.location?.lat || !place.location?.lng) return false;
+    if (state.mapFilter === 'all') return true;
+    return place.vertical === state.mapFilter;
+  });
+}
+
+function markerIcon(place) {
+  if (!window.L) return undefined;
+  return L.divIcon({
+    className: 'hoy-marker-shell',
+    html: `<span class="hoy-marker ${place.vertical==='gastro'?'gastro':'life'}" aria-hidden="true">${iconFor(place)}</span>`,
+    iconSize: [34,34],
+    iconAnchor: [17,17],
+    popupAnchor: [0,-16]
+  });
+}
+
+function initRegionMap() {
+  const el = document.querySelector('#regionMap');
+  if (!el) return;
+  if (!window.L) {
+    el.innerHTML = '<div class="map-fallback"><strong>Karte konnte nicht geladen werden.</strong><span>Die Listen und Routen funktionieren weiterhin.</span></div>';
+    return;
+  }
+  if (mapInstance) {
+    mapInstance.remove();
+    mapInstance = null;
+    userLocationLayer = null;
+  }
+  mapInstance = L.map(el,{zoomControl:true,scrollWheelZoom:false}).setView([state.region.center.lat,state.region.center.lng],13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    maxZoom:19,
+    attribution:'&copy; OpenStreetMap-Mitwirkende'
+  }).addTo(mapInstance);
+
+  const bounds = [];
+  mapPlaces().forEach(place => {
+    const pos = [place.location.lat,place.location.lng];
+    bounds.push(pos);
+    const status = place.weeklyHours ? openingState(place).label : 'Heute planbar';
+    const marker = L.marker(pos,{icon:markerIcon(place)}).addTo(mapInstance);
+    marker.bindPopup(`<div class="map-popup"><span>${iconFor(place)} ${esc(place.category)}</span><strong>${esc(place.name)}</strong><small>${esc(place.town)} · ${esc(status)}</small><button type="button" data-detail="${esc(place.id)}">Details</button></div>`);
+  });
+  if (bounds.length > 1) mapInstance.fitBounds(bounds,{padding:[28,28],maxZoom:14});
+  if (bounds.length === 1) mapInstance.setView(bounds[0],14);
+}
+
+function locateUser() {
+  if (!mapInstance) return;
+  if (!navigator.geolocation) return showToast('Standort ist in diesem Browser nicht verfügbar');
+  showToast('Standortfreigabe wird angefragt …');
+  navigator.geolocation.getCurrentPosition(position => {
+    const pos = [position.coords.latitude,position.coords.longitude];
+    if (userLocationLayer) userLocationLayer.remove();
+    userLocationLayer = L.circleMarker(pos,{radius:8,weight:3,fillOpacity:.85}).addTo(mapInstance).bindPopup('Deine Position');
+    mapInstance.flyTo(pos,14);
+    showToast('Deine Position wird nur auf dieser Karte angezeigt');
+  }, () => showToast('Standort wurde nicht freigegeben'), {enableHighAccuracy:false,timeout:8000,maximumAge:300000});
 }
 
 function showDetail(id) {
@@ -240,10 +357,11 @@ function showDetail(id) {
   detail.innerHTML = `<div class="detail"><button class="detail-close" type="button" data-close aria-label="Schließen">×</button><span class="eyebrow">${esc(place.category)}</span><h2>${esc(place.name)}</h2><p class="lede">${esc(place.summary)}</p><dl>
     <dt>Ort</dt><dd>${esc(place.town || state.region.shortLabel)}</dd>
     ${place.address?`<dt>Adresse</dt><dd>${esc(place.address)}</dd>`:''}
-    ${place.vertical==='gastro'?`<dt>Status</dt><dd>${esc(open.label)} · quellbasiert, nicht live</dd>`:''}
+    ${place.weeklyHours?`<dt>Status</dt><dd>${esc(open.label)} · ${esc(trustType(place))}</dd>`:''}
     ${Object.entries(facts).map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}
     <dt>Datenquelle</dt><dd>${sourceLink(place)}</dd>
     <dt>Prüfstand</dt><dd>${esc(place.source?.checkedAt || 'unbekannt')}</dd>
+    ${place.source?.note?`<dt>Hinweis</dt><dd>${esc(place.source.note)}</dd>`:''}
   </dl><div class="card-actions"><a href="${routeUrl(place)}" class="accent" target="_blank" rel="noopener">Route öffnen</a></div></div>`;
   detail.showModal();
 }
@@ -259,12 +377,17 @@ function showToast(message) {
   toast.textContent = message;
   toast.classList.add('show');
   clearTimeout(showToast.timer);
-  showToast.timer = setTimeout(()=>toast.classList.remove('show'),1800);
+  showToast.timer = setTimeout(()=>toast.classList.remove('show'),2200);
 }
 
 function render() {
   nav();
   if (!state.region) return;
+  if (state.tab !== 'region' && mapInstance) {
+    mapInstance.remove();
+    mapInstance = null;
+    userLocationLayer = null;
+  }
   if (state.tab === 'today') renderHome();
   if (state.tab === 'gastro') renderGastro();
   if (state.tab === 'lifestyle') renderLifestyle();
@@ -281,6 +404,12 @@ document.addEventListener('click', event => {
     state.filter = mode.dataset.mode;
     return render();
   }
+  const mapFilter = event.target.closest('[data-map-filter]');
+  if (mapFilter) {
+    state.mapFilter = mapFilter.dataset.mapFilter;
+    return render();
+  }
+  if (event.target.closest('[data-locate]')) return locateUser();
   const filter = event.target.closest('[data-filter]');
   if (filter) { state.filter = filter.dataset.filter; return render(); }
   const detailBtn = event.target.closest('[data-detail]');
