@@ -1,0 +1,1 @@
+Ready for PR # v0.7 broader 25-km option set.
