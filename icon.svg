@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="HOY Stadtkyll">
+  <rect width="512" height="512" rx="112" fill="#f8f3e9"/>
+  <path d="M40 354 155 236l70 72 89-130 158 176v92H40z" fill="#9fb7a6"/>
+  <path d="M40 390 160 300l66 58 98-105 148 137v56H40z" fill="#062a49" opacity=".2"/>
+  <text x="256" y="285" text-anchor="middle" font-family="Georgia,serif" font-size="154" font-weight="700" fill="#062a49">H<tspan fill="#ef5b0b">O</tspan>Y</text>
+  <text x="256" y="345" text-anchor="middle" font-family="Arial,sans-serif" font-size="27" font-weight="700" letter-spacing="8" fill="#062a49">STADTKYLL</text>
+</svg>
