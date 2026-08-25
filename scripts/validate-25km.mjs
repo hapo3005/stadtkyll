@@ -5,7 +5,8 @@ const files = [
   new URL('../data/places-25km-more.json', import.meta.url),
   new URL('../data/places-25km-extra.json', import.meta.url),
   new URL('../data/places-25km-special.json', import.meta.url),
-  new URL('../data/places-25km-moto-dog.json', import.meta.url)
+  new URL('../data/places-25km-moto-dog.json', import.meta.url),
+  new URL('../data/places-25km-depth.json', import.meta.url)
 ];
 const layers = files.map(file => JSON.parse(fs.readFileSync(file, 'utf8')));
 const places = layers.flat();

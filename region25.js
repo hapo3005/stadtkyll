@@ -4,11 +4,12 @@
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
   const LAYERS = [
-    'data/places-25km.json?v=0.9.1',
-    'data/places-25km-more.json?v=0.9.1',
-    'data/places-25km-extra.json?v=0.9.1',
-    'data/places-25km-special.json?v=0.9.1',
-    'data/places-25km-moto-dog.json?v=0.9.1'
+    'data/places-25km.json?v=0.10.0',
+    'data/places-25km-more.json?v=0.10.0',
+    'data/places-25km-extra.json?v=0.10.0',
+    'data/places-25km-special.json?v=0.10.0',
+    'data/places-25km-moto-dog.json?v=0.10.0',
+    'data/places-25km-depth.json?v=0.10.0'
   ];
   const DOG_FRIENDLY_NAMES = [
     'bielenhof-alm',
@@ -24,7 +25,9 @@
     'steffelner drees',
     'naturkundemuseum gerolstein',
     'kurpark stadtkyll',
-    'gerolsteiner dolomiten'
+    'gerolsteiner dolomiten',
+    'erwins brauhaus',
+    'birgeler hof'
   ];
   const MOTORCYCLE_STOP_NAMES = [
     'historischer burgort kronenburg',
@@ -40,8 +43,13 @@
     'woodstock',
     'bistro am see',
     'pizzeria mamma maria',
+    'mamma maria',
     'im flecken',
-    'balkan grill'
+    'balkan grill',
+    'poseidon',
+    'erwins brauhaus',
+    'birgeler hof',
+    'bei lonnen'
   ];
 
   const normalise = value => String(value || '')
@@ -75,7 +83,7 @@
     return {
       ...place,
       tags,
-      motorcycleCuration: {
+      motorcycleCuration: place.motorcycleCuration || {
         source: 'HOY lokale Kuratierung',
         checkedAt: '2026-08-25',
         note: 'Straßennaher Tourstopp; keine Betreiber-Zertifizierung als bikerfreundlich.'
@@ -112,7 +120,7 @@
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Region-Layer': 'stadtkyll-25km-v091'
+          'X-HOY-Region-Layer': 'stadtkyll-25km-v010'
         }
       });
     } catch (error) {
