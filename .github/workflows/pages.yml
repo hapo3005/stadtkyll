@@ -28,6 +28,7 @@ jobs:
           node --check quality-v04.js
           node --check region25.js
           node --check region25-ui.js
+          node --check region25-photos.js
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           python -m json.tool data/places-25km.json > /dev/null
@@ -37,7 +38,7 @@ jobs:
       - name: Prepare static site
         run: |
           mkdir -p _site/data
-          cp index.html styles.css map.css photos.css quality-v04.css app.js photos.js quality-v04.js region25.js region25-ui.js manifest.webmanifest icon.svg _site/
+          cp index.html styles.css map.css photos.css quality-v04.css app.js photos.js quality-v04.js region25.js region25-ui.js region25-photos.js manifest.webmanifest icon.svg _site/
           cp data/region.json data/places.json data/places-25km.json _site/data/
           touch _site/.nojekyll
 
