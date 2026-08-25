@@ -1,0 +1,27 @@
+{
+  "id": "stadtkyll",
+  "product": "HOY",
+  "regionLabel": "Stadtkyll · Oberes Kylltal",
+  "shortLabel": "Stadtkyll",
+  "country": "DE",
+  "timezone": "Europe/Berlin",
+  "locale": "de-DE",
+  "center": {"lat": 50.350553, "lng": 6.529506},
+  "proofRole": "region-2",
+  "coreReference": "hapo3005/hoy",
+  "cluster": ["Stadtkyll", "Kerschenbach", "Jünkerath", "Kronenburg"],
+  "expansion": ["Gerolstein"],
+  "modes": [
+    {"id": "open", "label": "Jetzt offen", "icon": "●"},
+    {"id": "food", "label": "Essen", "icon": "🍽️"},
+    {"id": "outdoor", "label": "Draußen", "icon": "🥾"},
+    {"id": "family", "label": "Mit Kindern", "icon": "👨‍👩‍👧"},
+    {"id": "rain", "label": "Bei Regen", "icon": "🌧️"},
+    {"id": "surprise", "label": "Überrasch mich", "icon": "✨"}
+  ],
+  "trust": {
+    "dynamicDataRule": "Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
+    "sourceFreshnessDays": 30
+  },
+  "version": "0.1.0"
+}
