@@ -3,7 +3,9 @@ import fs from 'node:fs';
 const files = [
   new URL('../data/places-25km.json', import.meta.url),
   new URL('../data/places-25km-more.json', import.meta.url),
-  new URL('../data/places-25km-extra.json', import.meta.url)
+  new URL('../data/places-25km-extra.json', import.meta.url),
+  new URL('../data/places-25km-special.json', import.meta.url),
+  new URL('../data/places-25km-moto-dog.json', import.meta.url)
 ];
 const layers = files.map(file => JSON.parse(fs.readFileSync(file, 'utf8')));
 const places = layers.flat();
@@ -34,6 +36,10 @@ const ids = new Set();
 let maxDistance = 0;
 let gastro = 0;
 let lifestyle = 0;
+let dog = 0;
+let motorcycle = 0;
+let motorsport = 0;
+let wellness = 0;
 
 for (const place of places) {
   if (!place.id || ids.has(place.id)) fail(`missing or duplicate id across radius layers: ${place.id}`);
@@ -60,8 +66,15 @@ for (const place of places) {
   if (place.scheduleValidFrom && !/^\d{4}-\d{2}-\d{2}$/.test(place.scheduleValidFrom)) fail(`${place.id}: invalid scheduleValidFrom`);
   if (place.scheduleValidTo && !/^\d{4}-\d{2}-\d{2}$/.test(place.scheduleValidTo)) fail(`${place.id}: invalid scheduleValidTo`);
 
+  const tags = new Set(place.tags || []);
+  if (tags.has('hund')) dog += 1;
+  if (tags.has('motorrad')) motorcycle += 1;
+  if (tags.has('motorsport')) motorsport += 1;
+  if (tags.has('wellness')) wellness += 1;
+
   if (place.vertical === 'gastro') gastro += 1;
   else lifestyle += 1;
 }
 
 console.log(`Validated ${places.length} 25-km additions across ${layers.length} layers: ${gastro} gastro, ${lifestyle} lifestyle, max ${maxDistance.toFixed(1)} km.`);
+console.log(`Special-interest coverage in explicit data: ${dog} dog, ${motorcycle} motorcycle, ${motorsport} motorsport, ${wellness} wellness.`);
