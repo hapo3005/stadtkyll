@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - 'region2-*'
+      - 'quality-*'
   pull_request:
     branches: [main]
 
@@ -16,6 +17,8 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check app.js
+          node --check photos.js
+          node --check quality-v04.js
           node --check scripts/validate-data.mjs
       - name: Validate JSON syntax
         run: |
@@ -24,4 +27,11 @@ jobs:
       - name: Validate regional data contract
         run: node scripts/validate-data.mjs
       - name: Verify required files
-        run: test -f index.html && test -f styles.css && test -f map.css && test -f manifest.webmanifest && test -f icon.svg
+        run: |
+          test -f index.html
+          test -f styles.css
+          test -f map.css
+          test -f photos.css
+          test -f quality-v04.css
+          test -f manifest.webmanifest
+          test -f icon.svg
