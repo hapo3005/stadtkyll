@@ -21,6 +21,7 @@
     "Birgel",
     "Steffeln",
     "Hillesheim",
+    "Oberbettingen",
     "Gerolstein",
     "Pelm",
     "Blankenheim",
@@ -45,12 +46,12 @@
     "dynamicDataRule": "Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
     "sourceFreshnessDays": 30,
     "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
-    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg im HOY-Radius liegt."
+    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt."
   },
   "map": {
     "provider": "OpenStreetMap",
     "interactive": true,
     "locationPermission": "on-demand"
   },
-  "version": "0.10.0"
+  "version": "0.11.0"
 }

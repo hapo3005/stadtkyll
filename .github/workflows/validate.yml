@@ -36,6 +36,7 @@ jobs:
           python -m json.tool data/places-25km-special.json > /dev/null
           python -m json.tool data/places-25km-moto-dog.json > /dev/null
           python -m json.tool data/places-25km-depth.json > /dev/null
+          python -m json.tool data/places-25km-v011.json > /dev/null
       - name: Validate regional data contracts
         run: |
           node scripts/validate-data.mjs
@@ -58,5 +59,6 @@ jobs:
           test -f data/places-25km-special.json
           test -f data/places-25km-moto-dog.json
           test -f data/places-25km-depth.json
+          test -f data/places-25km-v011.json
           test -f manifest.webmanifest
           test -f icon.svg

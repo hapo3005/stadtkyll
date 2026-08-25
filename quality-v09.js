@@ -2,11 +2,18 @@
   'use strict';
 
   let activeSpecial = null;
+  let activeMotoWindow = 'all';
   let placesPromise = null;
   const SPECIALS = {
     dog: { label: 'Mit Hund', icon: '🐕', tag: 'hund' },
     motorcycle: { label: 'Mit Motorrad', icon: '🏍️', tag: 'motorrad' },
     motorsport: { label: 'Motorsport', icon: '🏁', tag: 'motorsport' }
+  };
+  const MOTO_WINDOWS = {
+    all: { label: 'Alle' },
+    short: { label: 'Bis 2 Std.' },
+    half: { label: 'Halber Tag' },
+    full: { label: 'Ganzer Tag' }
   };
 
   function loadPlaces() {
@@ -55,9 +62,92 @@
     });
   }
 
+  function durationMinutes(place) {
+    const raw = String(place?.facts?.Dauer || place?.facts?.Zeitfenster || '');
+    const match = raw.match(/(\d+)\s*(?::\s*(\d+))?\s*h/i);
+    if (!match) return null;
+    return Number(match[1]) * 60 + Number(match[2] || 0);
+  }
+
+  function motoWindowFor(place) {
+    if (place?.motoWindow && MOTO_WINDOWS[place.motoWindow]) return place.motoWindow;
+    const tags = new Set(place?.tags || []);
+    if (tags.has('moto-short')) return 'short';
+    if (tags.has('moto-half')) return 'half';
+    if (tags.has('moto-full')) return 'full';
+    const minutes = durationMinutes(place);
+    if (minutes === null) return null;
+    if (minutes <= 120) return 'short';
+    if (minutes <= 270) return 'half';
+    return 'full';
+  }
+
+  async function enhanceMotorcycleWindows(root = document) {
+    const existingWrap = root.querySelector('#moto-window-filter');
+    const existingEmpty = root.querySelector('#moto-window-empty');
+    if (activeSpecial !== 'motorcycle') {
+      existingWrap?.remove();
+      existingEmpty?.remove();
+      return;
+    }
+
+    const eyebrow = root.querySelector('.head .eyebrow');
+    const filterline = root.querySelector('.filterline');
+    const list = root.querySelector('.list');
+    if (!eyebrow || !/HOY LIFESTYLE/i.test(eyebrow.textContent || '') || !filterline || !list) return;
+
+    const places = await loadPlaces();
+    if (!list.isConnected || activeSpecial !== 'motorcycle') return;
+    const byName = new Map(places.map(place => [place.name, place]));
+    const motoPlaces = places.filter(place => place.vertical === 'lifestyle' && (place.tags || []).includes('motorrad'));
+    const counts = { all: motoPlaces.length, short: 0, half: 0, full: 0 };
+    motoPlaces.forEach(place => {
+      const bucket = motoWindowFor(place);
+      if (bucket) counts[bucket] += 1;
+    });
+
+    let wrap = existingWrap;
+    if (!wrap) {
+      wrap = document.createElement('div');
+      wrap.id = 'moto-window-filter';
+      wrap.className = 'filterline moto-window-filter';
+      wrap.setAttribute('aria-label', 'Motorradtour nach Zeitfenster filtern');
+      filterline.insertAdjacentElement('afterend', wrap);
+    }
+    const signature = `${activeMotoWindow}|${counts.all}|${counts.short}|${counts.half}|${counts.full}`;
+    if (wrap.dataset.signature !== signature) {
+      wrap.dataset.signature = signature;
+      wrap.innerHTML = Object.entries(MOTO_WINDOWS).map(([id, config]) =>
+        `<button type="button" data-moto-window="${id}" class="${activeMotoWindow === id ? 'active' : ''}" aria-pressed="${activeMotoWindow === id}">${config.label} · ${counts[id]}</button>`
+      ).join('');
+    }
+
+    let visible = 0;
+    list.querySelectorAll(':scope > .card').forEach(card => {
+      const title = card.querySelector('h3')?.textContent?.trim();
+      const place = byName.get(title);
+      const show = activeMotoWindow === 'all' || motoWindowFor(place) === activeMotoWindow;
+      card.hidden = !show;
+      if (show) visible += 1;
+    });
+
+    if (!visible && !root.querySelector('#moto-window-empty')) {
+      const empty = document.createElement('div');
+      empty.id = 'moto-window-empty';
+      empty.className = 'empty';
+      empty.textContent = 'Für dieses Zeitfenster ist noch keine belastbare Tour hinterlegt.';
+      list.appendChild(empty);
+    } else if (visible) {
+      root.querySelector('#moto-window-empty')?.remove();
+    }
+  }
+
   async function enhanceCrossVertical(root = document) {
-    root.querySelector('#special-cross-gastro')?.remove();
-    if (!['dog', 'motorcycle'].includes(activeSpecial)) return;
+    const existing = root.querySelector('#special-cross-gastro');
+    if (!['dog', 'motorcycle'].includes(activeSpecial)) {
+      existing?.remove();
+      return;
+    }
 
     const eyebrow = root.querySelector('.head .eyebrow');
     const list = root.querySelector('.list');
@@ -70,17 +160,27 @@
     const gastro = places
       .filter(place => place.vertical === 'gastro' && (place.tags || []).includes(config.tag))
       .sort((a, b) => a.name.localeCompare(b.name, 'de'));
-    if (!gastro.length) return;
+    if (!gastro.length) {
+      existing?.remove();
+      return;
+    }
 
-    const section = document.createElement('section');
-    section.id = 'special-cross-gastro';
-    section.className = 'section';
     const title = activeSpecial === 'dog' ? 'Hundefreundlich einkehren' : 'Einkehr auf der Motorradtour';
     const copy = activeSpecial === 'dog'
       ? 'Gastro, die von der Region ausdrücklich als hundefreundlich geführt wird.'
       : 'Straßennahe Stopps aus der lokalen HOY-Kuratierung – nicht als Betreiber-Zertifizierung „bikerfreundlich“ gemeint.';
-    section.innerHTML = `<div class="section-head"><div><span class="eyebrow">${config.icon} ${config.label.toUpperCase()}</span><h2>${title}</h2></div><span>${gastro.length} Optionen</span></div><p class="section-copy">${copy}</p><div class="list">${gastro.map(window.card).join('')}</div>`;
-    list.insertAdjacentElement('afterend', section);
+    const signature = `${activeSpecial}|${gastro.map(place => place.id).join(',')}`;
+    let section = existing;
+    if (!section) {
+      section = document.createElement('section');
+      section.id = 'special-cross-gastro';
+      section.className = 'section';
+      list.insertAdjacentElement('afterend', section);
+    }
+    if (section.dataset.signature !== signature) {
+      section.dataset.signature = signature;
+      section.innerHTML = `<div class="section-head"><div><span class="eyebrow">${config.icon} ${config.label.toUpperCase()}</span><h2>${title}</h2></div><span>${gastro.length} Optionen</span></div><p class="section-copy">${copy}</p><div class="list">${gastro.map(window.card).join('')}</div>`;
+    }
   }
 
   async function enhanceDetail(root = document) {
@@ -97,7 +197,9 @@
       badges.push('<span class="pill">🐕 Hund-Option · Quelle geprüft</span>');
     }
     if ((place.tags || []).includes('motorrad')) {
-      badges.push('<span class="pill">🏍️ HOY Tourstopp</span>');
+      const windowId = motoWindowFor(place);
+      const windowLabel = windowId ? ` · ${MOTO_WINDOWS[windowId].label}` : '';
+      badges.push(`<span class="pill">🏍️ HOY Tourstopp${windowLabel}</span>`);
     }
     if ((place.tags || []).includes('motorsport')) {
       badges.push('<span class="pill">🏁 Motorsport</span>');
@@ -112,20 +214,35 @@
   }
 
   document.addEventListener('click', event => {
+    const motoWindow = event.target.closest('[data-moto-window]');
+    if (motoWindow) {
+      activeMotoWindow = motoWindow.dataset.motoWindow || 'all';
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      queue();
+      return;
+    }
+
     const mode = event.target.closest('[data-mode]');
     const filter = event.target.closest('[data-filter]');
     const nav = event.target.closest('[data-nav]');
 
     if (mode && SPECIALS[mode.dataset.mode] && typeof window.setTab === 'function') {
       activeSpecial = mode.dataset.mode;
+      activeMotoWindow = 'all';
       event.preventDefault();
       event.stopImmediatePropagation();
       window.setTab('lifestyle', activeSpecial);
       return;
     }
 
-    if (filter) activeSpecial = SPECIALS[filter.dataset.filter] ? filter.dataset.filter : null;
-    else if (nav) activeSpecial = SPECIALS[nav.dataset.filter] ? nav.dataset.filter : null;
+    if (filter) {
+      activeSpecial = SPECIALS[filter.dataset.filter] ? filter.dataset.filter : null;
+      if (activeSpecial !== 'motorcycle') activeMotoWindow = 'all';
+    } else if (nav) {
+      activeSpecial = SPECIALS[nav.dataset.filter] ? nav.dataset.filter : null;
+      if (activeSpecial !== 'motorcycle') activeMotoWindow = 'all';
+    }
   }, true);
 
   let queued = false;
@@ -135,6 +252,7 @@
     requestAnimationFrame(() => {
       queued = false;
       enhanceLifestyleFilters();
+      enhanceMotorcycleWindows();
       enhanceCrossVertical();
       enhanceDetail();
     });
