@@ -1,0 +1,133 @@
+:root{
+  --q-shadow:0 18px 46px rgba(5,31,51,.10);
+  --q-shadow-soft:0 9px 24px rgba(5,31,51,.07);
+  --q-radius:22px;
+}
+
+/* HOY Stadtkyll 0.4 — premium consumer layer
+   Keeps the regional data model untouched and aligns presentation with HOY Gastro. */
+
+body{background:#ebe7df}
+.app{background:var(--paper);box-shadow:0 24px 90px rgba(5,31,51,.14)}
+.view{padding-bottom:18px}
+
+/* Hero: fewer prototype signals, stronger visual hierarchy */
+.hero{min-height:640px;padding:calc(18px + env(safe-area-inset-top)) 22px 30px}
+.photo-hero{background-position:center 48%!important}
+.photo-hero:before{content:''!important;position:absolute!important;inset:0!important;background:linear-gradient(180deg,rgba(5,26,43,.18) 0%,rgba(5,26,43,.02) 38%,rgba(5,26,43,.24) 58%,rgba(5,26,43,.70) 100%)!important;z-index:-1!important}
+.photo-hero:after{height:90px!important;background:linear-gradient(180deg,transparent,var(--paper))!important}
+.hero-top{align-items:flex-start}
+.brand b{font-size:34px}.brand small{letter-spacing:.22em}
+.region-badge{font-size:7px;letter-spacing:.11em;padding:7px 9px;background:rgba(255,255,255,.80);border:1px solid rgba(255,255,255,.66);box-shadow:0 5px 16px rgba(5,31,51,.09);opacity:.88}
+.hero-copy{margin-top:auto;padding-bottom:220px;max-width:350px}
+.hero h1{font-size:56px;line-height:.91;letter-spacing:-.058em;margin:8px 0 13px}
+.hero p{font-size:16px;line-height:1.30;max-width:300px}
+.hero-photo-credit{top:auto!important;right:18px!important;bottom:190px!important;opacity:.86}
+
+.now-panel{left:18px;right:18px;bottom:22px;border-radius:22px;padding:12px 13px 13px;background:rgba(255,253,248,.975);box-shadow:0 22px 54px rgba(5,31,51,.24);border:1px solid rgba(255,255,255,.78)}
+.now-grid{gap:0}
+.metric{border:0;background:transparent;border-radius:0;min-height:68px;padding:10px 11px;position:relative}
+.metric+ .metric:before{content:'';position:absolute;left:0;top:13px;bottom:13px;width:1px;background:var(--line)}
+.metric small{font-size:7.5px;letter-spacing:.015em}.metric strong{font-size:25px}
+.primary{border-radius:12px;padding:13px 14px;margin-top:8px;font-size:11px;letter-spacing:.005em}
+
+/* Quick decisions */
+.quick{padding:17px 18px 5px;gap:8px;scroll-snap-type:x proximity}
+.chip{font-size:9px;padding:9px 12px;scroll-snap-align:start;box-shadow:0 3px 10px rgba(5,31,51,.025)}
+
+/* Section rhythm */
+.section{padding:28px 18px 0}
+.section-head{margin-bottom:12px;align-items:end}
+.section-head h2{font-size:27px;line-height:1.01}
+.section-head button{font-size:9px}
+.section-copy{font-size:8px;line-height:1.45;margin:-2px 0 13px;max-width:360px}
+
+/* Home cards become HOY-style visual snap cards */
+.section>.cards{display:flex;grid-template-columns:none;gap:12px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;margin-right:-18px;padding:0 18px 4px 0;-webkit-overflow-scrolling:touch}
+.section>.cards::-webkit-scrollbar{display:none}
+.section>.cards>.card{position:relative;flex:0 0 min(76vw,278px);scroll-snap-align:start;padding:0;border-radius:20px;overflow:hidden;background:var(--paper2);border:1px solid rgba(16,40,61,.10);box-shadow:var(--q-shadow-soft)}
+.section>.cards>.card .place-photo{margin:0;border-radius:0;aspect-ratio:4/3}
+.section>.cards>.card .card-top{padding:13px 14px 0;display:block}
+.section>.cards>.card .card-top>div{min-width:0}
+.section>.cards>.card h3{font-size:21px;margin:4px 0 5px}
+.section>.cards>.card p{font-size:9px;line-height:1.48}
+.section>.cards>.card .status{position:absolute;right:11px;top:11px;z-index:6;background:rgba(255,253,248,.94);backdrop-filter:blur(8px);box-shadow:0 5px 14px rgba(5,31,51,.11);max-width:145px;text-align:center}
+.section>.cards>.card .status.open{background:rgba(237,248,241,.95)}
+.section>.cards>.card .status.soon{background:rgba(255,241,222,.96)}
+.section>.cards>.card .meta-row{margin:10px 14px 0}
+.section>.cards>.card .trust{margin:10px 14px 0;padding-top:9px;font-size:6.5px}
+.section>.cards>.card .card-actions{margin:10px 14px 14px}
+
+/* Image labels are legal, but visually quiet */
+.photo-context{font-size:5.7px;padding:4px 6px;background:rgba(255,253,248,.86);opacity:.92}
+.photo-credit{font-size:5.7px;padding:4px 6px;background:rgba(5,31,51,.68);opacity:.92}
+.photo-overlay{inset:auto 7px 7px 7px}
+
+/* List views: compact, scan-friendly, decision first */
+.list{padding:0 18px 18px}
+.list .card{position:relative;display:grid;grid-template-columns:112px minmax(0,1fr);grid-template-rows:auto auto auto auto;column-gap:12px;padding:0;margin:0 0 11px;border-radius:18px;overflow:hidden;background:var(--paper2);border:1px solid rgba(16,40,61,.10);box-shadow:0 7px 20px rgba(5,31,51,.055);min-height:154px}
+.list .card .place-photo{grid-column:1;grid-row:1 / -1;margin:0;width:112px;height:100%;min-height:154px;aspect-ratio:auto;border-radius:0}
+.list .card .place-photo img{object-position:center}
+.list .card .photo-overlay{inset:auto 5px 6px 5px;display:block}
+.list .card .photo-credit{display:none}
+.list .card .photo-context{display:block;width:max-content;max-width:100%;white-space:normal;line-height:1.2;font-size:5.2px;background:rgba(255,253,248,.90)}
+.list .card .card-top{grid-column:2;padding:12px 11px 0 0;display:block;min-width:0}
+.list .card .kind{font-size:6.7px;letter-spacing:.08em}
+.list .card h3{font-size:17px;line-height:1.04;margin:4px 0 5px}
+.list .card p{font-size:8px;line-height:1.40;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.list .card .status{position:absolute;left:8px;top:8px;z-index:6;font-size:5.8px;padding:5px 6px;max-width:96px;white-space:normal;text-align:center;background:rgba(255,253,248,.95);box-shadow:0 4px 12px rgba(5,31,51,.10)}
+.list .card .meta-row{grid-column:2;margin:8px 11px 0 0;gap:5px;overflow:hidden;max-height:25px}
+.list .card .pill{font-size:6px;padding:4px 6px}
+.list .card .trust{grid-column:2;margin:7px 11px 0 0;padding-top:7px;font-size:5.8px;gap:5px;align-items:flex-start}
+.list .card .trust span:last-child{display:none}
+.list .card .card-actions{grid-column:2;margin:8px 11px 11px 0;gap:6px}
+.list .card .card-actions button,.list .card .card-actions a{padding:8px 7px;font-size:7px;border-radius:9px}
+
+/* Headers */
+.head{padding:calc(22px + env(safe-area-inset-top)) 18px 12px}
+.head h1{font-size:42px;line-height:.94;margin:11px 0 8px}
+.head p{font-size:9.5px;max-width:390px}
+.searchline{margin-top:15px}.searchline input{font-size:10px;padding:12px 13px}.searchline button{font-size:8px;padding:0 14px}
+.filterline{padding:7px 18px 13px}.filterline button{font-size:8px;padding:8px 11px}
+
+/* Editorial proof is useful internally, but should look like a product story */
+.editorial{margin-top:28px;border-radius:20px;padding:22px;box-shadow:0 14px 32px rgba(5,31,51,.12)}
+.editorial h2{font-size:29px}.editorial p{font-size:9px;line-height:1.55}.editorial button{margin-top:4px}
+.source-note{margin:18px 18px 6px;font-size:7px;opacity:.86}
+
+/* Region / map */
+.region-map-card{margin:8px 18px 0;border-radius:22px;background:var(--paper2);border:1px solid rgba(16,40,61,.10);box-shadow:var(--q-shadow-soft);overflow:hidden}
+.map-copy{padding:16px 16px 10px}.map-tools{padding:0 12px 11px}.region-map{border-radius:0!important;min-height:360px}
+.map-note{font-size:6.7px;line-height:1.45;padding:9px 13px 12px;margin:0;color:var(--muted)}
+.map-card{border-radius:20px;box-shadow:var(--q-shadow-soft)}
+
+/* Premium detail: full-bleed image, calm content */
+.dialog{background:var(--paper)}
+.detail{padding:0 0 36px;position:relative;overflow:hidden}
+.detail-close{position:absolute;right:14px;top:calc(14px + env(safe-area-inset-top));z-index:20;width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.78);background:rgba(255,253,248,.94);box-shadow:0 8px 22px rgba(5,31,51,.18);float:none}
+.detail-photo{margin:0 0 20px;aspect-ratio:4/3;border-radius:0;box-shadow:none;background:#d8e3e5}
+.detail-photo img{object-position:center}
+.detail .eyebrow,.detail h2,.detail .lede,.detail dl,.detail>.card-actions{margin-left:18px;margin-right:18px}
+.detail h2{font-size:37px;line-height:.96;margin-top:7px;margin-bottom:9px;clear:none}
+.detail .lede{font-size:10px;line-height:1.58;max-width:390px}
+.detail dl{grid-template-columns:95px 1fr;gap:10px;padding-top:15px;margin-top:18px;font-size:8.5px}
+.detail dt{font-size:7.5px}.detail dd{line-height:1.45}
+.detail>.card-actions{margin-top:18px}.detail>.card-actions a{padding:12px;border-radius:11px;font-size:9px}
+
+/* Bottom nav */
+.bottom{padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(255,253,248,.965);box-shadow:0 -9px 24px rgba(5,31,51,.045)}
+.bottom button{font-size:8.5px;gap:4px;color:#667684}.bottom span{font-size:20px}.bottom button.active{color:var(--orange)}
+
+/* Micro polish */
+.card,.primary,.chip,.filterline button,.bottom button,.card-actions a,.card-actions button{transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease}
+@media (hover:hover){
+  .section>.cards>.card:hover{transform:translateY(-2px);box-shadow:var(--q-shadow)}
+  .card-actions a:hover,.card-actions button:hover{transform:translateY(-1px)}
+}
+@media (min-width:700px){
+  .desktop{padding:24px}.app{height:min(900px,calc(100vh - 48px));border-radius:28px;box-shadow:0 26px 90px rgba(5,31,51,.16)}.dialog{height:min(900px,calc(100vh - 48px));border-radius:28px}
+}
+@media (max-width:370px){
+  .hero h1{font-size:50px}.hero-copy{padding-bottom:225px}.list .card{grid-template-columns:100px minmax(0,1fr)}.list .card .place-photo{width:100px}.section>.cards>.card{flex-basis:82vw}
+}
+@media (prefers-reduced-motion:reduce){.card,.primary,.chip,.filterline button,.bottom button,.card-actions a,.card-actions button{transition:none!important}}
