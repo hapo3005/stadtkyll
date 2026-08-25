@@ -23,6 +23,9 @@
       const copy = card.querySelector('p');
       if (eyebrow) eyebrow.textContent = 'MEHR OPTIONEN · KLAR KURATIERT';
       if (copy) copy.textContent = 'Stadtkyll bleibt der Mittelpunkt. HOY ergänzt gezielt die stärksten Gastro- und Erlebnisoptionen im Radius, statt dir ein unübersichtliches Branchenverzeichnis zu zeigen.';
+      card.querySelectorAll('.towns span').forEach(span => {
+        if (/Gerolstein später/i.test(span.textContent)) span.remove();
+      });
     });
 
     root.querySelectorAll('.editorial:not([data-radius-copy])').forEach(editorial => {
