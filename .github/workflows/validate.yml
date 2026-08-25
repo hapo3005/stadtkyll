@@ -21,6 +21,7 @@ jobs:
           node --check quality-v04.js
           node --check quality-v08.js
           node --check quality-v09.js
+          node --check quality-v012.js
           node --check region25.js
           node --check region25-ui.js
           node --check region25-photos.js
@@ -37,6 +38,7 @@ jobs:
           python -m json.tool data/places-25km-moto-dog.json > /dev/null
           python -m json.tool data/places-25km-depth.json > /dev/null
           python -m json.tool data/places-25km-v011.json > /dev/null
+          python -m json.tool data/places-25km-v012.json > /dev/null
       - name: Validate regional data contracts
         run: |
           node scripts/validate-data.mjs
@@ -50,6 +52,7 @@ jobs:
           test -f quality-v04.css
           test -f quality-v08.js
           test -f quality-v09.js
+          test -f quality-v012.js
           test -f region25.js
           test -f region25-ui.js
           test -f region25-photos.js
@@ -60,5 +63,6 @@ jobs:
           test -f data/places-25km-moto-dog.json
           test -f data/places-25km-depth.json
           test -f data/places-25km-v011.json
+          test -f data/places-25km-v012.json
           test -f manifest.webmanifest
           test -f icon.svg
