@@ -23,7 +23,10 @@
     "Hillesheim",
     "Gerolstein",
     "Pelm",
-    "Blankenheim"
+    "Blankenheim",
+    "Dahlem",
+    "Ormont",
+    "Neroth"
   ],
   "expansion": [],
   "modes": [
@@ -31,6 +34,8 @@
     {"id": "food", "label": "Essen", "icon": "🍽️"},
     {"id": "outdoor", "label": "Draußen", "icon": "🥾"},
     {"id": "family", "label": "Mit Kindern", "icon": "👨‍👩‍👧"},
+    {"id": "dog", "label": "Mit Hund", "icon": "🐕"},
+    {"id": "motorsport", "label": "Motorsport", "icon": "🏁"},
     {"id": "rain", "label": "Bei Regen", "icon": "🌧️"},
     {"id": "wellness", "label": "Wellness", "icon": "♨️"},
     {"id": "surprise", "label": "Überrasch mich", "icon": "✨"}
@@ -46,5 +51,5 @@
     "interactive": true,
     "locationPermission": "on-demand"
   },
-  "version": "0.8.0"
+  "version": "0.9.0"
 }
