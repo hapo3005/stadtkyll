@@ -6,11 +6,21 @@
   "country": "DE",
   "timezone": "Europe/Berlin",
   "locale": "de-DE",
-  "center": {"lat": 50.350553, "lng": 6.529506},
+  "center": {
+    "lat": 50.350553,
+    "lng": 6.529506
+  },
   "proofRole": "region-2",
   "coreReference": "hapo3005/hoy",
-  "cluster": ["Stadtkyll", "Kerschenbach", "Jünkerath", "Kronenburg"],
-  "expansion": ["Gerolstein"],
+  "cluster": [
+    "Stadtkyll",
+    "Kerschenbach",
+    "Jünkerath",
+    "Kronenburg"
+  ],
+  "expansion": [
+    "Gerolstein"
+  ],
   "modes": [
     {"id": "open", "label": "Jetzt offen", "icon": "●"},
     {"id": "food", "label": "Essen", "icon": "🍽️"},
@@ -21,7 +31,13 @@
   ],
   "trust": {
     "dynamicDataRule": "Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
-    "sourceFreshnessDays": 30
+    "sourceFreshnessDays": 30,
+    "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert."
   },
-  "version": "0.1.0"
+  "map": {
+    "provider": "OpenStreetMap",
+    "interactive": true,
+    "locationPermission": "on-demand"
+  },
+  "version": "0.2.0"
 }
