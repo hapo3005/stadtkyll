@@ -3,6 +3,10 @@
 
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
+  const LAYERS = [
+    'data/places-25km.json?v=0.7.0',
+    'data/places-25km-more.json?v=0.7.0'
+  ];
 
   window.fetch = async (input, init) => {
     const url = typeof input === 'string' ? input : input?.url || '';
@@ -12,16 +16,18 @@
     if (!baseResponse.ok) return baseResponse;
 
     try {
-      const extraResponse = await nativeFetch('data/places-25km.json?v=0.6.0', { cache: 'no-store' });
-      if (!extraResponse.ok) return baseResponse;
+      const layerResponses = await Promise.all(
+        LAYERS.map(layer => nativeFetch(layer, { cache: 'no-store' }))
+      );
+      if (layerResponses.some(response => !response.ok)) return baseResponse;
 
-      const [basePlaces, extraPlaces] = await Promise.all([
+      const [basePlaces, ...extraLayers] = await Promise.all([
         baseResponse.clone().json(),
-        extraResponse.json()
+        ...layerResponses.map(response => response.json())
       ]);
 
       const ids = new Set();
-      const merged = [...basePlaces, ...extraPlaces].filter(place => {
+      const merged = [basePlaces, ...extraLayers].flat().filter(place => {
         if (!place?.id || ids.has(place.id)) return false;
         ids.add(place.id);
         return true;
@@ -31,11 +37,11 @@
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Region-Layer': 'stadtkyll-25km-v06'
+          'X-HOY-Region-Layer': 'stadtkyll-25km-v07'
         }
       });
     } catch (error) {
-      console.warn('HOY 25-km layer unavailable; using Stadtkyll core only.', error);
+      console.warn('HOY 25-km layers unavailable; using Stadtkyll core only.', error);
       return baseResponse;
     }
   };
