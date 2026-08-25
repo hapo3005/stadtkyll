@@ -32,6 +32,7 @@ jobs:
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           python -m json.tool data/places-25km.json > /dev/null
+          python -m json.tool data/places-25km-more.json > /dev/null
           node scripts/validate-data.mjs
           node scripts/validate-25km.mjs
 
@@ -39,7 +40,7 @@ jobs:
         run: |
           mkdir -p _site/data
           cp index.html styles.css map.css photos.css quality-v04.css app.js photos.js quality-v04.js region25.js region25-ui.js region25-photos.js manifest.webmanifest icon.svg _site/
-          cp data/region.json data/places.json data/places-25km.json _site/data/
+          cp data/region.json data/places.json data/places-25km.json data/places-25km-more.json _site/data/
           touch _site/.nojekyll
 
       - name: Configure GitHub Pages
