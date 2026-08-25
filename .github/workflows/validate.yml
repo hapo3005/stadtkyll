@@ -21,6 +21,7 @@ jobs:
           node --check quality-v04.js
           node --check region25.js
           node --check region25-ui.js
+          node --check region25-photos.js
           node --check scripts/validate-data.mjs
           node --check scripts/validate-25km.mjs
       - name: Validate JSON syntax
@@ -41,6 +42,7 @@ jobs:
           test -f quality-v04.css
           test -f region25.js
           test -f region25-ui.js
+          test -f region25-photos.js
           test -f data/places-25km.json
           test -f manifest.webmanifest
           test -f icon.svg
