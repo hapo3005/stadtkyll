@@ -1,0 +1,103 @@
+[
+  {
+    "id": "gastro-gerolstein-mamma-maria",
+    "vertical": "gastro",
+    "name": "Pizzeria Mamma Maria",
+    "category": "Italienisch · Pizza · Mit Hund",
+    "town": "Gerolstein",
+    "address": "Brunnenstraße 18A, 54568 Gerolstein",
+    "summary": "Italienische Küche mit Pizza, Pasta und Antipasti; in der offiziellen hundefreundlichen Gastro-Auswahl des Gerolsteiner Lands geführt.",
+    "tags": ["italienisch", "pizza", "mittagessen", "abendessen", "terrasse", "familie", "hund"],
+    "location": {"lat": 50.22369, "lng": 6.65997},
+    "weeklyHours": {
+      "mon": [],
+      "tue": ["11:30-14:00", "17:30-22:30"],
+      "wed": ["11:30-14:00", "17:30-22:30"],
+      "thu": ["11:30-14:00", "17:30-22:30"],
+      "fri": ["11:30-14:00", "17:30-22:30"],
+      "sat": ["11:30-14:00", "17:30-22:30"],
+      "sun": ["11:30-14:00", "17:30-22:30"]
+    },
+    "scheduleValidFrom": "2019-01-01",
+    "scheduleValidTo": "2030-01-01",
+    "source": {"label": "Eifel Tourismus / Outdooractive", "url": "https://www.outdooractive.com/de/gastro/eifel/gerolstein-mamma-maria/22686959/", "type": "official_tourism", "checkedAt": "2026-08-25"},
+    "dogFriendly": {"source": "Gerolsteiner Land · Hundefreundliche Gastronomie", "sourceUrl": "https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/restaurants", "checkedAt": "2026-08-25"},
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-gerolstein-im-flecken",
+    "vertical": "gastro",
+    "name": "Im Flecken · Bistro am Eifelsteig",
+    "category": "Bistro · Frühstück · Mit Hund",
+    "town": "Gerolstein",
+    "address": "Hauptstraße 28, 54568 Gerolstein",
+    "summary": "Frühstück, regionale leichte Küche, Kaffee und Kuchen mit großer Terrasse; Hunde sind laut offizieller Quelle ausdrücklich erlaubt.",
+    "tags": ["fruehstueck", "cafe", "regional", "terrasse", "hund", "mittagessen"],
+    "location": {"lat": 50.222069, "lng": 6.662076},
+    "weeklyHours": {
+      "mon": [],
+      "tue": ["09:30-18:00"],
+      "wed": ["09:30-18:00"],
+      "thu": ["09:30-18:00"],
+      "fri": ["09:30-18:00"],
+      "sat": ["09:30-18:00"],
+      "sun": []
+    },
+    "scheduleValidFrom": "2022-11-01",
+    "scheduleValidTo": "2030-12-31",
+    "source": {"label": "Gerolsteiner Land / Outdooractive", "url": "https://www.outdooractive.com/de/gastro/eifel/gerolstein-im-flecken-bistro-am-eifelsteig/22686947/", "type": "official_tourism", "checkedAt": "2026-08-25"},
+    "dogFriendly": {"source": "Gerolsteiner Land · Hundefreundliche Gastronomie", "sourceUrl": "https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/restaurants", "checkedAt": "2026-08-25"},
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-gerolstein-balkan-grill",
+    "vertical": "gastro",
+    "name": "Balkan Grill Gerolstein",
+    "category": "Kroatisch · International · Mit Hund",
+    "town": "Gerolstein",
+    "address": "Hauptstraße 20, 54568 Gerolstein",
+    "summary": "Kroatische und internationale Küche mit Außenplätzen; als hundefreundliche Gastronomie der Region gelistet.",
+    "tags": ["kroatisch", "international", "mittagessen", "abendessen", "terrasse", "hund"],
+    "location": {"lat": 50.221978, "lng": 6.661554},
+    "weeklyHours": {
+      "mon": [],
+      "tue": ["11:30-14:00", "17:00-22:00"],
+      "wed": ["11:30-14:00", "17:00-22:00"],
+      "thu": ["11:30-14:00", "17:00-22:00"],
+      "fri": ["11:30-14:00", "17:00-22:00"],
+      "sat": ["11:30-14:00", "17:00-22:00"],
+      "sun": ["11:30-14:00", "17:00-22:00"]
+    },
+    "scheduleValidFrom": "2018-01-01",
+    "scheduleValidTo": "2030-12-31",
+    "source": {"label": "Eifel Tourismus / Outdooractive", "url": "https://www.outdooractive.com/de/gastro/eifel/gerolstein-balkan-grill/22686935/", "type": "official_tourism", "checkedAt": "2026-08-25"},
+    "dogFriendly": {"source": "Gerolsteiner Land · Hundefreundliche Gastronomie", "sourceUrl": "https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/restaurants", "checkedAt": "2026-08-25"},
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "life-moto-stadtkyll-tourenpool",
+    "vertical": "lifestyle",
+    "name": "Motorradtouren rund um Stadtkyll",
+    "category": "Motorrad · Kurven · Tourenpool",
+    "town": "Stadtkyll",
+    "summary": "Kurvenreiche Eifel-Touren rund um Stadtkyll mit Verbindungen Richtung Kronenburg, Hillesheim, Gerolstein und Vulkaneifel – als Ausgangspunkt für einen ganzen Motorradtagesausflug.",
+    "tags": ["motorrad", "kurven", "tour", "tagesausflug", "draussen"],
+    "facts": {"Auswahl": "10 veröffentlichte Tourenvorschläge in der Stadtkyll-Sammlung", "Charakter": "Eifel · kurvig · Tagesrunden", "Hinweis": "Streckenführung vor Abfahrt beim Touranbieter prüfen"},
+    "location": {"lat": 50.350553, "lng": 6.529506},
+    "source": {"label": "Outdooractive · Motorradtouren in Stadtkyll", "url": "https://www.outdooractive.com/de/motorradtouren/stadtkyll/motorradtouren-in-stadtkyll/200401870/", "type": "tour_platform", "checkedAt": "2026-08-25"},
+    "dynamicStatus": "official-static"
+  },
+  {
+    "id": "life-moto-gerolstein-tourenpool",
+    "vertical": "lifestyle",
+    "name": "Motorradtouren Vulkaneifel ab Gerolstein",
+    "category": "Motorrad · Vulkaneifel · Tagestour",
+    "town": "Gerolstein",
+    "summary": "Große Motorradrunden durch Vulkaneifel, Maare und Eifelkurven; die Gerolstein-Sammlung enthält unter anderem Touren über Kasselburg, Nürburgring und Schönecken.",
+    "tags": ["motorrad", "kurven", "vulkaneifel", "tour", "tagesausflug", "draussen"],
+    "facts": {"Beispiel": "Schön(e)Ecken in der Eifel · 207,8 km · ca. 4:55 h", "Highlights": "Kasselburg · Maare · Schönecken · Nürburgring", "Hinweis": "Touren können den 25-km-HOY-Kern verlassen"},
+    "location": {"lat": 50.2232, "lng": 6.6598},
+    "source": {"label": "Outdooractive · Motorradtouren in Gerolstein", "url": "https://www.outdooractive.com/de/motorradtouren/gerolstein/motorradtouren-in-gerolstein/200402679/", "type": "tour_platform", "checkedAt": "2026-08-25"},
+    "dynamicStatus": "official-static"
+  }
+]

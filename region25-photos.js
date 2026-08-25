@@ -10,7 +10,10 @@
     [/forsthaus kasselburg/, 50.238518, 6.683960],
     [/kiyo sushi/, 50.223604, 6.656812],
     [/big papa burger/, 50.223844, 6.642763],
-    [/costa verde/, 50.221808, 6.666735]
+    [/costa verde/, 50.221808, 6.666735],
+    [/mamma maria/, 50.223690, 6.659970],
+    [/im flecken/, 50.222069, 6.662076],
+    [/balkan grill/, 50.221978, 6.661554]
   ];
   const cache = new Map();
 
