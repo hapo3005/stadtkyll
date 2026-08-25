@@ -13,7 +13,11 @@
     [/costa verde/, 50.221808, 6.666735],
     [/mamma maria/, 50.223690, 6.659970],
     [/im flecken/, 50.222069, 6.662076],
-    [/balkan grill/, 50.221978, 6.661554]
+    [/balkan grill/, 50.221978, 6.661554],
+    [/poseidon/, 50.224054, 6.655500],
+    [/erwins brauhaus/, 50.320378, 6.617414],
+    [/birgeler hof/, 50.321284, 6.621737],
+    [/bei lonnen/, 50.327262, 6.442706]
   ];
   const cache = new Map();
 
