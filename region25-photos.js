@@ -9,7 +9,8 @@
     [/restaurant bei cemo/, 50.286784, 6.567938],
     [/forsthaus kasselburg/, 50.238518, 6.683960],
     [/kiyo sushi/, 50.223604, 6.656812],
-    [/big papa burger/, 50.223844, 6.642763]
+    [/big papa burger/, 50.223844, 6.642763],
+    [/costa verde/, 50.221808, 6.666735]
   ];
   const cache = new Map();
 
