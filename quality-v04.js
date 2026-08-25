@@ -6,8 +6,15 @@
 
   function classifyCards(root = document) {
     root.querySelectorAll('.section > .cards > .card').forEach((card, index) => {
-      card.classList.add('card-featured');
-      if (index === 0 && !card.dataset.qualityLead) card.dataset.qualityLead = '1';
+      const hasPlaceKind = !!card.querySelector('.kind');
+      if (hasPlaceKind) {
+        card.classList.add('card-featured');
+        if (index === 0 && !card.dataset.qualityLead) card.dataset.qualityLead = '1';
+      } else {
+        card.classList.add('card-proof');
+        card.classList.remove('card-featured');
+        card.querySelector('.place-photo')?.remove();
+      }
     });
 
     root.querySelectorAll('.list > .card').forEach(card => {
@@ -18,7 +25,15 @@
       const kind = card.querySelector('.kind')?.textContent || '';
       if (kind.includes('🍽️')) card.classList.add('card-gastro');
       else if (kind.trim()) card.classList.add('card-lifestyle');
+      else card.classList.add('card-proof');
       card.dataset.qualityKind = '1';
+    });
+  }
+
+  function cleanProofCards(root = document) {
+    root.querySelectorAll('.card-proof').forEach(card => {
+      card.querySelector('.place-photo')?.remove();
+      card.querySelector('.status')?.remove();
     });
   }
 
@@ -48,6 +63,7 @@
   function enhance() {
     scheduled = false;
     classifyCards();
+    cleanProofCards();
     refinePrototypeLabels();
     refineSourceNote();
   }
