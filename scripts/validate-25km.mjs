@@ -7,7 +7,8 @@ const files = [
   new URL('../data/places-25km-special.json', import.meta.url),
   new URL('../data/places-25km-moto-dog.json', import.meta.url),
   new URL('../data/places-25km-depth.json', import.meta.url),
-  new URL('../data/places-25km-v011.json', import.meta.url)
+  new URL('../data/places-25km-v011.json', import.meta.url),
+  new URL('../data/places-25km-v012.json', import.meta.url)
 ];
 const layers = files.map(file => JSON.parse(fs.readFileSync(file, 'utf8')));
 const places = layers.flat();
@@ -43,6 +44,8 @@ let dog = 0;
 let motorcycle = 0;
 let motorsport = 0;
 let wellness = 0;
+let rain = 0;
+let evening = 0;
 let motoShort = 0;
 let motoHalf = 0;
 let motoFull = 0;
@@ -78,6 +81,8 @@ for (const place of places) {
   if (tags.has('motorrad')) motorcycle += 1;
   if (tags.has('motorsport')) motorsport += 1;
   if (tags.has('wellness')) wellness += 1;
+  if (tags.has('regen') || tags.has('indoor')) rain += 1;
+  if (tags.has('abend') || tags.has('abendessen')) evening += 1;
   if (place.motoWindow === 'short') motoShort += 1;
   if (place.motoWindow === 'half') motoHalf += 1;
   if (place.motoWindow === 'full') motoFull += 1;
@@ -87,5 +92,5 @@ for (const place of places) {
 }
 
 console.log(`Validated ${places.length} 25-km additions across ${layers.length} layers: ${gastro} gastro, ${lifestyle} lifestyle, max ${maxDistance.toFixed(1)} km.`);
-console.log(`Special-interest coverage in explicit data: ${dog} dog, ${motorcycle} motorcycle, ${motorsport} motorsport, ${wellness} wellness.`);
+console.log(`Special-interest coverage in explicit data: ${dog} dog, ${motorcycle} motorcycle, ${motorsport} motorsport, ${wellness} wellness, ${rain} rain/indoor, ${evening} evening.`);
 console.log(`Explicit motorcycle windows: ${motoShort} short, ${motoHalf} half-day, ${motoFull} full-day.`);
