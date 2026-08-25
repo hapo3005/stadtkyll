@@ -22,5 +22,6 @@
 .popup-photo{display:block;margin:-2px -2px 8px;height:92px;overflow:hidden;border-radius:9px;background:#d8e3e5}
 .popup-photo img{display:block;width:100%;height:100%;object-fit:cover}
 .leaflet-popup-content .popup-photo+*{margin-top:0}
+.hoy-quality-v04 .list .card .photo-credit{display:inline-flex!important;margin-top:4px;max-width:100%;padding:3px 4px;font-size:4.5px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;background:rgba(5,31,51,.70)}
 @media (max-width:370px){.photo-overlay{align-items:flex-start;flex-direction:column}.photo-context{font-size:6px}.photo-credit{font-size:5.8px}.hero-photo-credit{top:calc(65px + env(safe-area-inset-top))}}
 @media (prefers-reduced-motion:no-preference){.place-photo img{transition:transform .35s ease}.card:active .place-photo img{transform:scale(1.025)}}
