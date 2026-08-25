@@ -4,10 +4,11 @@
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
   const LAYERS = [
-    'data/places-25km.json?v=0.9.0',
-    'data/places-25km-more.json?v=0.9.0',
-    'data/places-25km-extra.json?v=0.9.0',
-    'data/places-25km-special.json?v=0.9.0'
+    'data/places-25km.json?v=0.9.1',
+    'data/places-25km-more.json?v=0.9.1',
+    'data/places-25km-extra.json?v=0.9.1',
+    'data/places-25km-special.json?v=0.9.1',
+    'data/places-25km-moto-dog.json?v=0.9.1'
   ];
   const DOG_FRIENDLY_NAMES = [
     'bielenhof-alm',
@@ -21,7 +22,26 @@
     'eifel-blick hasenberg',
     'eifel-blick steffeln',
     'steffelner drees',
-    'naturkundemuseum gerolstein'
+    'naturkundemuseum gerolstein',
+    'kurpark stadtkyll',
+    'gerolsteiner dolomiten'
+  ];
+  const MOTORCYCLE_STOP_NAMES = [
+    'historischer burgort kronenburg',
+    'kronenburger see',
+    'eifel-blick hasenberg',
+    'eifel-blick steffeln',
+    'historische wassermuhle birgel',
+    'bielenhof-alm',
+    'forsthaus kasselburg',
+    'vulkangarten steffeln',
+    'stadtcafe gerolstein',
+    'cafe doppelfeld',
+    'woodstock',
+    'bistro am see',
+    'pizzeria mamma maria',
+    'im flecken',
+    'balkan grill'
   ];
 
   const normalise = value => String(value || '')
@@ -38,12 +58,27 @@
     return {
       ...place,
       tags,
-      dogFriendly: {
+      dogFriendly: place.dogFriendly || {
         source: 'Gerolsteiner Land · Hundefreundliche Gastronomie/Ausflüge',
         sourceUrl: place.vertical === 'gastro'
           ? 'https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/restaurants'
           : 'https://www.gerolsteiner-land.de/ausflugsziele/urlaub-hund/ausflugsziele',
         checkedAt: '2026-08-25'
+      }
+    };
+  }
+
+  function addMotorcycleContext(place) {
+    const name = normalise(place?.name);
+    if (!MOTORCYCLE_STOP_NAMES.some(candidate => name.includes(candidate))) return place;
+    const tags = Array.from(new Set([...(place.tags || []), 'motorrad']));
+    return {
+      ...place,
+      tags,
+      motorcycleCuration: {
+        source: 'HOY lokale Kuratierung',
+        checkedAt: '2026-08-25',
+        note: 'Straßennaher Tourstopp; keine Betreiber-Zertifizierung als bikerfreundlich.'
       }
     };
   }
@@ -71,13 +106,13 @@
         if (!place?.id || ids.has(place.id)) return false;
         ids.add(place.id);
         return true;
-      }).map(addDogContext);
+      }).map(addDogContext).map(addMotorcycleContext);
 
       return new Response(JSON.stringify(merged), {
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Region-Layer': 'stadtkyll-25km-v09'
+          'X-HOY-Region-Layer': 'stadtkyll-25km-v091'
         }
       });
     } catch (error) {
