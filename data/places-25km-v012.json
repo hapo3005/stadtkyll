@@ -125,31 +125,6 @@
     "dynamicStatus": "source-based"
   },
   {
-    "id": "life-hillesheim-kriminalhaus",
-    "vertical": "lifestyle",
-    "name": "Das Kriminalhaus",
-    "category": "Krimi · Museum · Café · Indoor",
-    "town": "Hillesheim",
-    "address": "Am Markt 5-7, 54576 Hillesheim",
-    "summary": "Krimiarchiv, Buchhandlung, Antiquariat und Café unter einem Dach – eine charakteristische Indoor-Idee für einen Regentag.",
-    "tags": ["krimi", "museum", "kultur", "regen", "indoor", "cafe"],
-    "facts": {"Krimiarchiv": "knapp 30.000 Bände laut Quelle", "Café": "Café Sherlock im Haus"},
-    "location": {"lat": 50.291546, "lng": 6.671228},
-    "weeklyHours": {
-      "mon": [],
-      "tue": [],
-      "wed": ["10:00-18:00"],
-      "thu": ["10:00-18:00"],
-      "fri": ["10:00-18:00"],
-      "sat": ["10:00-18:00"],
-      "sun": ["10:00-18:00"]
-    },
-    "scheduleValidFrom": "2026-01-21",
-    "scheduleValidTo": "2030-12-31",
-    "source": {"label": "Gerolsteiner Land · Kriminalhaus", "url": "https://www.gerolsteiner-land.de/pois/das-kriminalhaus", "type": "official_tourism", "checkedAt": "2026-08-26"},
-    "dynamicStatus": "source-based"
-  },
-  {
     "id": "gastro-hillesheim-cafe-sherlock",
     "vertical": "gastro",
     "name": "Café Sherlock",
