@@ -52,12 +52,20 @@
     "sourceFreshnessDays": 30,
     "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
     "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt.",
-    "weatherRule": "Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab."
+    "weatherRule": "Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab.",
+    "eventRule": "Große touristisch relevante Veranstaltungen dürfen in einem separaten Event-Radar über den Places-Radius hinaus sichtbar sein. Sie erweitern nicht den validierten 25-km-Ortebestand und müssen mit offizieller Quelle und Prüfdatum geführt werden."
   },
   "map": {
     "provider": "OpenStreetMap",
     "interactive": true,
     "locationPermission": "on-demand"
   },
-  "version": "0.12.0"
+  "eventRadar": {
+    "enabled": true,
+    "planningHorizon": "long-range",
+    "allowBeyondDiscoveryRadius": true,
+    "primaryRegionalMagnet": "Nürburgring",
+    "sourceFile": "data/events.json"
+  },
+  "version": "0.13.0"
 }
