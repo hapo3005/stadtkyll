@@ -17,6 +17,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check app.js
+          node --check events.js
           node --check photos.js
           node --check quality-v04.js
           node --check quality-v08.js
@@ -30,6 +31,7 @@ jobs:
       - name: Validate JSON syntax
         run: |
           python -m json.tool data/region.json > /dev/null
+          python -m json.tool data/events.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           python -m json.tool data/places-25km.json > /dev/null
           python -m json.tool data/places-25km-more.json > /dev/null
@@ -49,14 +51,17 @@ jobs:
           test -f styles.css
           test -f map.css
           test -f photos.css
+          test -f events.css
           test -f quality-v04.css
           test -f quality-v012.css
           test -f quality-v08.js
           test -f quality-v09.js
           test -f quality-v012.js
+          test -f events.js
           test -f region25.js
           test -f region25-ui.js
           test -f region25-photos.js
+          test -f data/events.json
           test -f data/places-25km.json
           test -f data/places-25km-more.json
           test -f data/places-25km-extra.json
