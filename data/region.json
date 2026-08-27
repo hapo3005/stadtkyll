@@ -25,13 +25,14 @@
     "providerResearchRule":"Vor neuen oder erweiterten Gastro-Profilen werden Betreiberwebsite, relevante Social-Media-Auftritte, aktuelle Öffnungszeiten, Kontaktdaten, Angebote und Speisekarten gründlich geprüft. Nicht auffindbare oder nicht verifizierbare Social-Profile werden als solche dokumentiert statt geraten.",
     "menuIdentityRule":"Vor der Übernahme von Gerichten oder Preisen muss die Menüquelle über Betrieb, Ort, Adresse oder eindeutig zuordenbare Betreiberidentität zum HOY-Ort passen. Gleichnamige Fremdbetriebe werden ausgeschlossen und als verworfene Recherchequelle dokumentiert.",
     "timeBoundedMenuRule":"Wochenkarten, Tagesangebote und Event-Menüs erhalten ein explizites Gültigkeitsfenster. HOY darf solche Gerichte außerhalb dieses Fensters nicht als aktuelle Auswahl verwenden; bekannte Betriebsferien oder Schließtage begrenzen das Fenster zusätzlich.",
+    "staleMenuRule":"Historische oder nicht ausreichend datierbare Betreiberkarten dürfen als Originalquelle verlinkt werden, aber nicht als aktuelle strukturierte Preisquelle gelten. Der historische oder unklare Stand muss sichtbar dokumentiert sein.",
     "menuRule":"HOY strukturiert Speisekarten nur aus nachvollziehbaren Betreiber- oder vergleichbar belastbaren Quellen. Preise, Tagesgerichte und Verfügbarkeiten bleiben quellbasiert und werden ohne Betriebssignal nie als live bestätigt dargestellt. Nicht zuverlässig extrahierbare Karten werden als geprüfte Originalkarte verlinkt statt mit geratenen Einzelpreisen aufgefüllt. 'Ab'-Preise werden ausdrücklich als Startpreise gekennzeichnet. Zeitlich begrenzte Karten werden außerhalb ihres Gültigkeitsfensters automatisch nicht mehr in der Gerichtssuche verwendet."
   },
   "map":{"provider":"OpenStreetMap","interactive":true,"locationPermission":"on-demand"},
   "eventRadar":{"enabled":true,"planningHorizon":"long-range","allowBeyondDiscoveryRadius":true,"primaryRegionalMagnet":"Nürburgring","sourceFile":"data/events.json"},
   "menuLayer": {
     "enabled": true,
-    "sourceFiles": ["data/menus.json","data/menus-25km-a.json","data/menus-25km-b.json","data/menus-25km-c.json","data/menus-25km-d.json","data/menus-25km-e.json","data/menus-25km-f.json","data/menus-25km-g.json"],
+    "sourceFiles": ["data/menus.json","data/menus-25km-a.json","data/menus-25km-b.json","data/menus-25km-c.json","data/menus-25km-d.json","data/menus-25km-e.json","data/menus-25km-f.json","data/menus-25km-g.json","data/menus-25km-h.json"],
     "dishFirstSearch": true,
     "priceFilters": true,
     "dailySpecials": true,
@@ -40,7 +41,8 @@
     "structuredOnlyWhenVerified": true,
     "identityMatchRequired": true,
     "timeBoundedOffers": true,
+    "staleMenuPricesBlocked": true,
     "liveClaimRequiresOperatorSignal": true
   },
-  "version":"0.20.0"
+  "version":"0.21.0"
 }
