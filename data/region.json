@@ -53,7 +53,8 @@
     "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
     "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt.",
     "weatherRule": "Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab.",
-    "eventRule": "Große touristisch relevante Veranstaltungen dürfen in einem separaten Event-Radar über den Places-Radius hinaus sichtbar sein. Sie erweitern nicht den validierten 25-km-Ortebestand und müssen mit offizieller Quelle und Prüfdatum geführt werden."
+    "eventRule": "Große touristisch relevante Veranstaltungen dürfen in einem separaten Event-Radar über den Places-Radius hinaus sichtbar sein. Sie erweitern nicht den validierten 25-km-Ortebestand und müssen mit offizieller Quelle und Prüfdatum geführt werden.",
+    "menuRule": "HOY strukturiert Speisekarten nur aus nachvollziehbaren Betreiber- oder vergleichbar belastbaren Quellen. Preise, Tagesgerichte und Verfügbarkeiten bleiben quellbasiert und werden ohne Betriebssignal nie als live bestätigt dargestellt. Unvollständige oder veränderliche Karten werden sichtbar als Ausschnitt bzw. Quellenstand gekennzeichnet."
   },
   "map": {
     "provider": "OpenStreetMap",
@@ -67,5 +68,13 @@
     "primaryRegionalMagnet": "Nürburgring",
     "sourceFile": "data/events.json"
   },
-  "version": "0.13.0"
+  "menuLayer": {
+    "enabled": true,
+    "sourceFile": "data/menus.json",
+    "dishFirstSearch": true,
+    "priceFilters": true,
+    "dailySpecials": true,
+    "liveClaimRequiresOperatorSignal": true
+  },
+  "version": "0.14.0"
 }
