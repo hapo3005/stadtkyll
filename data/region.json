@@ -6,75 +6,36 @@
   "country": "DE",
   "timezone": "Europe/Berlin",
   "locale": "de-DE",
-  "center": {
-    "lat": 50.350553,
-    "lng": 6.529506
-  },
+  "center": {"lat": 50.350553,"lng": 6.529506},
   "discoveryRadiusKm": 25,
   "proofRole": "region-2",
   "coreReference": "hapo3005/hoy",
-  "cluster": [
-    "Stadtkyll",
-    "Kerschenbach",
-    "Jünkerath",
-    "Kronenburg",
-    "Birgel",
-    "Steffeln",
-    "Hillesheim",
-    "Oberbettingen",
-    "Gerolstein",
-    "Pelm",
-    "Blankenheim",
-    "Dahlem",
-    "Ormont",
-    "Neroth",
-    "Kerpen-Loogh",
-    "Kopp",
-    "Feusdorf",
-    "Gerolstein-Müllenborn"
-  ],
+  "cluster": ["Stadtkyll","Kerschenbach","Jünkerath","Kronenburg","Birgel","Steffeln","Hillesheim","Oberbettingen","Gerolstein","Pelm","Blankenheim","Dahlem","Ormont","Neroth","Kerpen-Loogh","Kopp","Feusdorf","Gerolstein-Müllenborn"],
   "expansion": [],
   "modes": [
-    {"id": "open", "label": "Jetzt offen", "icon": "●"},
-    {"id": "food", "label": "Essen", "icon": "🍽️"},
-    {"id": "outdoor", "label": "Draußen", "icon": "🥾"},
-    {"id": "family", "label": "Mit Kindern", "icon": "👨‍👩‍👧"},
-    {"id": "dog", "label": "Mit Hund", "icon": "🐕"},
-    {"id": "motorcycle", "label": "Mit Motorrad", "icon": "🏍️"},
-    {"id": "motorsport", "label": "Motorsport", "icon": "🏁"},
-    {"id": "rain", "label": "Bei Regen", "icon": "🌧️"},
-    {"id": "evening", "label": "Abends", "icon": "🌙"},
-    {"id": "wellness", "label": "Wellness", "icon": "♨️"},
-    {"id": "surprise", "label": "Überrasch mich", "icon": "✨"}
+    {"id":"open","label":"Jetzt offen","icon":"●"},{"id":"food","label":"Essen","icon":"🍽️"},{"id":"outdoor","label":"Draußen","icon":"🥾"},{"id":"family","label":"Mit Kindern","icon":"👨‍👩‍👧"},{"id":"dog","label":"Mit Hund","icon":"🐕"},{"id":"motorcycle","label":"Mit Motorrad","icon":"🏍️"},{"id":"motorsport","label":"Motorsport","icon":"🏁"},{"id":"rain","label":"Bei Regen","icon":"🌧️"},{"id":"evening","label":"Abends","icon":"🌙"},{"id":"wellness","label":"Wellness","icon":"♨️"},{"id":"surprise","label":"Überrasch mich","icon":"✨"}
   ],
   "trust": {
-    "dynamicDataRule": "Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
-    "sourceFreshnessDays": 30,
-    "locationRule": "Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
-    "radiusRule": "Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt.",
-    "weatherRule": "Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab.",
-    "eventRule": "Große touristisch relevante Veranstaltungen dürfen in einem separaten Event-Radar über den Places-Radius hinaus sichtbar sein. Sie erweitern nicht den validierten 25-km-Ortebestand und müssen mit offizieller Quelle und Prüfdatum geführt werden.",
-    "menuRule": "HOY strukturiert Speisekarten nur aus nachvollziehbaren Betreiber- oder vergleichbar belastbaren Quellen. Preise, Tagesgerichte und Verfügbarkeiten bleiben quellbasiert und werden ohne Betriebssignal nie als live bestätigt dargestellt. Unvollständige oder veränderliche Karten werden sichtbar als Ausschnitt bzw. Quellenstand gekennzeichnet."
+    "dynamicDataRule":"Statische Öffnungszeiten und Verfügbarkeiten werden niemals als live-verifiziert dargestellt.",
+    "sourceFreshnessDays":30,
+    "locationRule":"Browser-Standort wird nur nach Nutzeraktion angefragt und im Prototyp nicht gespeichert.",
+    "radiusRule":"Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt.",
+    "weatherRule":"Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab.",
+    "eventRule":"Große touristisch relevante Veranstaltungen dürfen in einem separaten Event-Radar über den Places-Radius hinaus sichtbar sein. Sie erweitern nicht den validierten 25-km-Ortebestand und müssen mit offizieller Quelle und Prüfdatum geführt werden.",
+    "menuRule":"HOY strukturiert Speisekarten nur aus nachvollziehbaren Betreiber- oder vergleichbar belastbaren Quellen. Preise, Tagesgerichte und Verfügbarkeiten bleiben quellbasiert und werden ohne Betriebssignal nie als live bestätigt dargestellt. Nicht zuverlässig extrahierbare Karten werden als geprüfte Originalkarte verlinkt statt mit geratenen Einzelpreisen aufgefüllt. Zeitlich begrenzte Karten werden außerhalb ihres Gültigkeitsfensters automatisch nicht mehr in der Gerichtssuche verwendet."
   },
-  "map": {
-    "provider": "OpenStreetMap",
-    "interactive": true,
-    "locationPermission": "on-demand"
-  },
-  "eventRadar": {
-    "enabled": true,
-    "planningHorizon": "long-range",
-    "allowBeyondDiscoveryRadius": true,
-    "primaryRegionalMagnet": "Nürburgring",
-    "sourceFile": "data/events.json"
-  },
+  "map":{"provider":"OpenStreetMap","interactive":true,"locationPermission":"on-demand"},
+  "eventRadar":{"enabled":true,"planningHorizon":"long-range","allowBeyondDiscoveryRadius":true,"primaryRegionalMagnet":"Nürburgring","sourceFile":"data/events.json"},
   "menuLayer": {
     "enabled": true,
-    "sourceFile": "data/menus.json",
+    "sourceFiles": ["data/menus.json","data/menus-25km-a.json","data/menus-25km-b.json","data/menus-25km-c.json"],
     "dishFirstSearch": true,
     "priceFilters": true,
     "dailySpecials": true,
+    "validityWindows": true,
+    "originalMenuFallback": true,
+    "structuredOnlyWhenVerified": true,
     "liveClaimRequiresOperatorSignal": true
   },
-  "version": "0.14.0"
+  "version":"0.15.0"
 }
