@@ -1,0 +1,130 @@
+[
+  {
+    "id": "gastro-stadtkyll-haus-petra",
+    "vertical": "gastro",
+    "name": "Haus Petra",
+    "category": "Café · Hausmannskost · Biergarten",
+    "town": "Stadtkyll",
+    "address": "Waldstraße 3, 54589 Stadtkyll",
+    "summary": "Waldnahes Haus mit Café, Biergarten und bodenständiger Hausmannskost; saisonaler Gastronomiebetrieb von Frühjahr bis Herbst.",
+    "tags": ["cafe", "hausmannskost", "biergarten", "mittagessen", "abendessen", "draussen"],
+    "location": {"lat": 50.351914, "lng": 6.522059},
+    "weeklyHours": {
+      "mon": [],
+      "tue": [],
+      "wed": ["17:00-21:00"],
+      "thu": ["17:00-21:00"],
+      "fri": ["11:00-24:00"],
+      "sat": ["11:00-24:00"],
+      "sun": ["11:00-20:00"]
+    },
+    "scheduleValidFrom": "2026-04-01",
+    "scheduleValidTo": "2026-09-30",
+    "source": {
+      "label": "Haus Petra / Gerolsteiner Land",
+      "url": "https://www.haus-petra-stadtkyll.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberwebsite sowie offizielle Tourismusquellen wurden geprüft. Der veröffentlichte Saisonplan gilt 01.04.–30.09.2026; einzelne Tourismusdarstellungen weichen beim Sonntagsschluss voneinander ab, daher verwendet HOY die narrative Angabe 20:00 Uhr und kennzeichnet sie als quellbasiert."
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "ein Drittanbieter verweist auf @haus.petra; nicht als offizieller Betreiberkanal verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "no-reliable-digital-menu",
+      "note": "Keine belastbare aktuelle Betreiber-Speisekarte mit Einzelpreisen gefunden; Nutzerfoto- und Drittanbieterpreise werden nicht übernommen."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-hillesheim-flair-thai",
+    "vertical": "gastro",
+    "name": "Flair Café & Thai Restaurant",
+    "category": "Thailändisch · Café · Takeaway",
+    "town": "Hillesheim",
+    "address": "Am Sportpark 1, 54576 Hillesheim",
+    "summary": "Thailändische Küche mit Außenplätzen und Takeaway; der Betreiber nennt barrierefreien Zugang, Parkplätze und Haustiere als willkommen.",
+    "tags": ["thai", "takeaway", "terrasse", "hund", "mittagessen", "abendessen"],
+    "location": {"lat": 50.287740, "lng": 6.667292},
+    "weeklyHours": {
+      "mon": [],
+      "tue": [],
+      "wed": ["17:00-21:00"],
+      "thu": ["17:00-21:00"],
+      "fri": ["12:00-14:00", "17:00-21:00"],
+      "sat": ["12:00-14:00", "17:00-21:00"],
+      "sun": ["12:00-14:00", "17:00-21:00"]
+    },
+    "scheduleValidTo": "2026-12-31",
+    "source": {
+      "label": "Flair Café & Thai Restaurant · Betreiberseite",
+      "url": "https://flair-thairestaurant.eatbu.com/?lang=de",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite sowie Eifel-/Gerolsteiner-Land-Quellen wurden geprüft. Öffnungszeiten werden als quellbasiert, nicht live bestätigt geführt."
+    },
+    "contact": {
+      "phone": "+49 6593 9808114",
+      "email": "flaircafe.thairestaurant@gmail.com"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "operator-gallery-no-structured-prices",
+      "note": "Die Betreiberseite zeigt Gastronomie/Galerie, liefert aber keine verlässlich textlich extrahierbare aktuelle Preiskarte; Nutzerfoto-Preise bleiben ausgeschlossen."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-hillesheim-pizza-pasta-express",
+    "vertical": "gastro",
+    "name": "Pizza Pasta Express Hillesheim",
+    "category": "Pizza · Pasta · Döner · Lieferservice",
+    "town": "Hillesheim",
+    "address": "Graf-Mirbach-Platz 18, 54576 Hillesheim",
+    "summary": "Pizza-, Pasta- und Döner-Lieferservice mit eigener Betreiber-App und direkt veröffentlichter Online-Speisekarte.",
+    "tags": ["pizza", "pasta", "doener", "lieferservice", "takeaway", "hund", "mittagessen", "abendessen", "familie"],
+    "location": {"lat": 50.291482, "lng": 6.670975},
+    "weeklyHours": {
+      "mon": ["11:00-14:00", "16:00-22:00"],
+      "tue": [],
+      "wed": ["11:00-14:00", "16:00-22:00"],
+      "thu": ["11:00-14:00", "16:00-22:00"],
+      "fri": ["11:00-14:00", "16:00-22:00"],
+      "sat": ["11:00-14:00", "16:00-22:00"],
+      "sun": ["11:00-14:00", "16:00-22:00"]
+    },
+    "source": {
+      "label": "Pizza Pasta Express Hillesheim · Betreiberwebsite / Bestell-App",
+      "url": "https://pizzapasta-express.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberwebsite, Betreiber-App und Impressum wurden geprüft. Bei Samstag besteht ein Quellenkonflikt: Gerolsteiner Land nennt nur 16:00–22:00, die aktuelle Betreiber-App nennt 11:00–14:00 und 16:00–22:00. HOY priorisiert die Betreiberquelle und dokumentiert den Konflikt."
+    },
+    "menuSource": {
+      "label": "Pizza Pasta Express Hillesheim · Betreiber-App",
+      "url": "https://app.pizzapasta-express.de/",
+      "checkedAt": "2026-08-27"
+    },
+    "contact": {"phone": "+49 6593 208143"},
+    "hoursConflict": {
+      "checkedAt": "2026-08-27",
+      "operator": "Samstag 11:00–14:00 und 16:00–22:00",
+      "tourism": "Samstag 16:00–22:00",
+      "resolution": "Betreiberquelle priorisiert"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  }
+]
