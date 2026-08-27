@@ -3,7 +3,10 @@
 
   const nativeFetch = window.fetch.bind(window);
   const BASE_MENU_REQUEST = /(?:^|\/)data\/menus-25km-c\.json(?:[?#]|$)/;
-  const EXTRA_MENU_URL = 'data/menus-25km-d.json?v=0.16.0';
+  const EXTRA_MENU_URLS = [
+    'data/menus-25km-d.json?v=0.18.0',
+    'data/menus-25km-e.json?v=0.18.0'
+  ];
 
   window.fetch = async (input, init) => {
     const url = typeof input === 'string' ? input : input?.url || '';
@@ -13,30 +16,30 @@
     if (!baseResponse.ok) return baseResponse;
 
     try {
-      const extraResponse = await nativeFetch(EXTRA_MENU_URL, {cache:'no-store'});
-      if (!extraResponse.ok) return baseResponse;
+      const extraResponses = await Promise.all(EXTRA_MENU_URLS.map(extraUrl => nativeFetch(extraUrl, {cache:'no-store'})));
+      if (extraResponses.some(response => !response.ok)) return baseResponse;
 
-      const [baseDoc, extraDoc] = await Promise.all([
+      const [baseDoc, ...extraDocs] = await Promise.all([
         baseResponse.clone().json(),
-        extraResponse.json()
+        ...extraResponses.map(response => response.json())
       ]);
 
       const merged = {
         ...baseDoc,
-        version: '0.16.0',
-        menus: [...(baseDoc.menus || []), ...(extraDoc.menus || [])],
-        links: [...(baseDoc.links || []), ...(extraDoc.links || [])]
+        version: '0.18.0',
+        menus: [...(baseDoc.menus || []), ...extraDocs.flatMap(doc => doc.menus || [])],
+        links: [...(baseDoc.links || []), ...extraDocs.flatMap(doc => doc.links || [])]
       };
 
       return new Response(JSON.stringify(merged), {
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Menu-Layer': 'stadtkyll-0.16'
+          'X-HOY-Menu-Layer': 'stadtkyll-0.18'
         }
       });
     } catch (error) {
-      console.warn('HOY 0.16 menu extension unavailable; using previous menu layer.', error);
+      console.warn('HOY 0.18 menu extension unavailable; using previous menu layer.', error);
       return baseResponse;
     }
   };
