@@ -18,7 +18,7 @@ const CENTER = { lat: 50.350553, lng: 6.529506 };
 const MAX_KM = 25.5;
 const DAYS = ['mon','tue','wed','thu','fri','sat','sun'];
 const MOTO_WINDOWS = new Set(['short','half','full']);
-const timeRange = /^(?:[01]\d|2[0-3]):[0-5]\d-(?:[01]\d|2[0-3]):[0-5]\d$|^00:00-24:00$/;
+const timeRange = /^(?:[01]\d|2[0-3]):[0-5]\d-(?:(?:[01]\d|2[0-3]):[0-5]\d|24:00)$/;
 
 function fail(message) {
   console.error(`25-km validation failed: ${message}`);
