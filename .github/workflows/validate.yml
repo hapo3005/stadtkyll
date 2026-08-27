@@ -18,6 +18,7 @@ jobs:
         run: |
           node --check app.js
           node --check events.js
+          node --check menu-layer-v016.js
           node --check menus.js
           node --check photos.js
           node --check quality-v04.js
@@ -38,6 +39,7 @@ jobs:
           python -m json.tool data/menus-25km-a.json > /dev/null
           python -m json.tool data/menus-25km-b.json > /dev/null
           python -m json.tool data/menus-25km-c.json > /dev/null
+          python -m json.tool data/menus-25km-d.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           python -m json.tool data/places-25km.json > /dev/null
           python -m json.tool data/places-25km-more.json > /dev/null
@@ -66,6 +68,7 @@ jobs:
           test -f quality-v09.js
           test -f quality-v012.js
           test -f events.js
+          test -f menu-layer-v016.js
           test -f menus.js
           test -f region25.js
           test -f region25-ui.js
@@ -76,6 +79,7 @@ jobs:
           test -f data/menus-25km-a.json
           test -f data/menus-25km-b.json
           test -f data/menus-25km-c.json
+          test -f data/menus-25km-d.json
           test -f data/places-25km.json
           test -f data/places-25km-more.json
           test -f data/places-25km-extra.json
