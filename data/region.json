@@ -27,6 +27,7 @@
     "timeBoundedMenuRule":"Wochenkarten, Tagesangebote und Event-Menüs erhalten ein explizites Gültigkeitsfenster. HOY darf solche Gerichte außerhalb dieses Fensters nicht als aktuelle Auswahl verwenden; bekannte Betriebsferien oder Schließtage begrenzen das Fenster zusätzlich.",
     "staleMenuRule":"Historische oder nicht ausreichend datierbare Betreiberkarten dürfen als Originalquelle verlinkt werden, aber nicht als aktuelle strukturierte Preisquelle gelten. Der historische oder unklare Stand muss sichtbar dokumentiert sein.",
     "decisionRule":"Kombinierte Menüentscheidungen dürfen nur auf vorhandenen strukturierten Gerichten, verifizierten Anbieter-Tags, gültigen Menüfenstern und quellbasierten Öffnungszeiten beruhen. 'Jetzt offen' bleibt ausdrücklich ein Quellenstatus und kein Live-Signal.",
+    "homepageDecisionRule":"Die Startseite darf automatisch 3–5 konkrete Gerichte empfehlen, muss dabei gültige Menüfenster, Anbieterdiversität, Quellenstatus, Preis und regionale Nähe gemeinsam bewerten. Empfehlungen dürfen nie aus historischen Karten oder außerhalb gültiger Menüzeiträume stammen.",
     "proximityRule":"Nähe wird standardmäßig ab dem Stadtkyll-Mittelpunkt berechnet. Nach expliziter Standortfreigabe darf die aktuelle Browserposition nur im Arbeitsspeicher verwendet werden. Angezeigte Fahrminuten sind eine klar gekennzeichnete Näherung aus Luftlinie und pauschalem Regionalfaktor, keine Routing- oder Navigationszeit.",
     "menuRule":"HOY strukturiert Speisekarten nur aus nachvollziehbaren Betreiber- oder vergleichbar belastbaren Quellen. Preise, Tagesgerichte und Verfügbarkeiten bleiben quellbasiert und werden ohne Betriebssignal nie als live bestätigt dargestellt. Nicht zuverlässig extrahierbare Karten werden als geprüfte Originalkarte verlinkt statt mit geratenen Einzelpreisen aufgefüllt. 'Ab'-Preise werden ausdrücklich als Startpreise gekennzeichnet. Zeitlich begrenzte Karten werden außerhalb ihres Gültigkeitsfensters automatisch nicht mehr in der Gerichtssuche verwendet."
   },
@@ -37,6 +38,10 @@
     "sourceFiles": ["data/menus.json","data/menus-25km-a.json","data/menus-25km-b.json","data/menus-25km-c.json","data/menus-25km-d.json","data/menus-25km-e.json","data/menus-25km-f.json","data/menus-25km-g.json","data/menus-25km-h.json"],
     "dishFirstSearch": true,
     "compoundDecisionFilters": true,
+    "homepageDecisionRecommendations": true,
+    "homepageRecommendationCount": 5,
+    "homepageDiversityByPlace": true,
+    "homepageDaypartAware": true,
     "priceFilters": true,
     "openNowFilter": true,
     "eveningFilter": true,
@@ -56,5 +61,5 @@
     "staleMenuPricesBlocked": true,
     "liveClaimRequiresOperatorSignal": true
   },
-  "version":"0.22.0"
+  "version":"0.23.0"
 }
