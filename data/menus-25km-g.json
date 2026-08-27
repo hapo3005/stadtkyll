@@ -1,0 +1,132 @@
+{
+  "version": "0.20.0",
+  "checkedAt": "2026-08-27",
+  "currency": "EUR",
+  "menus": [
+    {
+      "placeId": "gastro-gerolstein-leos",
+      "placeName": "Leo's Restaurant, Café & Bar",
+      "coverage": "operator-current-offers",
+      "source": {
+        "label": "Hotel Löwenstein · Leo's Betreiberseite",
+        "url": "https://loewenstein-hotel.de/restaurant/",
+        "type": "operator-menu",
+        "checkedAt": "2026-08-27",
+        "note": "Nur aktuell direkt auf der Betreiberseite veröffentlichte Angebots- und Menüpreise werden strukturiert. Die verlinkte PDF-Speisekarte wird nicht automatisch als vollständig strukturiert ausgegeben, weil ihr Inhalt beim Prüfabruf technisch nicht zuverlässig extrahierbar war."
+      },
+      "items": [
+        ["Menü","3-Gang-Mittagsmenü",24.90,"Kennenlern-Angebot; laut Betreiber Donnerstag bis Sonntag von 12:00 bis 15:00","","Do–So 12:00–15:00"],
+        ["Menü","3-Gang-Abendmenü",42.00,"Drei-Gänge-Abendmenü laut aktueller Betreiberseite"]
+      ]
+    },
+    {
+      "placeId": "gastro-blankenheim-forstwalder-hof",
+      "placeName": "Forstwalder Hof",
+      "coverage": "structured-selection",
+      "source": {
+        "label": "Forstwalder Hof · Betreiber-Speisekarte",
+        "url": "https://www.forstwalderhof.de/speisekarte/",
+        "type": "operator-menu",
+        "checkedAt": "2026-08-27",
+        "note": "25 Positionen aus der aktuellen Betreiber-Speisekarte strukturiert. Preise bleiben quellbasiert und sind kein Live-Verfügbarkeitssignal."
+      },
+      "items": [
+        ["Frühstück","Starterfrühstück",4.90],
+        ["Frühstück","Landfrühstück",10.50,"Mit Rührei laut Betreiber 12,90 €"],
+        ["Frühstück","Forstwalder Hof Frühstück",13.50,"Mit Rührei laut Betreiber 15,50 €"],
+        ["Frühstück","Rührei-Frühstück",6.70],
+        ["Frühstück","Belegtes Brötchen",2.80],
+        ["Schnitzel","Schnitzel Wiener Art",13.50],
+        ["Schnitzel","Jägerschnitzel",14.50],
+        ["Schnitzel","Paprikaschnitzel",14.50],
+        ["Schnitzel","Pfefferschnitzel",14.50],
+        ["Schnitzel","Schnitzel Hollandaise",15.00],
+        ["Schnitzel","Putenschnitzel",15.00],
+        ["Hausmannskost","Rindergulasch mit Nudeln",14.50],
+        ["Hausmannskost","Schaschlik mit Pommes",13.50],
+        ["Imbiss","Currywurst mit Pommes",8.50],
+        ["Imbiss","Currywurst mit Brötchen",4.60],
+        ["Imbiss","Leberkäse mit Pommes",8.70],
+        ["Imbiss","Leberkäse mit Brötchen",4.20],
+        ["Regional","Wildfrikadelle mit Brötchen",6.00,"Saisonales Angebot laut Betreiber"],
+        ["Imbiss","Frikadelle mit Brötchen",4.00],
+        ["Imbiss","Bratwurst mit Brötchen",4.00],
+        ["Imbiss","Krakauer mit Brötchen",4.20],
+        ["Suppen","Eintopf des Tages",6.70],
+        ["Suppen","Gulaschsuppe",6.70],
+        ["Imbiss","Schnitzelbrötchen",6.90],
+        ["Regional","Wildpfefferbeißer",2.40]
+      ]
+    },
+    {
+      "placeId": "gastro-blankenheim-pfeffermuehle",
+      "placeName": "Hotel-Restaurant Pfeffermühle",
+      "coverage": "time-bounded-weekly-special",
+      "validFrom": "2026-08-28",
+      "validTo": "2026-08-28",
+      "source": {
+        "label": "Hotel-Restaurant Pfeffermühle · aktuelle Wochenempfehlung",
+        "url": "https://www.pfeffermuehle-uedelhoven.de/",
+        "type": "operator-menu",
+        "checkedAt": "2026-08-27",
+        "note": "Die Betreiberseite bezeichnet die Empfehlung als 24.08.–28.08.2026, weist zugleich aber Betriebsferien bis einschließlich 27.08. aus. HOY aktiviert diese sechs Gerichte deshalb ausschließlich für die Wiedereröffnung am 28.08.2026 und nicht während der Betriebsferien."
+      },
+      "items": [
+        ["Wochenempfehlung","Putensteaks vom Grill",17.50,"Mit Brokkoli, Sauce Hollandaise und Kroketten"],
+        ["Wochenempfehlung","Schweineschnitzel Jäger Art",17.90,"Mit Pommes und Salat"],
+        ["Wochenempfehlung","Schweinesteak vom Grill",17.80,"Mit Rahmbohnen, Speck, Zwiebeln und Schwenkkartoffeln"],
+        ["Wochenempfehlung","Spaghetti Aglio e Olio",10.80],
+        ["Wochenempfehlung","Spaghetti Aglio e Olio mit gebratenen Garnelen",19.20],
+        ["Wochenempfehlung","Bunter Salat mit Schinken und Käsestreifen",12.80,"Mit Hausbrot"]
+      ]
+    },
+    {
+      "placeId": "gastro-hillesheim-milan-stuben",
+      "placeName": "Milan Stuben",
+      "coverage": "time-bounded-event-menu",
+      "validFrom": "2026-09-18",
+      "validTo": "2026-09-18",
+      "source": {
+        "label": "Gerolsteiner Land · DinnerNight Milan Stuben",
+        "url": "https://www.gerolsteiner-land.de/events/zu-tisch-im-gerolsteiner-land-dinner-night-restaurant-milan-stuben",
+        "type": "tourism_official_event_menu",
+        "checkedAt": "2026-08-27",
+        "note": "Offiziell veröffentlichtes Drei-Gänge-Menü für den 18.09.2026 um 19:00 Uhr; 49 € pro Person inklusive Gutschein für einen Golf-Schnupperkurs. Wird außerhalb des Veranstaltungstags nicht in der Gerichtssuche verwendet."
+      },
+      "items": [
+        ["DinnerNight","DinnerNight 3-Gang-Menü",49.00,"Rote-Bete-Carpaccio mit Rucola, Pinienkernen und Parmesan · Schweinefilet mit Pfifferling-Rahmsauce, Spätzle und Salat · warme Waldfrüchte mit Vanilleeis und Sahne; inklusive Golf-Schnupperkurs-Gutschein"]
+      ]
+    },
+    {
+      "placeId": "gastro-hillesheim-olivin",
+      "placeName": "Olivin Café-Restaurant",
+      "coverage": "time-bounded-event-menu",
+      "validFrom": "2026-09-18",
+      "validTo": "2026-09-18",
+      "source": {
+        "label": "Gerolsteiner Land · DinnerNight Olivin",
+        "url": "https://www.gerolsteiner-land.de/en/events/zu-tisch-im-gerolsteiner-land-dinner-night-olivin-cafe-restaurant",
+        "type": "tourism_official_event_menu",
+        "checkedAt": "2026-08-27",
+        "note": "Offiziell veröffentlichtes Drei-Gänge-Menü für den 18.09.2026 um 19:00 Uhr; 39 € pro Person. Wird außerhalb des Veranstaltungstags nicht in der Gerichtssuche verwendet."
+      },
+      "items": [
+        ["DinnerNight","DinnerNight 3-Gang-Menü",39.00,"Gegrilltes griechisches Fladenbrot mit Knoblauchsauce und Tzatziki · Bifteki mit Feta, Kräuterbutter, Steakhouse-Pommes und Beilagensalat · Ravani mit Vanilleeis"]
+      ]
+    }
+  ],
+  "links": [
+    {
+      "placeId": "gastro-blankenheim-landlust",
+      "placeName": "Café Bistro Landlust",
+      "coverage": "operator-offers-no-prices",
+      "source": {
+        "label": "Café Bistro Landlust · Leckereien",
+        "url": "https://www.landlust-blankenheim.de/neue-seiteb820352b",
+        "type": "operator-menu-page",
+        "checkedAt": "2026-08-27",
+        "note": "Betreiberseite mit konkreten Frühstücks-, Bistro- und Dessertbeispielen, jedoch ohne verlässlich veröffentlichte Einzelpreise. HOY verlinkt die Originalseite statt Preise zu erfinden."
+      }
+    }
+  ]
+}
