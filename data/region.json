@@ -22,6 +22,7 @@
     "radiusRule":"Region-2-Erweiterungen müssen innerhalb von 25,5 km Luftlinie um den Stadtkyll-Mittelpunkt liegen. Motorradtouren dürfen als Tagestour den Kernradius verlassen, wenn ihr regionaler Einstieg oder Streckenbezug im HOY-Radius liegt.",
     "weatherRule":"Wettergewichtung nutzt ausschließlich den festen Stadtkyll-Regionspunkt und fragt keinen persönlichen Standort ab.",
     "eventRule":"Große touristisch relevante Veranstaltungen dürfen in einem separaten Event-Radar über den Places-Radius hinaus sichtbar sein. Sie erweitern nicht den validierten 25-km-Ortebestand und müssen mit offizieller Quelle und Prüfdatum geführt werden.",
+    "providerResearchRule":"Vor neuen oder erweiterten Gastro-Profilen werden Betreiberwebsite, relevante Social-Media-Auftritte, aktuelle Öffnungszeiten, Kontaktdaten, Angebote und Speisekarten gründlich geprüft. Nicht auffindbare oder nicht verifizierbare Social-Profile werden als solche dokumentiert statt geraten.",
     "menuRule":"HOY strukturiert Speisekarten nur aus nachvollziehbaren Betreiber- oder vergleichbar belastbaren Quellen. Preise, Tagesgerichte und Verfügbarkeiten bleiben quellbasiert und werden ohne Betriebssignal nie als live bestätigt dargestellt. Nicht zuverlässig extrahierbare Karten werden als geprüfte Originalkarte verlinkt statt mit geratenen Einzelpreisen aufgefüllt. Zeitlich begrenzte Karten werden außerhalb ihres Gültigkeitsfensters automatisch nicht mehr in der Gerichtssuche verwendet."
   },
   "map":{"provider":"OpenStreetMap","interactive":true,"locationPermission":"on-demand"},
@@ -37,5 +38,5 @@
     "structuredOnlyWhenVerified": true,
     "liveClaimRequiresOperatorSignal": true
   },
-  "version":"0.16.0"
+  "version":"0.17.0"
 }
