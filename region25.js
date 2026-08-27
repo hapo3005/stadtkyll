@@ -4,18 +4,19 @@
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
   const LAYERS = [
-    'data/places-25km.json?v=0.20.0',
-    'data/places-25km-more.json?v=0.20.0',
-    'data/places-25km-extra.json?v=0.20.0',
-    'data/places-25km-special.json?v=0.20.0',
-    'data/places-25km-moto-dog.json?v=0.20.0',
-    'data/places-25km-depth.json?v=0.20.0',
-    'data/places-25km-v011.json?v=0.20.0',
-    'data/places-25km-v012.json?v=0.20.0',
-    'data/places-25km-v016.json?v=0.20.0',
-    'data/places-25km-v018.json?v=0.20.0',
-    'data/places-25km-v019.json?v=0.20.0',
-    'data/places-25km-v020.json?v=0.20.0'
+    'data/places-25km.json?v=0.21.0',
+    'data/places-25km-more.json?v=0.21.0',
+    'data/places-25km-extra.json?v=0.21.0',
+    'data/places-25km-special.json?v=0.21.0',
+    'data/places-25km-moto-dog.json?v=0.21.0',
+    'data/places-25km-depth.json?v=0.21.0',
+    'data/places-25km-v011.json?v=0.21.0',
+    'data/places-25km-v012.json?v=0.21.0',
+    'data/places-25km-v016.json?v=0.21.0',
+    'data/places-25km-v018.json?v=0.21.0',
+    'data/places-25km-v019.json?v=0.21.0',
+    'data/places-25km-v020.json?v=0.21.0',
+    'data/places-25km-v021.json?v=0.21.0'
   ];
   const DOG_FRIENDLY_NAMES = [
     'bielenhof-alm','forsthaus kasselburg','restaurant woods','bistro am see','la sirena','woodstock','restaurant bei cemo','kronenburger see','eifel-blick hasenberg','eifel-blick steffeln','steffelner drees','naturkundemuseum gerolstein','kurpark stadtkyll','gerolsteiner dolomiten','erwins brauhaus','birgeler hof'
@@ -55,7 +56,7 @@
         ids.add(place.id);
         return true;
       }).map(addDogContext).map(addMotorcycleContext);
-      return new Response(JSON.stringify(merged), {status:200,headers:{'Content-Type':'application/json; charset=utf-8','X-HOY-Region-Layer':'stadtkyll-25km-v020'}});
+      return new Response(JSON.stringify(merged), {status:200,headers:{'Content-Type':'application/json; charset=utf-8','X-HOY-Region-Layer':'stadtkyll-25km-v021'}});
     } catch (error) {
       console.warn('HOY 25-km layers unavailable; using Stadtkyll core only.', error);
       return baseResponse;
