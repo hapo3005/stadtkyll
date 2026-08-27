@@ -13,7 +13,8 @@ const placeFiles = [
   'data/places-25km-v016.json',
   'data/places-25km-v018.json',
   'data/places-25km-v019.json',
-  'data/places-25km-v020.json'
+  'data/places-25km-v020.json',
+  'data/places-25km-v021.json'
 ];
 const menuFiles = [
   'data/menus.json',
@@ -23,7 +24,8 @@ const menuFiles = [
   'data/menus-25km-d.json',
   'data/menus-25km-e.json',
   'data/menus-25km-f.json',
-  'data/menus-25km-g.json'
+  'data/menus-25km-g.json',
+  'data/menus-25km-h.json'
 ];
 
 const readJson = file => JSON.parse(fs.readFileSync(file,'utf8'));
@@ -80,6 +82,9 @@ for (const doc of docs) {
     if (seenMenus.has(link.placeId)) errors.push(`menu link duplicates structured menu: ${link.placeId}`);
     if (!placeIds.has(link.placeId)) errors.push(`menu link references unknown place: ${link.placeId}`);
     if (!link.source?.url || !link.source?.label || !link.source?.checkedAt) errors.push(`menu link source incomplete: ${link.placeId}`);
+    if (link.coverage === 'stale-operator-menu-page' && !String(link.source?.note || '').toLowerCase().includes('histor')) {
+      errors.push(`stale menu link requires explicit historical warning: ${link.placeId}`);
+    }
   }
 }
 
