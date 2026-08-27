@@ -28,7 +28,7 @@
   "eventRadar":{"enabled":true,"planningHorizon":"long-range","allowBeyondDiscoveryRadius":true,"primaryRegionalMagnet":"Nürburgring","sourceFile":"data/events.json"},
   "menuLayer": {
     "enabled": true,
-    "sourceFiles": ["data/menus.json","data/menus-25km-a.json","data/menus-25km-b.json","data/menus-25km-c.json"],
+    "sourceFiles": ["data/menus.json","data/menus-25km-a.json","data/menus-25km-b.json","data/menus-25km-c.json","data/menus-25km-d.json"],
     "dishFirstSearch": true,
     "priceFilters": true,
     "dailySpecials": true,
@@ -37,5 +37,5 @@
     "structuredOnlyWhenVerified": true,
     "liveClaimRequiresOperatorSignal": true
   },
-  "version":"0.15.0"
+  "version":"0.16.0"
 }
