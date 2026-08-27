@@ -40,6 +40,7 @@ jobs:
           python -m json.tool data/menus-25km-b.json > /dev/null
           python -m json.tool data/menus-25km-c.json > /dev/null
           python -m json.tool data/menus-25km-d.json > /dev/null
+          python -m json.tool data/menus-25km-e.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           python -m json.tool data/places-25km.json > /dev/null
           python -m json.tool data/places-25km-more.json > /dev/null
@@ -50,6 +51,7 @@ jobs:
           python -m json.tool data/places-25km-v011.json > /dev/null
           python -m json.tool data/places-25km-v012.json > /dev/null
           python -m json.tool data/places-25km-v016.json > /dev/null
+          python -m json.tool data/places-25km-v018.json > /dev/null
       - name: Validate regional data contracts
         run: |
           node scripts/validate-data.mjs
@@ -81,6 +83,7 @@ jobs:
           test -f data/menus-25km-b.json
           test -f data/menus-25km-c.json
           test -f data/menus-25km-d.json
+          test -f data/menus-25km-e.json
           test -f data/places-25km.json
           test -f data/places-25km-more.json
           test -f data/places-25km-extra.json
@@ -90,5 +93,6 @@ jobs:
           test -f data/places-25km-v011.json
           test -f data/places-25km-v012.json
           test -f data/places-25km-v016.json
+          test -f data/places-25km-v018.json
           test -f manifest.webmanifest
           test -f icon.svg
