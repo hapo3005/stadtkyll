@@ -31,11 +31,13 @@ jobs:
           node --check region25-photos.js
           node --check scripts/validate-data.mjs
           node --check scripts/validate-25km.mjs
+          node --check scripts/validate-events.mjs
           node --check scripts/validate-menus.mjs
       - name: Validate JSON syntax
         run: |
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/events.json > /dev/null
+          python -m json.tool data/events-local.json > /dev/null
           python -m json.tool data/menus.json > /dev/null
           python -m json.tool data/menus-25km-a.json > /dev/null
           python -m json.tool data/menus-25km-b.json > /dev/null
@@ -63,6 +65,7 @@ jobs:
         run: |
           node scripts/validate-data.mjs
           node scripts/validate-25km.mjs
+          node scripts/validate-events.mjs
           node scripts/validate-menus.mjs
       - name: Verify required files
         run: |
@@ -85,8 +88,10 @@ jobs:
           test -f region25.js
           test -f region25-ui.js
           test -f region25-photos.js
+          test -f scripts/validate-events.mjs
           test -f scripts/validate-menus.mjs
           test -f data/events.json
+          test -f data/events-local.json
           test -f data/menus.json
           test -f data/menus-25km-a.json
           test -f data/menus-25km-b.json
