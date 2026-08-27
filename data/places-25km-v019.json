@@ -1,0 +1,159 @@
+[
+  {
+    "id": "gastro-gerolstein-athen",
+    "vertical": "gastro",
+    "name": "Restaurant Athen",
+    "category": "Griechisch · Restaurant",
+    "town": "Gerolstein",
+    "address": "Hauptstraße 61, 54568 Gerolstein",
+    "summary": "Griechisches Restaurant in Gerolstein mit klassischer mediterraner Küche; HOY führt ausschließlich die offiziell zu Gerolstein verifizierten Angaben.",
+    "tags": ["griechisch", "restaurant", "mittagessen", "abendessen"],
+    "location": {"lat": 50.222120, "lng": 6.665765},
+    "weeklyHours": {
+      "mon": [],
+      "tue": ["12:00-14:30", "17:30-21:30"],
+      "wed": ["12:00-14:30", "17:30-21:30"],
+      "thu": [],
+      "fri": ["12:00-14:30", "17:30-21:30"],
+      "sat": ["12:00-14:30", "17:30-21:30"],
+      "sun": ["12:00-21:00"]
+    },
+    "source": {
+      "label": "Restaurant Athen Gerolstein · Rheinland-Pfalz Tourismus",
+      "url": "https://www.rlp-tourismus.com/en/infosystem/gerolstein-restaurant-athen/poi.html",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizielle Tourismusquelle mit Adresse, Telefon, Facebook-Link und Öffnungszeiten. Ein im Web gefundenes DISH-Menü eines gleichnamigen Restaurants wurde nach Adressprüfung ausgeschlossen, weil es zu Schneverdingen gehört."
+    },
+    "contact": {"phone": "+49 6591 9492366"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "https://www.facebook.com/pg/Restaurant-ATHEN-Gerolstein-120582952678567/",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "identity-protected-no-structured-menu",
+      "note": "Keine aktuelle Preiskarte wurde strukturiert, weil gefundene gleichnamige Online-Menüs nicht eindeutig dem Gerolsteiner Betrieb zugeordnet werden konnten."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-gerolstein-pizza-express",
+    "vertical": "gastro",
+    "name": "Pizza Express Gerolstein",
+    "category": "Pizza · Döner · Pasta · Lieferservice",
+    "town": "Gerolstein",
+    "address": "Bahnhofstraße 7, 54568 Gerolstein",
+    "summary": "Lieferservice mit eigener Betreiberwebsite und Betreiber-App für Pizza, Döner, Pasta, Schnitzel, Falafel und weitere Kategorien.",
+    "tags": ["pizza", "doener", "pasta", "lieferservice", "takeaway", "mittagessen", "abendessen"],
+    "location": {"lat": 50.223202, "lng": 6.661128},
+    "weeklyHours": {
+      "mon": ["10:00-14:00", "16:00-21:45"],
+      "tue": [],
+      "wed": ["10:00-14:00", "16:00-21:45"],
+      "thu": ["10:00-14:00", "16:00-21:45"],
+      "fri": ["10:00-14:00", "16:00-21:45"],
+      "sat": ["16:00-21:45"],
+      "sun": ["10:00-14:00", "16:00-21:45"]
+    },
+    "source": {
+      "label": "Pizza Express Gerolstein · Betreiberwebsite / Eifel Tourismus",
+      "url": "https://pizzaexpress-gerolstein.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberwebsite und Betreiber-App wurden mit der offiziellen Tourismuszuordnung Bahnhofstraße 7 abgeglichen. Öffnungszeiten bleiben quellbasiert und sind kein Live-Signal."
+    },
+    "menuSource": {
+      "label": "Pizza Express Gerolstein · Betreiber-App",
+      "url": "https://app.pizzaexpress-gerolstein.de/",
+      "checkedAt": "2026-08-27"
+    },
+    "contact": {"phone": "+49 6591 985230"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-gerolstein-tinos",
+    "vertical": "gastro",
+    "name": "Tino's Grill & Burger",
+    "category": "Burger · Grill · Fingerfood",
+    "town": "Gerolstein",
+    "address": "Sarresdorfer Straße 62, 54568 Gerolstein",
+    "summary": "Hausgemachte Burger, Grillgerichte und Fingerfood mit Drive-in-Abholmöglichkeit.",
+    "tags": ["burger", "grill", "fingerfood", "takeaway", "mittagessen", "abendessen"],
+    "location": {"lat": 50.224343, "lng": 6.644631},
+    "weeklyHours": {
+      "mon": ["11:30-15:00"],
+      "tue": [],
+      "wed": [],
+      "thu": ["11:30-20:00"],
+      "fri": ["11:30-20:00"],
+      "sat": ["11:30-20:00"],
+      "sun": ["11:30-20:00"]
+    },
+    "source": {
+      "label": "Tino's Grill & Burger · Rheinland-Pfalz Tourismus",
+      "url": "https://www.rlp-tourismus.com/en/infosystem/gerolstein-tinos-grill-burger/poi.html",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizielle Tourismusquelle nennt den Facebook-Auftritt, Adresse, Telefon und Öffnungszeiten. Abweichende Drittanbieterzeiten werden nicht übernommen."
+    },
+    "contact": {"phone": "+49 6591 980773"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "https://de-de.facebook.com/tinosgerolstein/",
+      "instagram": "Drittanbieter verweist auf @tinosgrillandburger; nicht als Betreiberkanal verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "no-reliable-operator-menu",
+      "note": "Keine belastbare aktuelle Betreiber-Preiskarte gefunden; Drittanbieterpreise werden nicht strukturiert."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-juenkerath-der-stier",
+    "vertical": "gastro",
+    "name": "Der Stier Burger BBQ Grill",
+    "category": "Burger · BBQ · Grill",
+    "town": "Jünkerath",
+    "address": "Kölner Straße 17, 54584 Jünkerath",
+    "summary": "Burger mit Rindfleisch oder Chicken, hausgemachten Saucen und Pommes; zentral in Jünkerath gelegen.",
+    "tags": ["burger", "bbq", "grill", "mittagessen", "abendessen"],
+    "location": {"lat": 50.346680, "lng": 6.572354},
+    "weeklyHours": {
+      "mon": ["11:30-21:00"],
+      "tue": [],
+      "wed": ["11:30-21:00"],
+      "thu": ["11:30-21:00"],
+      "fri": ["11:30-22:00"],
+      "sat": ["11:30-22:00"],
+      "sun": ["11:30-20:00"]
+    },
+    "scheduleValidFrom": "2026-01-01",
+    "scheduleValidTo": "2030-12-31",
+    "source": {
+      "label": "Der Stier Burger BBQ Grill · Gerolsteiner Land / Eifel Tourismus",
+      "url": "https://www.gerolsteiner-land.de/gastro/juenkerath-der-stier-burger-bbq-grill",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizielle Tourismusquelle mit veröffentlichtem Gültigkeitsfenster 2026–2030; Outdooractive bestätigt die Koordinaten."
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "no-reliable-operator-menu",
+      "note": "Aktuell keine belastbare digitale Betreiber-Preiskarte gefunden."
+    },
+    "dynamicStatus": "source-based"
+  }
+]
