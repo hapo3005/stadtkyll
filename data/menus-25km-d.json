@@ -1,0 +1,52 @@
+{
+  "version": "0.16.0",
+  "checkedAt": "2026-08-27",
+  "currency": "EUR",
+  "menus": [],
+  "links": [
+    {
+      "placeId": "gastro-hillesheim-cafe-sherlock",
+      "placeName": "Café Sherlock",
+      "source": {
+        "label": "Café Sherlock · Betreiber-Speisekarte",
+        "url": "https://kriminalhaus.de/images/Speisekarte_Cafe_Sherlock.pdf",
+        "type": "operator-menu-link",
+        "checkedAt": "2026-08-27",
+        "note": "Die öffentlich referenzierte Speisekarte führt direkt auf die Betreiber-Domain kriminalhaus.de. HOY verlinkt die Originaldatei, übernimmt aber keine alten Drittanbieterpreise in die Gerichtssuche."
+      }
+    },
+    {
+      "placeId": "gastro-hillesheim-lo-stivale",
+      "placeName": "Ristorante Lo Stivale",
+      "source": {
+        "label": "Ristorante Lo Stivale · Betreiber-Speisekarte",
+        "url": "https://ristorante-pizzeria-lo-stivale-hillesheim.eatbu.com/?lang=de",
+        "type": "operator-menu-link",
+        "checkedAt": "2026-08-27",
+        "note": "Die aktuelle Betreiberseite weist ausdrücklich 'Unsere Speisekarte' aus. Einzelgerichte und Preise werden dort derzeit nicht zuverlässig als strukturierter Text ausgeliefert, deshalb Originalkarte statt geratener Preise."
+      }
+    },
+    {
+      "placeId": "gastro-oberbettingen-ob-dr-brueck",
+      "placeName": "Restaurant Ob dr Brück",
+      "source": {
+        "label": "Restaurant Ob dr Brück · Betreiber-Speisekarte",
+        "url": "https://ob-dr-brueck.jimdosite.com/restaurant/",
+        "type": "operator-menu-link",
+        "checkedAt": "2026-08-27",
+        "note": "Die Betreiberseite führt ausdrücklich 'Unsere Speisekarte'. Da die konkrete Karte technisch nicht zuverlässig als strukturierter Text extrahiert wird, verlinkt HOY die Originalquelle ohne Preise zu erfinden."
+      }
+    },
+    {
+      "placeId": "gastro-juenkerath-mersin",
+      "placeName": "Kebap-Pizzeria Mersin",
+      "source": {
+        "label": "Kebap-Pizzeria Mersin · Betreiber-Webseite",
+        "url": "https://kebap-pizzeria-mersin-junkerath.business.site/",
+        "type": "operator-menu-link",
+        "checkedAt": "2026-08-27",
+        "note": "Eifel Tourismus führt diese Betreiber-Webseite als offiziellen Webauftritt der Kebap-Pizzeria. Die Speisekarte ist dort bzw. über den Betreiberauftritt auffindbar; HOY übernimmt keine Nutzerfoto- oder Drittanbieterpreise."
+      }
+    }
+  ]
+}
