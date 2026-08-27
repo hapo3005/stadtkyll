@@ -34,6 +34,7 @@ jobs:
           node --check region25.js
           node --check region25-ui.js
           node --check region25-photos.js
+          node --check scripts/validate-menus.mjs
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/events.json > /dev/null
           python -m json.tool data/menus.json > /dev/null
@@ -48,6 +49,7 @@ jobs:
           python -m json.tool data/places-25km-v012.json > /dev/null
           node scripts/validate-data.mjs
           node scripts/validate-25km.mjs
+          node scripts/validate-menus.mjs
 
       - name: Prepare static site
         run: |
