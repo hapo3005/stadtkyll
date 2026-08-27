@@ -20,6 +20,7 @@ jobs:
           node --check events.js
           node --check menu-layer-v016.js
           node --check menus.js
+          node --check home-decide.js
           node --check photos.js
           node --check quality-v04.js
           node --check quality-v08.js
@@ -71,6 +72,7 @@ jobs:
           test -f photos.css
           test -f events.css
           test -f menus.css
+          test -f home-decide.css
           test -f quality-v04.css
           test -f quality-v012.css
           test -f quality-v08.js
@@ -79,6 +81,7 @@ jobs:
           test -f events.js
           test -f menu-layer-v016.js
           test -f menus.js
+          test -f home-decide.js
           test -f region25.js
           test -f region25-ui.js
           test -f region25-photos.js
