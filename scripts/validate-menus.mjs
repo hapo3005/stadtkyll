@@ -10,14 +10,16 @@ const placeFiles = [
   'data/places-25km-depth.json',
   'data/places-25km-v011.json',
   'data/places-25km-v012.json',
-  'data/places-25km-v016.json'
+  'data/places-25km-v016.json',
+  'data/places-25km-v018.json'
 ];
 const menuFiles = [
   'data/menus.json',
   'data/menus-25km-a.json',
   'data/menus-25km-b.json',
   'data/menus-25km-c.json',
-  'data/menus-25km-d.json'
+  'data/menus-25km-d.json',
+  'data/menus-25km-e.json'
 ];
 
 const readJson = file => JSON.parse(fs.readFileSync(file,'utf8'));
