@@ -4,14 +4,15 @@
   const nativeFetch = window.fetch.bind(window);
   const PLACES_REQUEST = /(?:^|\/)data\/places\.json(?:[?#]|$)/;
   const LAYERS = [
-    'data/places-25km.json?v=0.12.0',
-    'data/places-25km-more.json?v=0.12.0',
-    'data/places-25km-extra.json?v=0.12.0',
-    'data/places-25km-special.json?v=0.12.0',
-    'data/places-25km-moto-dog.json?v=0.12.0',
-    'data/places-25km-depth.json?v=0.12.0',
-    'data/places-25km-v011.json?v=0.12.0',
-    'data/places-25km-v012.json?v=0.12.0'
+    'data/places-25km.json?v=0.17.0',
+    'data/places-25km-more.json?v=0.17.0',
+    'data/places-25km-extra.json?v=0.17.0',
+    'data/places-25km-special.json?v=0.17.0',
+    'data/places-25km-moto-dog.json?v=0.17.0',
+    'data/places-25km-depth.json?v=0.17.0',
+    'data/places-25km-v011.json?v=0.17.0',
+    'data/places-25km-v012.json?v=0.17.0',
+    'data/places-25km-v016.json?v=0.17.0'
   ];
   const DOG_FRIENDLY_NAMES = [
     'bielenhof-alm',
@@ -131,7 +132,7 @@
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Region-Layer': 'stadtkyll-25km-v012'
+          'X-HOY-Region-Layer': 'stadtkyll-25km-v017'
         }
       });
     } catch (error) {
