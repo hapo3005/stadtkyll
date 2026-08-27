@@ -1,0 +1,65 @@
+{
+  "version": "0.21.0",
+  "checkedAt": "2026-08-27",
+  "currency": "EUR",
+  "menus": [
+    {
+      "placeId": "gastro-blankenheim-beros",
+      "placeName": "Bero's Pizzeria & Grillhouse",
+      "coverage": "operator-order-system-structured-selection",
+      "source": {
+        "label": "Bero's Restaurant · Betreiber-Bestellsystem",
+        "url": "https://beros-restaurant.order.app.hd.digital/menus",
+        "type": "operator-menu",
+        "checkedAt": "2026-08-27",
+        "note": "134 aktuelle Preispositionen aus dem Betreiber-Bestellsystem strukturiert. Größenvarianten von Pizza werden, soweit möglich, in einer Position zusammengefasst, um die HOY-Suche nicht mit nahezu identischen Duplikaten zu überladen. Preise sind quellbasiert, nicht live garantiert."
+      },
+      "items": [
+        ["Salat","Bauernsalat",11.5],["Salat","Mozzarella-Salat",11.0,"","vegetarisch"],["Salat","Thunfischsalat",12.5],["Salat","Salat Capricciosa",14.5],["Salat","Vegetaria Salat",14.0,"","vegetarisch"],["Salat","Salat Hawaii",14.0],["Salat","Krabben Salat",15.0],["Salat","Salat Chicken",15.0],["Salat","Haiti Salat",15.0],["Salat","Greek Salat",14.0,"","vegetarisch"],["Salat","Steak Salat",16.5],
+        ["Pizza","Pizza Margherita",9.5,"Ø30 cm; Jumbo Ø36 cm: 11.00 €","vegetarisch"],["Pizza","Pizza Funghi",10.5,"Ø30 cm; Jumbo Ø36 cm: 13.50 €","vegetarisch"],["Pizza","Pizza Salami",11.0,"Ø30 cm; Jumbo Ø36 cm: 14.00 €"],["Pizza","Pizza Prosciutto",11.5,"Ø30 cm; Jumbo Ø36 cm: 14.00 €"],["Pizza","Pizza Tonno",11.5,"Ø30 cm; Jumbo Ø36 cm: 14.00 €"],["Pizza","Vegane Pizza",12.0,"Ø30 cm; Jumbo Ø36 cm: 15.50 €","vegan"],["Pizza","Pizza Artischocken",11.5,"Ø30 cm; Jumbo Ø36 cm: 14.00 €","vegetarisch"],["Pizza","Pizza Mozzarella",12.0,"Ø30 cm; Jumbo Ø36 cm: 14.00 €","vegetarisch"],["Pizza","Pizza Hawaii",12.0,"Ø30 cm; Jumbo Ø36 cm: 15.50 €"],["Pizza","Pizza Roma",12.0,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Popeye",12.0,"Ø30 cm; Jumbo Ø36 cm: 15.50 €","vegetarisch"],["Pizza","Pizza Inferno (scharf)",12.0,"Ø30 cm; Jumbo Ø36 cm: 15.50 €"],["Pizza","Pizza Knoblauchwurst",12.5,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Aloa",12.0,"Ø30 cm; Jumbo Ø36 cm: 15.50 €"],["Pizza","Pizza Regina",12.0,"Ø30 cm; Jumbo Ø36 cm: 15.50 €"],["Pizza","Pizza Frutti di Mare",13.0,"Ø30 cm; Jumbo Ø36 cm: 16.00 €"],["Pizza","Pizza Ligure",12.5,"Ø30 cm; Jumbo Ø36 cm: 15.50 €"],["Pizza","Pizza Gamberetti",13.0,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Quattro Formaggi",13.0,"Ø30 cm; Jumbo Ø36 cm: 16.50 €","vegetarisch"],["Pizza","Pizza Contutta",14.0,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Vegetarische Pizza",13.0,"Ø30 cm; Jumbo Ø36 cm: 16.50 €","vegetarisch"],["Pizza","Pizza Döner",14.5,"Ø30 cm; Jumbo Ø36 cm: 17.50 €"],["Pizza","Pizza Royal",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Texas",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Alaska",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Kentucky",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Haus Speciale",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.50 €"],["Pizza","Pizza Romana",14.5,"Ø30 cm; Jumbo Ø36 cm: 17.50 €"],["Pizza","Pizza ala Chef",14.5,"Ø30 cm; Jumbo Ø36 cm: 18.00 €"],["Pizza","Pizza Contadina",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.00 €","vegetarisch"],["Pizza","Pizza Quattro Stagioni",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.00 €"],["Pizza","Pizza Napoli",13.5,"Ø30 cm; Jumbo Ø36 cm: 16.00 €"],["Pizza","Pizza Steak",15.5,"Ø30 cm; Jumbo Ø36 cm: 19.00 €"],["Pizza","Pizza Beros",15.5,"Ø30 cm; Jumbo Ø36 cm: 19.00 €"],["Pizza","Eifel Pizza",14.5,"Ø30 cm; Jumbo Ø36 cm: 19.00 €"],["Pizza","Pizza Salat",13.0,"Ø30 cm; Jumbo Ø36 cm: 15.00 €","vegetarisch"],["Pizza","Calzone (Ø26 cm)",14.5],["Pizza","Calzone Drehspieß Katmer (Ø26 cm)",14.5],["Pizza","Pizza Margherita Ø26 cm",8.0,"","vegetarisch"],["Familienpizza","Familienpizza Margherita 60×40 cm",30.0,"","vegetarisch"],
+        ["American Pizza","American Pizza Texas Barbecue",13.5,"Ø30 cm; Jumbo Ø36 cm: 17.50 €"],["American Pizza","American Pizza Alaska Barbecue",13.5,"Ø30 cm; Jumbo Ø36 cm: 17.50 €"],["American Pizza","American Pizza Kentucky Barbecue",13.5,"Ø30 cm; Jumbo Ø36 cm: 17.50 €"],
+        ["Pizzabrötchen","Pizzabrötchen mit Kräutercreme",5.5,"","vegetarisch"],["Pizzabrötchen","Pizzabrötchen gefüllt mit Salami und Gouda",8.9],["Pizzabrötchen","Pizzabrötchen gefüllt mit Hinterschinken und Gouda",8.9],["Pizzabrötchen","Pizzabrötchen gefüllt mit Thunfisch und Gouda",8.9],["Pizzabrötchen","Pizzabrötchen gefüllt mit Spinat und Weichkäse",8.9,"","vegetarisch"],["Pizzabrötchen","Pizzabrötchen gefüllt mit Dönerfleisch und Gouda",9.9],
+        ["Lahmacun","Lahmacun",7.5],["Lahmacun","Lahmacun mit Dönerfleisch",10.0],["Lahmacun","Lahmacun mit Dönerfleisch, Weichkäse und Jalapenos",10.5],
+        ["Döner","Eifeler Döner",9.5],["Döner","Döner Kebab",9.0],["Döner","Döner vegetarisch",7.5,"","vegetarisch"],["Döner","Pomm-Döner",9.0],["Döner","Dönerteller mit Salat, Zwiebelringen und Tzatziki",13.5],["Döner","Dönerteller mit Pommes, Zwiebelringen und Tzatziki",13.5],["Döner","Dönerteller Komplett",16.0],["Döner","Dönerfleisch Portion",10.0],["Döner","Überbackener Döner",15.5],["Döner","Überbackener Döner Hawaii",16.5],["Döner","Döner Dürüm",10.0],["Döner","Dönerfleisch Portion Groß",14.5],["Döner","Chili Cheese Döner (Tasche)",9.5],
+        ["Grill","Argentina Roastbeef-Steak",24.9],["Grill","Lammkoteletts (4 Stück)",23.9],["Grill","BBQ Grill Combination",31.9],["Grill","Gegrillte Hähnchenbrustfilets (ca. 300 g)",18.9],["Grill","Lamm-Steak 300 g",22.9],
+        ["Schnitzel","Schnitzel Wiener Art",12.0],["Schnitzel","Jägerschnitzel",14.5],["Schnitzel","Paprika-Schnitzel",14.5],["Schnitzel","Schnitzel Champignons",15.5],["Schnitzel","Schnitzel Pfeffer",14.5],["Schnitzel","Schnitzel Hollandaise",15.0],["Schnitzel","Schnitzel Hawaii",16.0],["Schnitzel","Schnitzel Spinat",16.0],["Schnitzel","Schnitzel mit gebratenen Zwiebeln und Champignons",15.0],["Schnitzel","Schnitzel Diavolo",15.5],["Schnitzel","Schnitzel Spargel",16.0],
+        ["Burger","Eifel Burger",15.0],["Burger","Sucuk Burger",15.0],["Burger","Basic Burger 2",14.0],["Burger","Giant Double Burger",18.0],["Burger","Big Hardcore Burger",27.0],["Burger","Bacon Burger",15.0],["Burger","Chickenburger",15.0],["Burger","Burger Deluxe",15.0],["Burger","Homestyle-Burger",15.0],["Burger","Veggie-Burger",15.0,"","vegetarisch"],["Burger","Hawaii-Burger",15.0],["Burger","Kebap Burger",15.0],["Burger","DER EINZIG WAHRE",46.0],
+        ["Pasta","Pasta Napoli",10.0,"","vegetarisch"],["Pasta","Pasta Funghi",13.0,"","vegetarisch"],["Pasta","Pasta Broccoli",14.0,"","vegetarisch"],["Pasta","Pasta alla Panna",14.0],["Pasta","Pasta Carbonara",14.5],["Pasta","Lasagne",13.0],["Pasta","Pasta Frutti di Mare",14.5],["Pasta","Pasta Arrabbiata",14.0,"","vegetarisch"],["Pasta","Pasta Eccole",14.5],["Pasta","Pasta Drehspieß",15.0],["Pasta","Pasta Haus Speciale",15.5],["Pasta","Pasta La Casa Speciale",15.0],
+        ["Auflauf","Kartoffelgratin Royal",14.5],["Auflauf","Kartoffelgratin Haus Speciale",16.5],["Auflauf","Kartoffelgratin Bero's",14.5,"","vegetarisch"],
+        ["Wrap","Chicken Wrap",10.4],["Wrap","Vegetaria Wrap",10.4,"","vegetarisch"],["Wrap","Tuna Wrap",10.4],
+        ["Wurst","Bratwurst mit Pommes",8.5],["Wurst","Currywurst mit Pommes",10.0],["Wurst","Jägerwurst mit Pommes",10.5],["Wurst","Paprikawurst mit Pommes",10.5],["Wurst","Bratwurst ohne Pommes",6.0],
+        ["Fingerfood","Pommes frites",4.0,"","vegetarisch"],["Fingerfood","Folienkartoffel mit Sour Cream",6.0,"","vegetarisch"],["Fingerfood","Mozzarella-Sticks (6 Stück)",6.5,"","vegetarisch"],["Fingerfood","Bratkartoffeln",4.5,"","vegetarisch"],["Fingerfood","Chicken Nuggets",6.5],["Fingerfood","Zwiebelringe paniert (6 Stück)",7.0,"","vegetarisch"]
+      ]
+    },
+    {
+      "placeId": "gastro-dahlem-eifelpark-restaurant",
+      "placeName": "Eifelpark Restaurant Kronenburger See",
+      "coverage": "operator-menu-and-breakfast",
+      "source": {
+        "label": "Eifelpark Restaurant · Betreiber-Speise- und Frühstückskarte",
+        "url": "https://eifelpark-restaurant.de/speisen-und-fruehstueck/",
+        "type": "operator-menu",
+        "checkedAt": "2026-08-27",
+        "note": "39 aktuelle Positionen aus Betreiber-Speisekarte und Frühstückskarte strukturiert. Betreiberseite © 2026, täglich 08:00–20:00. Preise bleiben quellbasiert."
+      },
+      "items": [
+        ["Frühstück","Kleines Frühstück",8.9,"2 Brötchen, Käse, Wurst, Butter, Marmelade, Honig/Nutella + 1 Heißgetränk"],["Frühstück","Französisches Frühstück",13.9,"Croissant, Schokocroissant, 2 Brötchen, Aufstriche, Käse, Wurst, Müsli + 1 Heißgetränk"],["Frühstück","Verwöhnfrühstück für 2",34.9,"4 Brötchen, 2 Croissants, Aufstriche, Käse/Wurst, Lachs, Rührei, Joghurt, Müsli, Orangensaft + Heißgetränke"],["Frühstück","Portion Rührei mit Speck",3.0],["Frühstück","Hartgekochtes Ei",1.5],
+        ["Speisekarte","Kleiner Salatteller",4.9,"","vegetarisch"],["Speisekarte","Großer gemischter Salatteller",9.5,"","vegetarisch"],["Speisekarte","Tomatensuppe mit Sahnehaube",7.5,"","vegetarisch"],["Speisekarte","Eifeler Kartoffelsuppe",7.5],["Speisekarte","Rindercarpaccio",13.9],["Speisekarte","Schweineschnitzel Wiener Art",16.9],["Speisekarte","Schweineschnitzel Champignon-Rahm",19.9],["Speisekarte","Pusztaschnitzel",19.9],["Speisekarte","Schweineschnitzel Hawaii",19.9],["Speisekarte","Grillteller",24.9],["Speisekarte","Rumpsteak mit Kräuterbutter & Pommes",30.9],["Speisekarte","Rumpsteak mit Zwiebeln, Champignons & Pommes",32.9],["Speisekarte","Ofenlachs in cremiger Sauce mit Spinat, Zitrone & Reis",20.9],["Speisekarte","Kronenburger mit Pommes",15.9],["Speisekarte","Eifelburger mit Pommes",15.9],["Speisekarte","Veggieburger mit Pommes",15.9,"","vegetarisch"],["Speisekarte","Walnuss-Pilz-Bratling mit gebratenen Birnenscheiben & Rotkohl",15.9,"","vegetarisch"],["Speisekarte","Gnocchi mit Cocktailtomaten in Spinat-Sahnesauce",13.9,"","vegetarisch"],["Speisekarte","Ofenkartoffel an Salatbouquet mit Sour Cream",11.9,"","vegetarisch"],["Speisekarte","Schupfnudeln mit mediterranem Gemüse in Knoblauchöl",13.9,"","vegetarisch"],["Speisekarte","Gemüse-Curry mit Kokosmilch und Reis",15.9,"","vegan"],["Speisekarte","Flammkuchen Eifelgold",13.9],["Speisekarte","Flammkuchen Landlust",13.9,"","vegetarisch"],["Speisekarte","Flammkuchen mit Lachs, Rucola & Pesto",14.9],["Speisekarte","Pizza Margherita",14.9,"","vegetarisch"],["Speisekarte","Pizza Salami",14.9],["Speisekarte","Pizza Tonno",14.9],["Speisekarte","Pizza Prosciutto",14.9],["Speisekarte","Pizza Funghi",14.9,"","vegetarisch"],["Speisekarte","Pizza Vegetarisch",14.9,"","vegetarisch"],["Speisekarte","Pasta mit Tomatensauce",12.9,"","vegetarisch"],["Speisekarte","Pasta mit Bolognesesauce",13.4],["Speisekarte","Pasta in Hackfleisch-Béchamelsauce mit Peperoni, Schafskäse & Oliven",17.9],["Speisekarte","Pasta in Tomaten-Rahmsauce mit Lachs & Krabben",21.9]
+      ]
+    }
+  ],
+  "links": [
+    {
+      "placeId": "gastro-blankenheim-cafe-kloesterchen",
+      "placeName": "Café Klösterchen",
+      "coverage": "stale-operator-menu-page",
+      "source": {
+        "label": "Café Klösterchen · Betreiber-Speise- und Getränkekarte",
+        "url": "https://cafe-kloesterchen.de/speisen-und-getraenke/",
+        "type": "operator-menu-page",
+        "checkedAt": "2026-08-27",
+        "note": "Die Betreiberseite ist weiterhin erreichbar und zeigt aktuelle Öffnungszeiten, trägt im Seiteninhalt jedoch einen historischen Menüstand aus 2019. HOY verlinkt sie als Originalquelle, übernimmt die dortigen Preise aber nicht als aktuelle strukturierte Gerichte."
+      }
+    }
+  ]
+}
