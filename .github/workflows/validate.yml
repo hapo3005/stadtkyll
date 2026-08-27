@@ -35,6 +35,9 @@ jobs:
           python -m json.tool data/region.json > /dev/null
           python -m json.tool data/events.json > /dev/null
           python -m json.tool data/menus.json > /dev/null
+          python -m json.tool data/menus-25km-a.json > /dev/null
+          python -m json.tool data/menus-25km-b.json > /dev/null
+          python -m json.tool data/menus-25km-c.json > /dev/null
           python -m json.tool data/places.json > /dev/null
           python -m json.tool data/places-25km.json > /dev/null
           python -m json.tool data/places-25km-more.json > /dev/null
@@ -70,6 +73,9 @@ jobs:
           test -f scripts/validate-menus.mjs
           test -f data/events.json
           test -f data/menus.json
+          test -f data/menus-25km-a.json
+          test -f data/menus-25km-b.json
+          test -f data/menus-25km-c.json
           test -f data/places-25km.json
           test -f data/places-25km-more.json
           test -f data/places-25km-extra.json
