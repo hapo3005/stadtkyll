@@ -1,0 +1,123 @@
+[
+  {
+    "id": "gastro-blankenheim-beros",
+    "vertical": "gastro",
+    "name": "Bero's Pizzeria & Grillhouse",
+    "category": "Pizza · Döner · Burger · Grill · Lieferservice",
+    "town": "Blankenheim",
+    "address": "Rathausplatz 14, 53945 Blankenheim",
+    "summary": "Pizzeria und Grillhouse mit sehr breiter Betreiberkarte: Pizza, Döner, Schnitzel, Burger, Pasta, Grillgerichte und mehr; Bestellung und Abholung über das eigene Online-System.",
+    "tags": ["pizza", "doener", "burger", "grill", "pasta", "schnitzel", "takeaway", "lieferservice", "mittagessen", "abendessen", "familie"],
+    "location": {"lat": 50.43697, "lng": 6.65097},
+    "weeklyHours": {
+      "mon": ["12:00-22:00"], "tue": ["12:00-22:00"], "wed": ["12:00-22:00"], "thu": ["12:00-22:00"],
+      "fri": ["12:00-22:00"], "sat": ["12:00-22:00"], "sun": ["12:00-22:00"]
+    },
+    "source": {
+      "label": "Bero's Pizzeria & Grillhouse · Betreiberseite / Betreiber-Bestellsystem",
+      "url": "https://www.beros-blankenheim.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite und Betreiber-Bestellsystem wurden mit dem verifizierten Eifel-Tourismus-Datensatz (Rathausplatz 14, Koordinaten 50.436970/6.650970) abgeglichen. Das Bestellsystem zeigt aktuell täglich 12:00–22:00 für Gäste; HOY führt dies quellbasiert, nicht als Live-Signal."
+    },
+    "menuSource": {"label": "Bero's · Betreiber-Bestellsystem", "url": "https://beros-restaurant.order.app.hd.digital/menus", "checkedAt": "2026-08-27"},
+    "contact": {"phone": "+49 2449 1364", "email": "info@beros-blankenheim.de"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "instagram": "@beros_blankenheim wird von einem Drittanbieter als vom Eigentümer verifiziert geführt; nicht als primäre Preisquelle verwendet",
+      "facebook": "kein belastbares offizielles Profil unabhängig verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-dahlem-eifelpark-restaurant",
+    "vertical": "gastro",
+    "name": "Eifelpark Restaurant Kronenburger See",
+    "category": "Restaurant · Frühstück · Terrasse · Biergarten",
+    "town": "Dahlem-Kronenburg",
+    "address": "Zum Kleebusch 15, 53949 Dahlem-Kronenburg",
+    "summary": "Ganzjähriges Restaurant am Kronenburger See mit Frühstück, gutbürgerlicher Küche, vegetarischen und veganen Optionen, Panorama-Terrassen, Spielplatz und Takeaway.",
+    "tags": ["fruehstueck", "restaurant", "terrasse", "biergarten", "takeaway", "familie", "vegetarisch", "vegan", "mittagessen", "abendessen", "draussen"],
+    "location": {"lat": 50.361416, "lng": 6.472912},
+    "weeklyHours": {
+      "mon": ["08:00-20:00"], "tue": ["08:00-20:00"], "wed": ["08:00-20:00"], "thu": ["08:00-20:00"],
+      "fri": ["08:00-20:00"], "sat": ["08:00-20:00"], "sun": ["08:00-20:00"]
+    },
+    "source": {
+      "label": "Eifelpark Restaurant Kronenburger See · Betreiberseite / Eifel Tourismus",
+      "url": "https://eifelpark-restaurant.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite, Speise- und Frühstückskarte sowie der verifizierte Eifel-Tourismus-Datensatz wurden geprüft. Öffnungszeiten täglich 08:00–20:00; Koordinaten 50.361416/6.472912."
+    },
+    "menuSource": {"label": "Eifelpark Restaurant · Betreiber-Speise- und Frühstückskarte", "url": "https://eifelpark-restaurant.de/speisen-und-fruehstueck/", "checkedAt": "2026-08-27"},
+    "contact": {"phone": "+49 6557 894", "email": "info@eifelpark-eks.de"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "Betreiberseite verlinkt einen Facebook-Kanal; Ziel war beim Prüfabruf technisch nicht zuverlässig auflösbar",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-blankenheim-ruebezahl",
+    "vertical": "gastro",
+    "name": "Gasthaus Rübezahl",
+    "category": "Hausmannskost · Regional · Terrasse",
+    "town": "Blankenheim-Mülheim",
+    "address": "Stappengasse 1, 53945 Blankenheim-Mülheim",
+    "summary": "Familiengeführtes Gasthaus mit frischer gutbürgerlicher Küche, saisonalen Aktionen und Terrasse; besonders auf Wanderer, Radfahrer und Motorradfahrer ausgerichtet.",
+    "tags": ["hausmannskost", "regional", "terrasse", "motorrad", "mittagessen", "abendessen", "wanderer"],
+    "location": {"lat": 50.448484, "lng": 6.683095},
+    "weeklyHours": {
+      "mon": [], "tue": [], "wed": [], "thu": ["18:00-22:00"], "fri": ["18:00-22:00"],
+      "sat": ["12:00-14:00", "18:00-22:00"], "sun": ["12:00-14:00", "18:00-22:00"]
+    },
+    "scheduleValidTo": "2027-10-15",
+    "source": {
+      "label": "Gasthaus Rübezahl · Betreiberseite / Eifel Tourismus",
+      "url": "https://www.gasthaus-ruebezahl.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite nennt aktuelle Restaurantzeiten und saisonale Küche; Eifel Tourismus bestätigt Adresse, Öffnungszeiten und Koordinaten 50.448484/6.683095."
+    },
+    "contact": {"phone": "+49 2449 7873", "email": "kontakt@gasthaus-ruebezahl.de"},
+    "socialResearch": {"checkedAt": "2026-08-27", "facebook": "kein belastbares offizielles Profil verifiziert", "instagram": "kein belastbares offizielles Profil verifiziert"},
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "operator-kitchen-description-no-prices",
+      "note": "Betreiberseite beschreibt saisonale und gutbürgerliche Küche, veröffentlicht aber keine aktuelle digitale Preiskarte. Drittanbieterpreise bleiben ausgeschlossen."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-blankenheim-cafe-kloesterchen",
+    "vertical": "gastro",
+    "name": "Café Klösterchen",
+    "category": "Café · Kuchen · Waffeln · Begegnungscafé",
+    "town": "Blankenheim",
+    "address": "Hülchrath 3, 53945 Blankenheim",
+    "summary": "Begegnungscafé bei der Kreuzkapelle Hülchrath mit Waffeln, Kuchen, Getränken und Mittagstisch der Seniorenhausgemeinschaften.",
+    "tags": ["cafe", "kuchen", "waffeln", "nachmittag", "mittagessen", "familie"],
+    "location": {"lat": 50.43931, "lng": 6.64371},
+    "weeklyHours": {
+      "mon": [], "tue": ["12:00-18:00"], "wed": ["12:00-18:00"], "thu": ["12:00-18:00"],
+      "fri": ["12:00-18:00"], "sat": ["12:00-18:00"], "sun": ["12:00-18:00"]
+    },
+    "source": {
+      "label": "Café Klösterchen · Betreiberseite / Rheinischer Verein",
+      "url": "https://cafe-kloesterchen.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite und aktuelle Trägerinformationen wurden geprüft. Die Koordinate stammt aus dem Kulturdatensatz der Kreuzkapelle Hülchrath am identischen Standort Hülchrath 3 und dient als adressbezogener Kartenpunkt."
+    },
+    "contact": {"phone": "+49 2449 91720-116", "email": "info@cafe-kloesterchen.de"},
+    "socialResearch": {"checkedAt": "2026-08-27", "facebook": "kein belastbares offizielles Profil verifiziert", "instagram": "kein belastbares offizielles Profil verifiziert"},
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "stale-operator-menu-page",
+      "note": "Die Betreiber-Speise- und Getränkeseite ist weiterhin online und die Öffnungszeiten sind aktuell sichtbar, die Menüseite trägt jedoch einen historischen Seitenstand aus 2019. Preise werden deshalb nicht als aktuelle HOY-Gerichte strukturiert."
+    },
+    "dynamicStatus": "source-based"
+  }
+]
