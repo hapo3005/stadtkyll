@@ -4,9 +4,10 @@
   const nativeFetch = window.fetch.bind(window);
   const BASE_MENU_REQUEST = /(?:^|\/)data\/menus-25km-c\.json(?:[?#]|$)/;
   const EXTRA_MENU_URLS = [
-    'data/menus-25km-d.json?v=0.19.0',
-    'data/menus-25km-e.json?v=0.19.0',
-    'data/menus-25km-f.json?v=0.19.0'
+    'data/menus-25km-d.json?v=0.20.0',
+    'data/menus-25km-e.json?v=0.20.0',
+    'data/menus-25km-f.json?v=0.20.0',
+    'data/menus-25km-g.json?v=0.20.0'
   ];
 
   window.fetch = async (input, init) => {
@@ -27,7 +28,7 @@
 
       const merged = {
         ...baseDoc,
-        version: '0.19.0',
+        version: '0.20.0',
         menus: [...(baseDoc.menus || []), ...extraDocs.flatMap(doc => doc.menus || [])],
         links: [...(baseDoc.links || []), ...extraDocs.flatMap(doc => doc.links || [])]
       };
@@ -36,11 +37,11 @@
         status: 200,
         headers: {
           'Content-Type': 'application/json; charset=utf-8',
-          'X-HOY-Menu-Layer': 'stadtkyll-0.19'
+          'X-HOY-Menu-Layer': 'stadtkyll-0.20'
         }
       });
     } catch (error) {
-      console.warn('HOY 0.19 menu extension unavailable; using previous menu layer.', error);
+      console.warn('HOY 0.20 menu extension unavailable; using previous menu layer.', error);
       return baseResponse;
     }
   };
