@@ -1,5 +1,5 @@
 {
-  "version": "0.16.0",
+  "version": "0.17.0",
   "checkedAt": "2026-08-27",
   "currency": "EUR",
   "menus": [],
@@ -46,6 +46,17 @@
         "type": "operator-menu-link",
         "checkedAt": "2026-08-27",
         "note": "Eifel Tourismus führt diese Betreiber-Webseite als offiziellen Webauftritt der Kebap-Pizzeria. Die Speisekarte ist dort bzw. über den Betreiberauftritt auffindbar; HOY übernimmt keine Nutzerfoto- oder Drittanbieterpreise."
+      }
+    },
+    {
+      "placeId": "gastro-stadtkyll-kings-pizza",
+      "placeName": "King's Pizza Pasta Express",
+      "source": {
+        "label": "King's Pizza Pasta Express · Betreiber-Bestellmenü",
+        "url": "https://app.kings-pizza-stadtkyll.de/",
+        "type": "operator-menu-link",
+        "checkedAt": "2026-08-27",
+        "note": "Die Betreiberwebsite verlinkt direkt in die eigene Bestell-App. Das Bestellmenü ist aktuell erreichbar, liefert die Einzelpositionen aber nicht zuverlässig als indexierbaren Text; deshalb Originalmenü statt Drittanbieterpreise."
       }
     }
   ]
