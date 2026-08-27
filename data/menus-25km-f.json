@@ -1,0 +1,57 @@
+{
+  "version": "0.19.0",
+  "checkedAt": "2026-08-27",
+  "currency": "EUR",
+  "menus": [
+    {
+      "placeId": "gastro-gerolstein-pizza-express",
+      "placeName": "Pizza Express Gerolstein",
+      "coverage": "structured-selection",
+      "source": {
+        "label": "Pizza Express Gerolstein · Betreiber-App",
+        "url": "https://app.pizzaexpress-gerolstein.de/",
+        "type": "operator-menu",
+        "checkedAt": "2026-08-27",
+        "note": "35 Positionen aus der Betreiber-App strukturiert: die vollständige öffentlich auslesbare Kategorie Familien Pizza plus Pizza Funghi. 'Ab'-Preise werden ausdrücklich als Startpreise gekennzeichnet. Weitere Betreiber-Kategorien bleiben für spätere Strukturierung verfügbar."
+      },
+      "items": [
+        ["Pizza","Pizza Funghi",8.30,"Tomatensauce, Käse, Champignons"],
+        ["Familien Pizza","Familienpizza Magaritha",24.00,"Tomatensauce, Käse"],
+        ["Familien Pizza","Familienpizza Salami",25.00,"Tomatensauce, Käse, Salami","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Funghi",25.00,"Tomatensauce, Käse, Champignons","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Funghi Salami",26.00,"Tomatensauce, Käse, Salami, Champignons","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Trio",27.00,"Tomatensauce, Käse, Salami, Schinken, Champignons","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Hawaii",26.00,"Tomatensauce, Käse, Schinken, Ananas","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Tonno",26.00,"Tomatensauce, Käse, Thunfisch","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Tonno Cipolla",27.00,"Tomatensauce, Käse, Thunfisch, Zwiebeln","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Sucuk",26.00,"Tomatensauce, Käse, Knoblauchwurst","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Scampi",30.00,"Tomatensauce, Käse, Krabben","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Spezial",29.00,"Tomatensauce, Käse, Salami, Schinken, Peperoniwurst, Champignons, Zwiebeln","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Peperoniwurst",26.00,"Tomatensauce, Käse, Peperoniwurst"],
+        ["Familien Pizza","Familienpizza Venedig",28.00,"Tomatensauce, Käse, Salami, Schinken, Peperoniwurst","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Vegetarisch",29.00,"Tomatensauce, Käse, Champignons, Paprika, Tomaten, Mais","vegetarisch","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Fantasia",29.00,"Tomatensauce, Käse, Thunfisch, Schinken, Artischocken, Oliven","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Mafia",29.00,"Tomatensauce, Käse, Salami, Champignons, gekochtes Ei, Hackfleisch, Zwiebeln","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Chef",29.00,"Hackfleischsauce, Spaghetti, Bolognese, Käse","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Adria",30.00,"Tomatensauce, Käse, Thunfisch, Krabben, Knoblauch","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Venezia",29.00,"Hollandaise, Käse, Hähnchenbrust, Spargel, Ananas","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Diavolo",27.00,"Tomatensauce, Käse, Paprika, scharfe Peperoni, Oliven, Knoblauch","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Hackfleisch",26.00,"Tomatensauce, Käse, Hackfleisch","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Mexicana",30.00,"Hollandaise, Käse, Hähnchenbrust, Mais, scharfe Peperoni","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Döner",29.00,"Tomatensauce, Käse, Drehspießfleisch","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Salvatore",30.00,"Hollandaise, Käse, Tomaten, Paprika, Broccoli, Zwiebeln","vegetarisch","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Antalya",30.00,"Tomatensauce, Drehspießfleisch, Käse, Salat, Zaziki","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Creme Fraiché",30.00,"Tomatensauce, Käse, Hackfleisch, Eisbergsalat, Tomaten, Zwiebeln, Creme-Fraiche","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Kentucky",30.00,"Hollandaise, Drehspießfleisch, Broccoli, Mais, Käse","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Therese",29.00,"Hollandaise, Käse, Hähnchenbrust, Spargel, Champignons","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Istanbul",29.00,"Hollandaise, Drehspießfleisch, Käse","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Kornelia",29.00,"Hollandaise, Käse, Hähnchenbrust, Mais","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Onur Spezial Hot",30.00,"Hollandaise, Drehspießfleisch, Paprika, Zwiebeln, Mais","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Tornado",30.00,"Barbecue-Soße, Drehspießfleisch, Zwiebeln, Peperoni (scharf), Käse","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Texas",30.00,"Barbecue-Sauce, Hähnchenbrust, Paprika, Mais, Käse","","ab-Preis laut Betreiber"],
+        ["Familien Pizza","Familienpizza Miami",30.00,"Barbecue-Sauce, Peperoniwurst, Hackfleisch, Peperoni (scharf), Käse","","ab-Preis laut Betreiber"]
+      ]
+    }
+  ],
+  "links": []
+}
