@@ -1,0 +1,40 @@
+[
+  {
+    "id": "gastro-stadtkyll-kings-pizza",
+    "vertical": "gastro",
+    "name": "King's Pizza Pasta Express",
+    "category": "Pizza · Pasta · Lieferservice",
+    "town": "Stadtkyll",
+    "address": "Im Hahnborn 2, 54589 Stadtkyll",
+    "summary": "Pizza-, Pasta- und Lieferservice mit eigener Betreiber-App für Onlinebestellungen; Speisen sind auch zur Abholung bzw. vor Ort vorgesehen.",
+    "tags": ["pizza", "pasta", "lieferservice", "takeaway", "mittagessen", "abendessen", "schnell"],
+    "location": {"lat": 50.351230, "lng": 6.544168},
+    "weeklyHours": {
+      "mon": ["11:00-14:00", "16:00-22:00"],
+      "tue": [],
+      "wed": ["11:00-14:00", "16:00-22:00"],
+      "thu": ["11:00-14:00", "16:00-22:00"],
+      "fri": ["11:00-14:00", "16:00-22:00"],
+      "sat": ["10:00-22:00"],
+      "sun": ["11:00-22:00"]
+    },
+    "source": {
+      "label": "King's Pizza Pasta Express · Betreiberwebsite / Bestell-App",
+      "url": "https://kings-pizza-stadtkyll.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberwebsite und Impressum der Betreiber-App wurden geprüft. Die dort veröffentlichten Öffnungszeiten werden als quellbasiert geführt und nicht als live bestätigt."
+    },
+    "menuSource": {
+      "label": "King's Pizza Pasta Express · Online bestellen",
+      "url": "https://app.kings-pizza-stadtkyll.de/",
+      "checkedAt": "2026-08-27"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  }
+]
