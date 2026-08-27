@@ -12,7 +12,8 @@ const placeFiles = [
   'data/places-25km-v012.json',
   'data/places-25km-v016.json',
   'data/places-25km-v018.json',
-  'data/places-25km-v019.json'
+  'data/places-25km-v019.json',
+  'data/places-25km-v020.json'
 ];
 const menuFiles = [
   'data/menus.json',
@@ -21,7 +22,8 @@ const menuFiles = [
   'data/menus-25km-c.json',
   'data/menus-25km-d.json',
   'data/menus-25km-e.json',
-  'data/menus-25km-f.json'
+  'data/menus-25km-f.json',
+  'data/menus-25km-g.json'
 ];
 
 const readJson = file => JSON.parse(fs.readFileSync(file,'utf8'));
