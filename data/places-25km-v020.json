@@ -1,0 +1,366 @@
+[
+  {
+    "id": "gastro-gerolstein-eiscafe-italia",
+    "vertical": "gastro",
+    "name": "Eiscafé Italia",
+    "category": "Eiscafé · Café · Terrasse",
+    "town": "Gerolstein",
+    "address": "Kasselburgerweg 1, 54568 Gerolstein",
+    "summary": "Eiscafé mit Innen- und Außenplätzen in Gerolstein; die offiziellen Tourismusdaten führen den Betrieb saisonal von Februar bis Ende November.",
+    "tags": ["eis", "cafe", "terrasse", "draussen", "familie", "nachmittag"],
+    "location": {"lat": 50.224555, "lng": 6.659024},
+    "weeklyHours": {
+      "mon": ["11:00-19:00"],
+      "tue": ["11:00-19:00"],
+      "wed": ["11:00-19:00"],
+      "thu": ["11:00-19:00"],
+      "fri": ["11:00-19:00"],
+      "sat": ["11:00-19:00"],
+      "sun": ["11:00-19:00"]
+    },
+    "scheduleValidFrom": "2026-02-01",
+    "scheduleValidTo": "2026-11-30",
+    "source": {
+      "label": "Eiscafé Italia Gerolstein · Rheinland-Pfalz Tourismus / Outdooractive",
+      "url": "https://www.rlp-tourismus.com/en/infosystem/gerolstein-eiscafe-italia/poi.html",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizielle Tourismusdaten nennen Adresse, Telefon, saisonale Öffnungszeiten sowie den Facebook-Auftritt; Koordinaten wurden über den verifizierten Outdooractive-Datensatz abgeglichen."
+    },
+    "contact": {"phone": "+49 6591 9498371"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "https://www.facebook.com/eiscafeitaliage/",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "no-reliable-operator-menu",
+      "note": "Keine belastbare aktuelle Betreiber-Preiskarte gefunden; Eis- und Getränkepreise werden daher nicht geraten."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-gerolstein-leos",
+    "vertical": "gastro",
+    "name": "Leo's Restaurant, Café & Bar",
+    "category": "Restaurant · Regional · Saisonal · Hotelbar",
+    "town": "Gerolstein",
+    "address": "Zur Büschkapelle 5, 54568 Gerolstein",
+    "summary": "Restaurant im Hotel Löwenstein mit regional-saisonaler Küche, Mittagsangebot von Donnerstag bis Sonntag und Abendservice.",
+    "tags": ["regional", "saisonal", "restaurant", "mittagessen", "abendessen", "bar"],
+    "location": {"lat": 50.216126, "lng": 6.662932},
+    "weeklyHours": {
+      "mon": ["17:00-22:00"],
+      "tue": ["17:00-22:00"],
+      "wed": ["17:00-22:00"],
+      "thu": ["17:00-22:00"],
+      "fri": ["15:00-24:00"],
+      "sat": ["15:00-24:00"],
+      "sun": ["15:00-24:00"]
+    },
+    "source": {
+      "label": "Hotel Löwenstein · Leo's Betreiberseite",
+      "url": "https://loewenstein-hotel.de/restaurant/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Die aktuelle Betreiberseite nennt Mo–Do Öffnung ab 17 Uhr, Fr–So ab 15 Uhr sowie warme Küche Mo–Do 18–21 Uhr. Für die Schließzeiten nutzt HOY ergänzend den offiziellen Tourismusdatensatz; alle Zeiten bleiben quellbasiert, nicht live."
+    },
+    "menuSource": {
+      "label": "Leo's · aktuelle Betreiber-Speisekarte Mai 2026",
+      "url": "https://loewenstein-hotel.de/wp-content/uploads/2026/05/HL-Speisekarte-neues-Design-202605.pdf",
+      "checkedAt": "2026-08-27",
+      "note": "Die Betreiberseite verlinkt diese Karte aktuell; der PDF-Inhalt war beim Prüfabruf technisch nicht zuverlässig extrahierbar, deshalb werden daraus keine Einzelpreise übernommen."
+    },
+    "contact": {
+      "phone": "+49 6591 819390",
+      "email": "rezeption@loewenstein-hotel.de"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "Betreiberseite führt Social-Integration; konkretes offizielles Profil nicht eindeutig extrahierbar",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-hillesheim-kaffeestuv",
+    "vertical": "gastro",
+    "name": "Hillesheimer Kaffeestuv",
+    "category": "Café · Frühstück · Bistro",
+    "town": "Hillesheim",
+    "address": "Am Markt 8, 54576 Hillesheim",
+    "summary": "Café und Bistro am Markt mit Frühstück, Mittagstisch und herzhaften Kleinigkeiten wie Flammkuchen.",
+    "tags": ["cafe", "fruehstueck", "bistro", "mittagessen", "terrasse", "nachmittag"],
+    "location": {"lat": 50.291750, "lng": 6.671500},
+    "weeklyHours": {
+      "mon": ["09:00-18:00"],
+      "tue": ["09:00-18:00"],
+      "wed": [],
+      "thu": ["09:00-18:00"],
+      "fri": ["09:00-18:00"],
+      "sat": ["09:00-18:00"],
+      "sun": ["09:00-18:00"]
+    },
+    "scheduleValidTo": "2030-12-31",
+    "source": {
+      "label": "Hillesheimer Kaffeestuv · Gerolsteiner Land / Eifel Tourismus",
+      "url": "https://www.gerolsteiner-land.de/gastro/hillesheimer-kaffeestuv",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizielle Tourismusdaten nennen Adresse, Telefon, Öffnungszeiten, Frühstück, Mittagstisch und Außenplätze. Eine belastbare Betreiberwebsite wurde im Prüfpass nicht gefunden."
+    },
+    "contact": {"phone": "+49 6593 998414"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "no-reliable-operator-menu",
+      "note": "Keine aktuelle Betreiber-Speisekarte mit verifizierbaren Einzelpreisen gefunden; Drittanbieterpreise bleiben ausgeschlossen."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-hillesheim-milan-stuben",
+    "vertical": "gastro",
+    "name": "Milan Stuben",
+    "category": "Restaurant · Terrasse · Golfclub",
+    "town": "Hillesheim",
+    "address": "Milanweg 1, 54576 Hillesheim",
+    "summary": "Restaurant des Golfclub Eifel mit Terrasse und Blick auf den Golfplatz; die Betreiberseite nennt durchgehend warme Küche während der Öffnungszeiten.",
+    "tags": ["restaurant", "terrasse", "draussen", "mittagessen", "abendessen", "regional"],
+    "location": {"lat": 50.312901, "lng": 6.675328},
+    "weeklyHours": {
+      "mon": ["15:00-20:00"],
+      "tue": [],
+      "wed": ["15:00-21:00"],
+      "thu": ["15:00-21:00"],
+      "fri": ["12:00-21:00"],
+      "sat": ["12:00-21:00"],
+      "sun": ["12:00-20:00"]
+    },
+    "source": {
+      "label": "Golfclub Eifel · Milan Stuben Betreiberseite",
+      "url": "https://golfclub-eifel.de/gastronomie/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Aktuelle Betreiberseite mit Öffnungszeiten, Kontakt, Terrassenhinweis und Link zur Speisekarte. Betreiberzeiten werden gegenüber älteren Tourismuszeiten priorisiert."
+    },
+    "menuSource": {
+      "label": "Milan Stuben · Betreiber-Speisekarte 20.03.2026",
+      "url": "https://golfclub-eifel.de/wp-content/uploads/2026/03/Speisekarte-Neu-A5-20.03.2026.pdf",
+      "checkedAt": "2026-08-27",
+      "note": "Aktuell auf der Betreiberseite verlinkt; PDF war beim Prüfabruf technisch nicht zuverlässig extrahierbar."
+    },
+    "contact": {
+      "phone": "+49 6593 8639",
+      "email": "sabine.krumpen@golfclub-eifel.de"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares dediziertes Restaurantprofil verifiziert",
+      "instagram": "kein belastbares dediziertes Restaurantprofil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-hillesheim-olivin",
+    "vertical": "gastro",
+    "name": "Olivin Café-Restaurant",
+    "category": "Griechisch · Restaurant · Kegelbahn",
+    "town": "Hillesheim",
+    "address": "Koblenzer Straße 5, 54576 Hillesheim",
+    "summary": "Griechisch geprägtes Café-Restaurant in Hillesheim mit Außenplätzen, Mittag- und Abendküche sowie Kegelbahn.",
+    "tags": ["griechisch", "restaurant", "mittagessen", "abendessen", "terrasse"],
+    "location": {"lat": 50.291180, "lng": 6.672800},
+    "weeklyHours": {
+      "mon": [],
+      "tue": ["11:00-14:00", "17:00-22:00"],
+      "wed": ["11:00-14:00", "17:00-22:00"],
+      "thu": ["11:00-14:00", "17:00-22:00"],
+      "fri": ["11:00-14:00", "17:00-22:00"],
+      "sat": ["11:00-14:00", "17:00-22:00"],
+      "sun": ["10:00-22:00"]
+    },
+    "scheduleValidTo": "2030-12-31",
+    "source": {
+      "label": "Olivin Café-Restaurant · Gerolsteiner Land / Eifel Tourismus",
+      "url": "https://www.gerolsteiner-land.de/gastro/hillesheim-olivin-cafe-restaurant",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizielle Tourismusdaten nennen Adresse, Telefon, aktuelle Öffnungszeiten, Außenplätze und griechische Küche. Ein historisch genanntes Betreiber-Domain wurde nicht als aktuelle Preisquelle verwendet."
+    },
+    "contact": {"phone": "+49 6593 9985261"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "Drittanbieter verweist auf @olivin_restaurant_hillesheim; nicht als Betreiberkanal verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-blankenheim-forstwalder-hof",
+    "vertical": "gastro",
+    "name": "Forstwalder Hof",
+    "category": "Hofgastronomie · Frühstück · Hausmannskost",
+    "town": "Blankenheim-Mülheim",
+    "address": "Am Genfbach 1, 53945 Blankenheim",
+    "summary": "Hofgastronomie mit Frühstück, Schnitzeln, Hausmannskost und regionalen Produkten; viele Gerichte sind auch zum Mitnehmen erhältlich.",
+    "tags": ["fruehstueck", "hausmannskost", "schnitzel", "regional", "takeaway", "mittagessen"],
+    "location": {"lat": 50.456582, "lng": 6.681523},
+    "weeklyHours": {
+      "mon": ["08:00-19:00"],
+      "tue": ["08:00-19:00"],
+      "wed": ["08:00-19:00"],
+      "thu": ["08:00-19:00"],
+      "fri": ["08:00-19:00"],
+      "sat": ["08:00-18:00"],
+      "sun": ["08:00-18:00"]
+    },
+    "scheduleValidFrom": "2026-04-01",
+    "scheduleValidTo": "2026-10-31",
+    "source": {
+      "label": "Forstwalder Hof · Betreiberseite",
+      "url": "https://www.forstwalderhof.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite, Öffnungszeiten und Speisekarte wurden gemeinsam geprüft. Für April bis Oktober gelten die hier hinterlegten Sommerzeiten; Winterzeiten werden getrennt behandelt statt ganzjährig fortgeschrieben."
+    },
+    "menuSource": {
+      "label": "Forstwalder Hof · Betreiber-Speisekarte",
+      "url": "https://www.forstwalderhof.de/speisekarte/",
+      "checkedAt": "2026-08-27"
+    },
+    "contact": {"phone": "+49 2449 9192500"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-blankenheim-landlust",
+    "vertical": "gastro",
+    "name": "Café Bistro Landlust",
+    "category": "Café · Bistro · Frühstück",
+    "town": "Blankenheim",
+    "address": "Klosterstraße 3, 53945 Blankenheim",
+    "summary": "Kleines Café-Bistro mit frisch zubereiteten herzhaften und süßen Angeboten, Frühstück und wechselnden Speisen.",
+    "tags": ["cafe", "bistro", "fruehstueck", "mittagessen", "nachmittag"],
+    "location": {"lat": 50.437216, "lng": 6.650331},
+    "weeklyHours": {
+      "mon": [],
+      "tue": [],
+      "wed": [],
+      "thu": ["11:00-18:00"],
+      "fri": ["11:00-18:00"],
+      "sat": ["11:00-18:00"],
+      "sun": ["11:00-18:00"]
+    },
+    "scheduleValidFrom": "2026-04-02",
+    "scheduleValidTo": "2027-04-02",
+    "source": {
+      "label": "Café Bistro Landlust · Betreiberseite / Eifel Tourismus",
+      "url": "https://www.landlust-blankenheim.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite nennt aktuelle Öffnungszeiten und Reservierung per Telefon; der offizielle Tourismusdatensatz bestätigt Adresse, Kontakt und Gültigkeitsfenster."
+    },
+    "contact": {
+      "phone": "+49 151 54744777",
+      "email": "landlust-blankenheim@t-online.de"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "operator-offers-without-prices",
+      "note": "Die Betreiberseite zeigt konkrete Speisen und Frühstücksangebote, veröffentlicht dort aber keine belastbaren Einzelpreise."
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-blankenheim-pfeffermuehle",
+    "vertical": "gastro",
+    "name": "Hotel-Restaurant Pfeffermühle",
+    "category": "Restaurant · Eifeler Küche · Hotel",
+    "town": "Blankenheim-Uedelhoven",
+    "address": "Üxheimer Straße 3, 53945 Blankenheim",
+    "summary": "Restaurant mit Eifeler Küche und aktuell veröffentlichten Wochenempfehlungen; HOY berücksichtigt die Betriebsferien bis einschließlich 27. August 2026.",
+    "tags": ["eifeler-kueche", "restaurant", "mittagessen", "abendessen", "regional"],
+    "location": {"lat": 50.373533, "lng": 6.759157},
+    "weeklyHours": {
+      "mon": [],
+      "tue": [],
+      "wed": ["17:30-21:00"],
+      "thu": ["11:30-14:00", "17:30-21:00"],
+      "fri": ["11:30-14:00", "17:30-21:00"],
+      "sat": ["11:30-14:00", "17:30-21:00"],
+      "sun": ["11:30-14:00", "17:30-21:00"]
+    },
+    "source": {
+      "label": "Hotel-Restaurant Pfeffermühle · Betreiberseite",
+      "url": "https://www.pfeffermuehle-uedelhoven.de/",
+      "type": "operator_site",
+      "checkedAt": "2026-08-27",
+      "note": "Betreiberseite und Speisekartenbereich wurden geprüft. Aktueller Hinweis: Betriebsferien 10.08.–27.08.2026, Wiedereröffnung am 28.08.2026 um 17:30 Uhr. Wochenempfehlungen werden deshalb erst ab der Wiedereröffnung als passend behandelt."
+    },
+    "contact": {
+      "phone": "+49 2697 1444",
+      "email": "pfeffermuehle-uedelhoven@t-online.de"
+    },
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "dynamicStatus": "source-based"
+  },
+  {
+    "id": "gastro-blankenheim-brasserie-ahr",
+    "vertical": "gastro",
+    "name": "Brasserie an der Ahr",
+    "category": "Brasserie · Französisch · Regional",
+    "town": "Blankenheim",
+    "address": "Ahrstraße 34, 53945 Blankenheim",
+    "summary": "Brasserie im historischen Blankenheim mit französisch inspirierter, saisonaler und regionaler Küche sowie Biergarten.",
+    "tags": ["brasserie", "franzoesisch", "regional", "saisonal", "biergarten", "abendessen"],
+    "location": {"lat": 50.438370, "lng": 6.648630},
+    "weeklyHours": {
+      "mon": [],
+      "tue": [],
+      "wed": ["17:00-23:00"],
+      "thu": ["17:00-23:00"],
+      "fri": ["17:00-23:00"],
+      "sat": ["17:00-23:00"],
+      "sun": ["12:00-23:00"]
+    },
+    "scheduleValidTo": "2026-10-15",
+    "source": {
+      "label": "Brasserie an der Ahr · Eifel Tourismus",
+      "url": "https://www.eifel.info/a-brasserie-an-der-ahr",
+      "type": "tourism_official",
+      "checkedAt": "2026-08-27",
+      "note": "Offizieller Tourismusdatensatz nennt Betreiberwebsite, Adresse, Telefon, Öffnungszeiten bis 15.10.2026 sowie französisch-regionale Ausrichtung. Drittanbieterpreise werden nicht übernommen."
+    },
+    "contact": {"phone": "+49 2449 218444"},
+    "socialResearch": {
+      "checkedAt": "2026-08-27",
+      "facebook": "kein belastbares offizielles Profil verifiziert",
+      "instagram": "kein belastbares offizielles Profil verifiziert"
+    },
+    "menuResearch": {
+      "checkedAt": "2026-08-27",
+      "status": "no-reliable-operator-menu",
+      "note": "Keine zuverlässig auslesbare aktuelle Betreiber-Preiskarte gefunden; Preise aus Restaurantportalen werden nicht strukturiert."
+    },
+    "dynamicStatus": "source-based"
+  }
+]
