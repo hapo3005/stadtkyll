@@ -9,7 +9,8 @@ const placeFiles = [
   'data/places-25km-moto-dog.json',
   'data/places-25km-depth.json',
   'data/places-25km-v011.json',
-  'data/places-25km-v012.json'
+  'data/places-25km-v012.json',
+  'data/places-25km-v016.json'
 ];
 const menuFiles = [
   'data/menus.json',
