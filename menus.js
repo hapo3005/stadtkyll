@@ -106,7 +106,7 @@
     const filtered = menu.items.filter(item => itemMatches(item, activeMenuFilter));
     const todaySpecials = menu.items.filter(isToday);
     const filters = categoryFilters(menu);
-    return `<section class="hoy-menu-detail" data-hoy-menu-detail>
+    return `<section class="hoy-menu-detail" data-hoy-menu-detail data-menu-place="${escHtml(menu.placeId)}" data-menu-filter-state="${escHtml(activeMenuFilter)}">
       <div class="menu-detail-head">
         <div><span class="eyebrow">HOY SPEISEKARTE</span><h3>Was bekommst du hier?</h3></div>
         <span class="menu-count">${menu.items.length} erfasst</span>
@@ -127,6 +127,7 @@
     const menu = menuFor(activePlaceId);
     const old = detailEl.querySelector('[data-hoy-menu-detail]');
     if (!menu) { old?.remove(); return; }
+    if (old?.dataset.menuPlace === activePlaceId && old?.dataset.menuFilterState === activeMenuFilter) return;
     const detailBody = detailEl.querySelector('.detail');
     if (!detailBody) return;
     const temp = document.createElement('div');
@@ -143,7 +144,7 @@
   function menuSignal(menu) {
     const min = minPrice(menu);
     const today = menu.items.find(isToday);
-    return `<div class="menu-signal" data-menu-signal>
+    return `<div class="menu-signal" data-menu-signal data-menu-place="${escHtml(menu.placeId)}">
       <span>HOY SPEISEKARTE</span>
       <strong>${today ? `Heute: ${escHtml(today.name)} · ${money(today.price)}` : `${menu.items.length} Gerichte${min !== null ? ` · ab ${money(min)}` : ''}`}</strong>
       <small>${escHtml(coverageLabel(menu))} · ${escHtml(sourceAge(menu))}</small>
@@ -156,8 +157,10 @@
       const card = button.closest('.card');
       if (!card) return;
       const menu = menuFor(button.dataset.detail);
-      card.querySelector('[data-menu-signal]')?.remove();
-      if (!menu) return;
+      const existing = card.querySelector('[data-menu-signal]');
+      if (!menu) { existing?.remove(); return; }
+      if (existing?.dataset.menuPlace === menu.placeId) return;
+      existing?.remove();
       const trust = card.querySelector('.trust');
       if (trust) trust.insertAdjacentHTML('beforebegin', menuSignal(menu));
     });
