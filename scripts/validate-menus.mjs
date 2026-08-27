@@ -15,7 +15,8 @@ const menuFiles = [
   'data/menus.json',
   'data/menus-25km-a.json',
   'data/menus-25km-b.json',
-  'data/menus-25km-c.json'
+  'data/menus-25km-c.json',
+  'data/menus-25km-d.json'
 ];
 
 const readJson = file => JSON.parse(fs.readFileSync(file,'utf8'));
