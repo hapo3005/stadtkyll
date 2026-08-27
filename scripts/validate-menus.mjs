@@ -11,7 +11,8 @@ const placeFiles = [
   'data/places-25km-v011.json',
   'data/places-25km-v012.json',
   'data/places-25km-v016.json',
-  'data/places-25km-v018.json'
+  'data/places-25km-v018.json',
+  'data/places-25km-v019.json'
 ];
 const menuFiles = [
   'data/menus.json',
@@ -19,7 +20,8 @@ const menuFiles = [
   'data/menus-25km-b.json',
   'data/menus-25km-c.json',
   'data/menus-25km-d.json',
-  'data/menus-25km-e.json'
+  'data/menus-25km-e.json',
+  'data/menus-25km-f.json'
 ];
 
 const readJson = file => JSON.parse(fs.readFileSync(file,'utf8'));
@@ -39,12 +41,7 @@ const isoDate = /^\d{4}-\d{2}-\d{2}$/;
 function normalizeItem(raw,menu,index) {
   if (!Array.isArray(raw)) return raw;
   const [category,name,price,description='',tags='',availability='',season=''] = raw;
-  return {
-    id:`${menu.placeId}-${index + 1}`,
-    category,name,price,description,
-    tags:tags ? String(tags).split('|').filter(Boolean) : [],
-    availability,season
-  };
+  return {id:`${menu.placeId}-${index + 1}`,category,name,price,description,tags:tags ? String(tags).split('|').filter(Boolean) : [],availability,season};
 }
 
 for (const doc of docs) {
@@ -69,9 +66,7 @@ for (const doc of docs) {
       if (seenItems.has(key)) errors.push(`duplicate menu item id: ${key}`);
       seenItems.add(key);
       if (!Number.isFinite(item.price) || item.price < 0) errors.push(`invalid price: ${key}`);
-      if (item.availableDays && (!Array.isArray(item.availableDays) || item.availableDays.some(day => !['mon','tue','wed','thu','fri','sat','sun'].includes(day)))) {
-        errors.push(`invalid availableDays: ${key}`);
-      }
+      if (item.availableDays && (!Array.isArray(item.availableDays) || item.availableDays.some(day => !['mon','tue','wed','thu','fri','sat','sun'].includes(day)))) errors.push(`invalid availableDays: ${key}`);
     }
   }
 
